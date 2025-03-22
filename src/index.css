@@ -5,13 +5,39 @@
 body {
   margin: 0;
   padding: 0;
-  font-size: 20px;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
+  color: #333;
+  font-size: 15px;
+  font-family: "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell",
+    "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
   font-optical-sizing: auto;
   font-weight: 400;
   font-style: normal;
+}
+
+@font-face {
+  font-family: "Arita-buri-Medium";
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+  src: local("Arita-buri-Medium"),
+    url("./assets/fonts/Arita-buri-Medium.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Arita-buri-SemiBold";
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+  src: local("Arita-buri-SemiBold"),
+    url("./assets/fonts/Arita-buri-SemiBold.woff") format("woff");
+}
+
+.arita-buri {
+  font-family: "Arita-buri-Medium";
+}
+
+.arita-buri-bold {
+  font-family: "Arita-buri-SemiBold";
 }
 
 .dancing-script {
@@ -21,6 +47,64 @@ body {
 .eb-garamond {
   font-family: "EB Garamond", serif;
   letter-spacing: 0.02rem;
+}
+
+.sub-title {
+  font-family: "EB Garamond", serif;
+  letter-spacing: 0.2rem;
+  font-size: 16px;
+}
+
+.main-title {
+  font-family: "Arita-buri-SemiBold";
+  font-size: 26px;
+}
+
+.main-title2 {
+  font-family: "Arita-buri-SemiBold";
+  font-size: 20px;
+  line-height: 2;
+  letter-spacing: 0.05rem;
+}
+
+.calendar {
+  width: 440px;
+}
+
+.calendar div {
+  display: flex;
+  justify-content: space-between;
+  margin: 10px 0;
+}
+
+.calendar span {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  font-size: 16px;
+}
+
+.calendar-header span {
+  font-size: 18px;
+  font-family: "Arita-buri-SemiBold";
+}
+
+.custom-icon > svg {
+  @apply w-full h-full fill-current pointer-events-none;
+}
+
+@media screen and (max-width: 1050px) {
+  .calendar {
+    width: 350px;
+  }
+
+  .calendar span {
+    width: 38px;
+    height: 38px;
+    font-size: 14px;
+  }
 }
 
 .fade {
