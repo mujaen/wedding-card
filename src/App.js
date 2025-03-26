@@ -250,10 +250,34 @@ function App() {
             <span></span>
           </div>
         </div>
+        <a
+          href="/"
+          className="fade flex justify-between items-center border border-gray-300 hover:border-gray-600 rounded-[8px] gap-[10px] mt-10 py-4 px-16"
+        >
+          <span className="w-[18px] h-[18px]">
+            <svg
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              className="w-full h-full pointer-events-none"
+            >
+              <g clip-path="url(#clip0_406_1953)">
+                <path
+                  d="M11.9999 0.0424805C9.35386 0.0453916 6.817 1.09776 4.94586 2.96871C3.07472 4.83966 2.0221 7.37642 2.01892 10.0225C2.01892 12.5925 4.00892 16.6145 7.93392 21.9765C8.40118 22.6166 9.01298 23.1374 9.71952 23.4964C10.4261 23.8554 11.2074 24.0425 11.9999 24.0425C12.7924 24.0425 13.5738 23.8554 14.2803 23.4964C14.9869 23.1374 15.5987 22.6166 16.0659 21.9765C19.9909 16.6145 21.9809 12.5925 21.9809 10.0225C21.9777 7.37642 20.9251 4.83966 19.054 2.96871C17.1828 1.09776 14.646 0.0453916 11.9999 0.0424805ZM11.9999 14.0005C11.2088 14.0005 10.4354 13.7659 9.77764 13.3264C9.11984 12.8868 8.60715 12.2621 8.3044 11.5312C8.00165 10.8003 7.92244 9.99605 8.07678 9.22012C8.23112 8.4442 8.61208 7.73146 9.17149 7.17205C9.7309 6.61264 10.4436 6.23168 11.2196 6.07734C11.9955 5.923 12.7998 6.00221 13.5307 6.30496C14.2616 6.60771 14.8863 7.1204 15.3258 7.7782C15.7653 8.436 15.9999 9.20936 15.9999 10.0005C15.9999 11.0613 15.5785 12.0788 14.8283 12.8289C14.0782 13.5791 13.0608 14.0005 11.9999 14.0005Z"
+                  fill="#333333"
+                />
+              </g>
+            </svg>
+          </span>
+
+          <span className="text-[18px]">위치 안내 바로가기</span>
+        </a>
       </div>
       <div className="flex flex-col items-center py-20 bg-white">
-        <h3 className="sub-title text-primary-300">GROOM &amp; BRIDE</h3>
-        <h2 className="flex flex-col items-center main-title text-gray-800 py-4">
+        <h3 className="fade sub-title text-primary-300">GROOM &amp; BRIDE</h3>
+        <h2 className="fade flex flex-col items-center main-title text-gray-800 py-4">
           신랑 &amp; 신부를 소개합니다
         </h2>
         <div className="flex lg:flex-row flex-col gap-[40px] py-[40px]">
@@ -304,12 +328,118 @@ function App() {
       <div className="flex flex-col items-center py-20 bg-primary-100">
         <h3 className="fade sub-title text-primary-300">OUR STORY</h3>
         <h2 className="fade main-title text-gray-800 py-4">우리의 이야기</h2>
-        <div className="flex lg:flex-row flex-col">
-          <img
-            className="w-full rounded-xl overflow-hidden"
-            src={broomImage}
-            alt="이야기1 이미지"
-          />
+        <div className="py-0 lg:py-[50px]">
+          <div className="flex lg:flex-row flex-col relative justify-center lg:py-[50px]">
+            <div className="lg:w-[450px] lg:mx-0 mx-[50px] lg:pr-[100px] pr-0">
+              <img
+                className="w-full rounded-xl overflow-hidden"
+                src={broomImage}
+                alt="이야기1 이미지"
+              />
+            </div>
+            <div className="flex flex-col items-center justify-center gap-[20px] lg:w-[450px] lg:mx-0 mx-[50px] lg:pl-[100px] pl-0">
+              <h3 className="text-xl arita-buri-bold tracking-wider pt-[30px]">
+                첫눈에 서로를 알아본 우리
+              </h3>
+              <h4 className="arita-buri leading-8 text-[15px]">
+                벚꽃 피는 봄날, 오래 알던 친구처럼 대화가 잘 통하는 사람을
+                만났습니다. 둘 다 활동적이고 웃음 포인트가 같아 첫 만남부터 "이
+                사람이다" 하는 느낌이 왔어요.
+              </h4>
+            </div>
+
+            <div className="hidden lg:block absolute top-0 bottom-0 left-0 right-0 border-l border-secondary-100 h-full w-[1px] m-auto"></div>
+            <span className="hidden lg:block absolute top-0 bottom-0 left-0 right-0 rounded-full w-[21px] h-[21px] bg-secondary-100 m-auto"></span>
+          </div>
+          <div className="flex lg:flex-row-reverse flex-col relative justify-center lg:py-[50px] pt-[40px]">
+            <div className="lg:w-[450px] lg:mx-0 mx-[50px] lg:pl-[100px] pl-0">
+              <img
+                className="w-full rounded-xl overflow-hidden"
+                src={broomImage}
+                alt="이야기1 이미지"
+              />
+            </div>
+            <div className="flex flex-col items-center justify-center gap-[20px] lg:w-[450px] lg:mx-0 mx-[50px] lg:pr-[100px] pr-0">
+              <h3 className="text-xl arita-buri-bold tracking-wider pt-[30px]">
+                첫눈에 서로를 알아본 우리
+              </h3>
+              <h4 className="arita-buri leading-8 text-[15px]">
+                벚꽃 피는 봄날, 오래 알던 친구처럼 대화가 잘 통하는 사람을
+                만났습니다. 둘 다 활동적이고 웃음 포인트가 같아 첫 만남부터 "이
+                사람이다" 하는 느낌이 왔어요.
+              </h4>
+            </div>
+            <div className="hidden lg:block absolute top-0 bottom-0 left-0 right-0 border-l border-secondary-100 h-full w-[1px] m-auto"></div>
+            <span className="hidden lg:block absolute top-0 bottom-0 left-0 right-0 rounded-full w-[21px] h-[21px] bg-secondary-100 m-auto"></span>
+          </div>
+          <div className="flex lg:flex-row flex-col relative justify-center lg:py-[50px] pt-[40px]">
+            <div className="lg:w-[450px] lg:mx-0 mx-[50px] lg:pr-[100px] pr-0">
+              <img
+                className="w-full rounded-xl overflow-hidden"
+                src={broomImage}
+                alt="이야기1 이미지"
+              />
+            </div>
+            <div className="flex flex-col items-center justify-center gap-[20px] lg:w-[450px] lg:mx-0 mx-[50px] lg:pl-[100px] pl-0">
+              <h3 className="text-xl arita-buri-bold tracking-wider pt-[30px]">
+                우리의 새로운 시작
+              </h3>
+              <h4 className="arita-buri leading-8 text-[15px]">
+                🤵🏻 신랑 김민호
+                <br />
+                저, 드디어 장가갑니다! 이 세상에 이 사람보다 나를 더 잘 이해하는
+                사람은 없을 거라는 확신이 듭니다. 항상 웃음이 넘치도록
+                살겠습니다. 잘 살자, 우리!
+                <br />
+                <br />
+                👰🏻 신부 이혜진
+                <br />
+                둘이서 함께라면 인생에 어떤 어려운 문제가 주어져도 풀어나갈 수
+                있을 것 같다는 용기가 생겨요. 서로에게 가장 좋은 친구이자
+                연인으로 즐겁게 살겠습니다.
+              </h4>
+            </div>
+            <div className="hidden lg:block absolute top-0 bottom-0 left-0 right-0 border-l border-secondary-100 h-full w-[1px] m-auto"></div>
+            <span className="hidden lg:block absolute top-0 bottom-0 left-0 right-0 rounded-full w-[21px] h-[21px] bg-secondary-100 m-auto"></span>
+          </div>
+          <div className="flex lg:flex-row-reverse flex-col relative justify-center lg:py-[50px] pt-[40px]">
+            <div className="lg:w-[450px] lg:mx-0 mx-[50px] lg:pl-[100px] pl-0">
+              <img
+                className="w-full rounded-xl overflow-hidden"
+                src={broomImage}
+                alt="이야기1 이미지"
+              />
+            </div>
+            <div className="flex flex-col items-center justify-center gap-[20px] lg:w-[450px] lg:mx-0 mx-[50px] lg:pr-[100px] pr-0">
+              <h3 className="text-xl arita-buri-bold tracking-wider pt-[30px]">
+                우리의 새로운 시작
+              </h3>
+              <h4 className="arita-buri leading-8 text-[15px]">
+                🤵🏻 신랑 김민호
+                <br />
+                저, 드디어 장가갑니다! 이 세상에 이 사람보다 나를 더 잘 이해하는
+                사람은 없을 거라는 확신이 듭니다. 항상 웃음이 넘치도록
+                살겠습니다. 잘 살자, 우리!
+                <br />
+                <br />
+                👰🏻 신부 이혜진
+                <br />
+                둘이서 함께라면 인생에 어떤 어려운 문제가 주어져도 풀어나갈 수
+                있을 것 같다는 용기가 생겨요. 서로에게 가장 좋은 친구이자
+                연인으로 즐겁게 살겠습니다.
+              </h4>
+            </div>
+            <div className="hidden lg:block absolute top-0 bottom-0 left-0 right-0 border-l border-secondary-100 h-full w-[1px] m-auto"></div>
+            <span className="hidden lg:block absolute top-0 bottom-0 left-0 right-0 rounded-full w-[21px] h-[21px] bg-secondary-100 m-auto"></span>
+          </div>
+        </div>
+        <div className="fade">
+          <p className="dancing-script text-primary-300 text-2xl">
+            And Now ...
+          </p>
+          <p className="dancing-script text-primary-300 text-2xl">
+            We're Getting Married !
+          </p>
         </div>
       </div>
     </section>
