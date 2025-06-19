@@ -280,7 +280,7 @@ function App() {
         <h2 className="fade flex flex-col items-center main-title text-gray-800 py-4">
           신랑 &amp; 신부를 소개합니다
         </h2>
-        <div className="flex lg:flex-row flex-col gap-[40px] py-[40px]">
+        <div className="flex lg:flex-row flex-col gap-[40px] py-[10px] lg:py-[40px]">
           <div className="lg:max-w-[400px] lg:mx-0 mx-[50px]">
             <img
               className="w-full rounded-xl overflow-hidden"
@@ -328,7 +328,7 @@ function App() {
       <div className="flex flex-col items-center py-20 bg-primary-100">
         <h3 className="fade sub-title text-primary-300">OUR STORY</h3>
         <h2 className="fade main-title text-gray-800 py-4">우리의 이야기</h2>
-        <div className="py-0 lg:py-[50px]">
+        <div className="py-[10px] lg:py-[40px]">
           <div className="flex lg:flex-row flex-col relative justify-center lg:py-[50px]">
             <div className="lg:w-[450px] lg:mx-0 mx-[50px] lg:pr-[100px] pr-0">
               <img
@@ -433,7 +433,7 @@ function App() {
             <span className="hidden lg:block absolute top-0 bottom-0 left-0 right-0 rounded-full w-[21px] h-[21px] bg-secondary-100 m-auto"></span>
           </div>
         </div>
-        <div className="fade">
+        <div className="fade hidden lg:block">
           <p className="dancing-script text-primary-300 text-2xl">
             And Now ...
           </p>
@@ -442,6 +442,99 @@ function App() {
           </p>
         </div>
       </div>
+      <div className="flex flex-col items-center py-20 bg-white">
+        <h3 className="fade sub-title text-primary-300">GALLERY</h3>
+        <h2 className="fade flex flex-col items-center main-title text-gray-800 py-4">
+          우리의 소중한 순간
+        </h2>
+        <div className="flex flex-wrap lg:gap-[20px] lg:w-[840px] py-[10px] lg:py-[40px] px-6 lg:px-0">
+          <div className="lg:w-[195px] w-1/3 p-2 lg:p-0">
+            <img
+              className="w-full rounded-md overflow-hidden"
+              src={broomImage}
+              alt="이야기1 이미지"
+            />
+          </div>
+          <div className="lg:w-[195px] w-1/3 p-2 lg:p-0">
+            <img
+              className="w-full rounded-md overflow-hidden"
+              src={broomImage}
+              alt="이야기1 이미지"
+            />
+          </div>
+          <div className="lg:w-[195px] w-1/3 p-2 lg:p-0">
+            <img
+              className="w-full rounded-md overflow-hidden"
+              src={broomImage}
+              alt="이야기1 이미지"
+            />
+          </div>
+          <div className="lg:w-[195px] w-1/3 p-2 lg:p-0">
+            <img
+              className="w-full rounded-md overflow-hidden"
+              src={broomImage}
+              alt="이야기1 이미지"
+            />
+          </div>
+          <div className="lg:w-[195px] w-1/3 p-2 lg:p-0">
+            <img
+              className="w-full rounded-md overflow-hidden"
+              src={broomImage}
+              alt="이야기1 이미지"
+            />
+          </div>
+          <div className="lg:w-[195px] w-1/3 p-2 lg:p-0">
+            <img
+              className="w-full rounded-md overflow-hidden"
+              src={broomImage}
+              alt="이야기1 이미지"
+            />
+          </div>
+          <div className="lg:w-[195px] w-1/3 p-2 lg:p-0">
+            <img
+              className="w-full rounded-md overflow-hidden"
+              src={broomImage}
+              alt="이야기1 이미지"
+            />
+          </div>
+          <div className="lg:w-[195px] w-1/3 p-2 lg:p-0">
+            <img
+              className="w-full rounded-md overflow-hidden"
+              src={broomImage}
+              alt="이야기1 이미지"
+            />
+          </div>
+          <div className="lg:w-[195px] w-1/3 p-2 lg:p-0">
+            <img
+              className="w-full rounded-md overflow-hidden"
+              src={broomImage}
+              alt="이야기1 이미지"
+            />
+          </div>
+          <div className="lg:w-[195px] w-1/3 p-2 lg:p-0">
+            <img
+              className="w-full rounded-md overflow-hidden"
+              src={broomImage}
+              alt="이야기1 이미지"
+            />
+          </div>
+          <div className="lg:w-[195px] w-1/3 p-2 lg:p-0">
+            <img
+              className="w-full rounded-md overflow-hidden"
+              src={broomImage}
+              alt="이야기1 이미지"
+            />
+          </div>
+          <div className="lg:w-[195px] w-1/3 p-2 lg:p-0">
+            <img
+              className="w-full rounded-md overflow-hidden"
+              src={broomImage}
+              alt="이야기1 이미지"
+            />
+          </div>
+        </div>
+      </div>
+      <div className="flex flex-col items-center py-20 bg-primary-100">12</div>
     </section>
   );
 }
