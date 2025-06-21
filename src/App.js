@@ -11,6 +11,13 @@ function App() {
     threshold: 0.5, // 50%가 viewport에 들어와 있어야 callback 실행
   };
 
+  const [timeLeft, setTimeLeft] = useState({
+    days: 0,
+    hours: 0,
+    minutes: 0,
+    seconds: 0,
+  });
+
   const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
       if (entry.intersectionRatio > 0) {
@@ -31,6 +38,31 @@ function App() {
     const boxList = document.querySelectorAll(".fade");
 
     boxList.forEach((el) => observer.observe(el));
+
+    const targetDate = new Date("2025-12-06T14:40:00");
+
+    const updateCountdown = () => {
+      const now = new Date();
+      const diff = targetDate.getTime() - now.getTime();
+
+      if (diff <= 0) {
+        setTimeLeft({ days: 0, hours: 0, minutes: 0, seconds: 0 });
+        return;
+      }
+
+      const totalSeconds = Math.floor(diff / 1000);
+      const days = Math.floor(totalSeconds / (3600 * 24));
+      const hours = Math.floor((totalSeconds % (3600 * 24)) / 3600);
+      const minutes = Math.floor((totalSeconds % 3600) / 60);
+      const seconds = totalSeconds % 60;
+
+      setTimeLeft({ days, hours, minutes, seconds });
+    };
+
+    updateCountdown(); // 초기 실행
+    const timer = setInterval(updateCountdown, 1000); // 1초마다 갱신
+
+    return () => clearInterval(timer);
   }, []);
 
   return (
@@ -188,7 +220,7 @@ function App() {
           </div>
         </div>
       </div>
-      <div className="flex flex-col items-center py-20 bg-white">
+      <div className="flex flex-col items-center py-20 bg-gray-50">
         <h3 className="fade sub-title text-primary-300">WEDDING DAY</h3>
         <h2 className="fade flex flex-col items-center main-title2 text-gray-800 py-4">
           <span>2025.12.06. 토요일 오후 2:40</span>
@@ -248,6 +280,61 @@ function App() {
             <span></span>
             <span></span>
             <span></span>
+          </div>
+        </div>
+        <div className="flex mt-8">
+          <span className="flex items-center gap-[3px]">
+            <span>민호</span>
+            <svg
+              width="16"
+              height="16"
+              viewBox="0 0 16 16"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M5.97449 12.9791C4.01296 11.4758 1.33334 8.99241 1.33334 6.64436C1.33334 2.72175 5.00011 1.25725 8 4.28741C10.9999 1.25725 14.6667 2.72175 14.6667 6.64434C14.6667 8.99247 11.9871 11.4758 10.0255 12.9791C9.13754 13.6597 8.69354 14 8 14C7.30647 14 6.86247 13.6597 5.97449 12.9791Z"
+                fill="#F87171"
+              />
+            </svg>
+            <span>혜진의</span>
+            <span>결혼식까지</span>
+          </span>
+        </div>
+        <div className="flex items-center justify-center w-[350px] lg:w-[440px] mt-4 gap-[10px] lg:gap-[20px]">
+          <div className="flex-1 text-center rounded-md py-4 bg-white shadow-lg">
+            <p className="text-[18px] lg:text-[24px] dancing-script lg:pb-1">
+              {timeLeft.days}
+            </p>
+            <span className="text-[11px] lg:text-[12px] text-gray-400 arita-buri">
+              DAYS
+            </span>
+          </div>
+          <div className="flex-1 text-center rounded-md py-4 bg-white shadow-lg">
+            <p className="text-[18px] lg:text-[24px] dancing-script lg:pb-1">
+              {timeLeft.hours}
+            </p>
+            <span className="text-[11px] lg:text-[12px] text-gray-400 arita-buri">
+              HOURS
+            </span>
+          </div>
+          <div className="flex-1 text-center rounded-md py-4 bg-white shadow-lg">
+            <p className="text-[18px] lg:text-[24px] dancing-script lg:pb-1">
+              {timeLeft.minutes}
+            </p>
+            <span className="text-[11px] lg:text-[12px] text-gray-400 arita-buri">
+              MINUTES
+            </span>
+          </div>
+          <div className="flex-1 text-center rounded-md py-4 bg-white shadow-lg">
+            <p className="text-[18px] lg:text-[24px] dancing-script lg:pb-1">
+              {timeLeft.seconds}
+            </p>
+            <span className="text-[11px] lg:text-[12px] text-gray-400 arita-buri">
+              SECONDS
+            </span>
           </div>
         </div>
         <a
@@ -534,7 +621,30 @@ function App() {
           </div>
         </div>
       </div>
-      <div className="flex flex-col items-center py-20 bg-primary-100">12</div>
+      <div className="flex justify-center py-20 bg-primary-100">
+        <div className="flex items-center justify-center lg:w-[840px] gap-[10px] lg:gap-[20px] px-6 lg:px-0">
+          <div className="flex flex-col items-center rounded-md py-4 bg-white w-full">
+            <p className="text-[28px] dancing-script pb-2">90</p>
+            <span className="text-[14px] text-gray-400 arita-buri">DAYS</span>
+          </div>
+          <div className="flex flex-col items-center rounded-md py-4 bg-white w-full">
+            <p className="text-[28px] dancing-script pb-2">90</p>
+            <span className="text-[14px] text-gray-400 arita-buri">HOURS</span>
+          </div>
+          <div className="flex flex-col items-center rounded-md p-4 bg-white w-full">
+            <p className="text-[28px] dancing-script pb-2">90</p>
+            <span className="text-[14px] text-gray-400 arita-buri">
+              MINUTES
+            </span>
+          </div>
+          <div className="flex flex-col items-center rounded-md p-4 bg-white w-full">
+            <p className="text-[28px] dancing-script pb-2">90</p>
+            <span className="text-[14px] text-gray-400 arita-buri">
+              SECONDS
+            </span>
+          </div>
+        </div>
+      </div>
     </section>
   );
 }
