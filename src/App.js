@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 
-import mainImage from "./assets/images/main.jpeg";
+import mainImage from "./assets/images/main.jpg";
 import broomImage from "./assets/images/broom.png";
 
 function App() {
@@ -73,18 +73,6 @@ function App() {
           src={mainImage}
           alt="메인 이미지"
         />
-        <p className="dancing-script absolute top-[80px] left-0 right-0 text-center text-xl text-gray-900">
-          We're Getting Married
-        </p>
-        <p className="arita-buri absolute top-[116px] left-0 right-0 text-center text-[26px] tracking-widest text-gray-900">
-          김민호<span className="eb-garamond px-4">&amp;</span>이혜진
-        </p>
-        <p className="eb-garamond absolute top-[160px] left-0 right-0 text-center text-lg text-gray-900">
-          2025.12.06. SAT 14:40 PM
-        </p>
-        <p className="eb-garamond absolute top-[186px] left-0 right-0 text-center text-base text-gray-900">
-          THE VENUEG SEOUL
-        </p>
       </div>
       <div className="menu lg:flex lg:px-4 justify-between text-primary-500">
         <h1 className="flex justify-between items-center arita-buri text-xl  lg:border-none border-b">
@@ -282,7 +270,7 @@ function App() {
             <span></span>
           </div>
         </div>
-        <div className="flex mt-8">
+        <div className="fade flex mt-8">
           <span className="flex items-center gap-[3px]">
             <span>민호</span>
             <svg
@@ -303,7 +291,7 @@ function App() {
             <span>결혼식까지</span>
           </span>
         </div>
-        <div className="flex items-center justify-center w-[350px] lg:w-[440px] mt-4 gap-[10px] lg:gap-[20px]">
+        <div className="fade flex items-center justify-center w-[350px] lg:w-[440px] mt-4 gap-[10px] lg:gap-[20px]">
           <div className="flex-1 text-center rounded-md py-4 bg-white shadow-lg">
             <p className="text-[18px] lg:text-[24px] dancing-script lg:pb-1">
               {timeLeft.days}
@@ -370,11 +358,11 @@ function App() {
         <div className="flex lg:flex-row flex-col gap-[40px] py-[10px] lg:py-[40px]">
           <div className="lg:max-w-[400px] lg:mx-0 mx-[50px]">
             <img
-              className="w-full rounded-xl overflow-hidden"
+              className="fade w-full rounded-xl overflow-hidden"
               src={broomImage}
               alt="신랑 이미지"
             />
-            <div className="flex justify-center items-baseline gap-[20px] pt-[30px] py-[20px]">
+            <div className="fade flex justify-center items-baseline gap-[20px] pt-[30px] py-[20px]">
               <span className="text-[15px] arita-buri text-secondary-500">
                 신랑
               </span>
@@ -382,7 +370,7 @@ function App() {
                 김민호
               </span>
             </div>
-            <div className="arita-buri leading-8 text-[15px]">
+            <div className="fade arita-buri leading-8 text-[15px]">
               헬스케어 서비스를 만들고 싶어 약학을 공부했습니다. 프로그래밍
               동아리에서 지금의 신랑을 만나 창업을 함께하며 평생의 짝꿍이라는
               확신이 생겼어요. 함께한 시간들이 행복했던 만큼 앞으로의 날들이
@@ -391,11 +379,11 @@ function App() {
           </div>
           <div className="lg:max-w-[400px] lg:mx-0 mx-[50px]">
             <img
-              className="w-full rounded-xl overflow-hidden"
+              className="fade w-full rounded-xl overflow-hidden"
               src={broomImage}
               alt="신부 이미지"
             />
-            <div className="flex justify-center items-baseline gap-[20px] pt-[30px] py-[20px]">
+            <div className="fade flex justify-center items-baseline gap-[20px] pt-[30px] py-[20px]">
               <span className="text-[15px] arita-buri text-primary-500">
                 신부
               </span>
@@ -403,7 +391,7 @@ function App() {
                 이혜진
               </span>
             </div>
-            <div className="arita-buri leading-8 text-[15px]">
+            <div className="fade arita-buri leading-8 text-[15px]">
               헬스케어 서비스를 만들고 싶어 약학을 공부했습니다. 프로그래밍
               동아리에서 지금의 신랑을 만나 창업을 함께하며 평생의 짝꿍이라는
               확신이 생겼어요. 함께한 시간들이 행복했던 만큼 앞으로의 날들이
@@ -416,7 +404,7 @@ function App() {
         <h3 className="fade sub-title text-primary-300">OUR STORY</h3>
         <h2 className="fade main-title text-gray-800 py-4">우리의 이야기</h2>
         <div className="py-[10px] lg:py-[40px]">
-          <div className="flex lg:flex-row flex-col relative justify-center lg:py-[50px]">
+          <div className="fade flex lg:flex-row flex-col relative justify-center lg:py-[50px]">
             <div className="lg:w-[450px] lg:mx-0 mx-[50px] lg:pr-[100px] pr-0">
               <img
                 className="w-full rounded-xl overflow-hidden"
@@ -438,7 +426,7 @@ function App() {
             <div className="hidden lg:block absolute top-0 bottom-0 left-0 right-0 border-l border-secondary-100 h-full w-[1px] m-auto"></div>
             <span className="hidden lg:block absolute top-0 bottom-0 left-0 right-0 rounded-full w-[21px] h-[21px] bg-secondary-100 m-auto"></span>
           </div>
-          <div className="flex lg:flex-row-reverse flex-col relative justify-center lg:py-[50px] pt-[40px]">
+          <div className="fade flex lg:flex-row-reverse flex-col relative justify-center lg:py-[50px] pt-[40px]">
             <div className="lg:w-[450px] lg:mx-0 mx-[50px] lg:pl-[100px] pl-0">
               <img
                 className="w-full rounded-xl overflow-hidden"
@@ -459,7 +447,7 @@ function App() {
             <div className="hidden lg:block absolute top-0 bottom-0 left-0 right-0 border-l border-secondary-100 h-full w-[1px] m-auto"></div>
             <span className="hidden lg:block absolute top-0 bottom-0 left-0 right-0 rounded-full w-[21px] h-[21px] bg-secondary-100 m-auto"></span>
           </div>
-          <div className="flex lg:flex-row flex-col relative justify-center lg:py-[50px] pt-[40px]">
+          <div className="fade flex lg:flex-row flex-col relative justify-center lg:py-[50px] pt-[40px]">
             <div className="lg:w-[450px] lg:mx-0 mx-[50px] lg:pr-[100px] pr-0">
               <img
                 className="w-full rounded-xl overflow-hidden"
@@ -489,7 +477,7 @@ function App() {
             <div className="hidden lg:block absolute top-0 bottom-0 left-0 right-0 border-l border-secondary-100 h-full w-[1px] m-auto"></div>
             <span className="hidden lg:block absolute top-0 bottom-0 left-0 right-0 rounded-full w-[21px] h-[21px] bg-secondary-100 m-auto"></span>
           </div>
-          <div className="flex lg:flex-row-reverse flex-col relative justify-center lg:py-[50px] pt-[40px]">
+          <div className="fade flex lg:flex-row-reverse flex-col relative justify-center lg:py-[50px] pt-[40px]">
             <div className="lg:w-[450px] lg:mx-0 mx-[50px] lg:pl-[100px] pl-0">
               <img
                 className="w-full rounded-xl overflow-hidden"
@@ -534,7 +522,7 @@ function App() {
         <h2 className="fade flex flex-col items-center main-title text-gray-800 py-4">
           우리의 소중한 순간
         </h2>
-        <div className="flex flex-wrap lg:gap-[20px] lg:w-[840px] py-[10px] lg:py-[40px] px-6 lg:px-0">
+        <div className="fade flex flex-wrap lg:gap-[20px] lg:w-[840px] py-[10px] lg:py-[40px] px-6 lg:px-0">
           <div className="lg:w-[195px] w-1/3 p-2 lg:p-0">
             <img
               className="w-full rounded-md overflow-hidden"
