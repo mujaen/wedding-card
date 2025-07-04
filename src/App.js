@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 
 import mainImage from "./assets/images/main.jpg";
+import mainImage3 from "./assets/images/main3.jpg";
+import mainImage4 from "./assets/images/main4.jpg";
 import broomImage from "./assets/images/broom.png";
 
 function App() {
@@ -71,6 +73,20 @@ function App() {
         <img
           className="max-w-[600px] w-full"
           src={mainImage}
+          alt="메인 이미지"
+        />
+      </div>
+      <div className="flex justify-center relative bg-white shadow-sm">
+        <img
+          className="max-w-[600px] w-full"
+          src={mainImage3}
+          alt="메인 이미지"
+        />
+      </div>
+      <div className="flex justify-center relative bg-white shadow-sm">
+        <img
+          className="max-w-[600px] w-full"
+          src={mainImage4}
           alt="메인 이미지"
         />
       </div>
