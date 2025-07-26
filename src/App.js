@@ -764,8 +764,8 @@ function App() {
           <br />
           행복하게 잘 살겠습니다.
         </div>
-        <div class="flex gap-[24px] py-8">
-          <div class="w-[500px]">
+        <div class="flex lg:flex-row w-full justify-center flex-col gap-[24px] py-12">
+          <div class="lg:w-[500px] lg:px-0 px-8">
             <button
               type="button"
               class="flex justify-between items-center gap-[14px] w-full bg-green-100 px-[25px] py-[20px] border-[0.5px] border-green-300 text-green-700 text-[22px] font-500"
@@ -811,7 +811,7 @@ function App() {
             </button>
             <div
               class={`${
-                isOpenLeft ? "h-full visible" : "h-0 invisible"
+                isOpenLeft ? "h-[490px] visible" : "h-0 invisible"
               } transition-all bg-green-50 border-l-[0.5px] border-r-[0.5px] border-green-300`}
             >
               <div class="p-[30px] border-b-[0.5px] border-green-300">
@@ -927,10 +927,10 @@ function App() {
               </div>
             </div>
           </div>
-          <div class="w-[500px]">
+          <div class="lg:w-[500px] lg:px-0 px-8">
             <button
               type="button"
-              class="flex justify-between items-center w-full bg-primary-100 px-[25px] py-[20px] border-[0.5px] border-primary-200 text-secondary-700 text-[22px] font-500"
+              class="flex justify-between items-center gap-[14px] w-full bg-primary-100  px-[25px] py-[20px] border-[0.5px] border-primary-200 text-secondary-700 text-[22px] font-500"
               onClick={() => handleRightButtonClick()}
             >
               <span class="flex gap-[14px] items-center">
@@ -971,10 +971,63 @@ function App() {
                 />
               </svg>
             </button>
-            <div class="">
-              <div class="flex justify-between p-[30px]">
-                <span>신부</span>
-                <span>토스 1000-9136-2017</span>
+            <div
+              class={`${
+                isOpenRight ? "h-[163px] visible" : "h-0 invisible"
+              } transition-all bg-primary-50 border-l-[0.5px] border-r-[0.5px] border-green-300`}
+            >
+              <div class="p-[30px] border-b-[0.5px] border-green-300">
+                <div class="flex justify-between">
+                  <span>
+                    신부
+                    <em class="not-italic text-[18px] pl-2 font-700">이혜진</em>
+                  </span>
+                  <span>토스 1000-9136-201</span>
+                </div>
+                <div class="flex justify-center gap-[20px] pt-[20px]">
+                  <button
+                    type="button"
+                    class="flex items-center justify-center gap-[8px] rounded-full w-[50%] py-4 bg-yellow-700 shadow-lg"
+                    onClick={() =>
+                      (window.location.href =
+                        "https://qr.kakaopay.com/Ej7xyipUD")
+                    }
+                  >
+                    <svg
+                      width="18"
+                      height="16"
+                      viewBox="0 0 18 16"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M9 0C13.9706 0 18 3.13401 18 7C18 10.866 13.9706 14 9 14C7.88189 14 6.81193 13.8396 5.82422 13.5498L1.30469 15.4326L2.8916 12.1396C1.11373 10.8609 0 9.03196 0 7C0 3.13401 4.02944 0 9 0Z"
+                        fill="#333333"
+                      />
+                    </svg>
+
+                    <span class="text-[16px]">카카오페이 송금</span>
+                  </button>
+                  <button
+                    type="button"
+                    class="flex items-center justify-center gap-[8px] rounded-full w-[50%] py-4 bg-white shadow-lg"
+                    onClick={() => copyToClipboard("238502-04-127818")}
+                  >
+                    <svg
+                      width="15"
+                      height="15"
+                      viewBox="0 0 15 15"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M13.7501 2.59062L11.2414 0H6.25012C5.75284 0 5.27593 0.197544 4.9243 0.549175C4.57267 0.900805 4.37512 1.37772 4.37512 1.875V2.5H3.12512C2.62784 2.5 2.15093 2.69754 1.7993 3.04917C1.44767 3.40081 1.25012 3.87772 1.25012 4.375V15H11.2501V11.875H13.7501V2.59062ZM10.0001 13.75H2.50012V4.375C2.50012 4.20924 2.56597 4.05027 2.68318 3.93306C2.80039 3.81585 2.95936 3.75 3.12512 3.75H4.37512V11.875H10.0001V13.75ZM5.62512 10.625V1.875C5.62512 1.70924 5.69097 1.55027 5.80818 1.43306C5.92539 1.31585 6.08436 1.25 6.25012 1.25H10.0001V3.75H12.5001V10.625H5.62512Z"
+                        fill="#333333"
+                      />
+                    </svg>
+                    <span class="text-[16px]">계좌번호 복사</span>
+                  </button>
+                </div>
               </div>
             </div>
           </div>
