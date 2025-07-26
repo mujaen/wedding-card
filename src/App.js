@@ -764,7 +764,7 @@ function App() {
           <br />
           행복하게 잘 살겠습니다.
         </div>
-        <div class="flex lg:flex-row w-full justify-center flex-col gap-[24px] py-12">
+        <div class="fade flex lg:flex-row w-full justify-center flex-col gap-[24px] py-12">
           <div class="lg:w-[500px] lg:px-0 px-8">
             <button
               type="button"
@@ -811,7 +811,7 @@ function App() {
             </button>
             <div
               class={`${
-                isOpenLeft ? "h-[490px] visible" : "h-0 invisible"
+                isOpenLeft ? "lg:h-[490px] h-[566px] visible" : "h-0 invisible"
               } transition-all bg-green-50 border-l-[0.5px] border-r-[0.5px] border-green-300`}
             >
               <div class="p-[30px] border-b-[0.5px] border-green-300">
@@ -822,10 +822,10 @@ function App() {
                   </span>
                   <span>국민 238502-04-127818</span>
                 </div>
-                <div class="flex justify-center gap-[20px] pt-[20px]">
+                <div class="flex lg:flex-row flex-col justify-center gap-[20px] pt-[20px]">
                   <button
                     type="button"
-                    class="flex items-center justify-center gap-[8px] rounded-full w-[50%] py-4 bg-yellow-700 shadow-lg"
+                    class="flex items-center justify-center gap-[8px] rounded-full w-full py-4 bg-yellow-700 shadow-lg"
                     onClick={() =>
                       (window.location.href =
                         "https://qr.kakaopay.com/FDBFqcWrK")
@@ -848,7 +848,7 @@ function App() {
                   </button>
                   <button
                     type="button"
-                    class="flex items-center justify-center gap-[8px] rounded-full w-[50%] py-4 bg-white shadow-lg"
+                    class="flex items-center justify-center gap-[8px] rounded-full w-full py-4 bg-white shadow-lg"
                     onClick={() => copyToClipboard("238502-04-127818")}
                   >
                     <svg
@@ -878,7 +878,7 @@ function App() {
                 <div class="flex justify-center pt-[20px]">
                   <button
                     type="button"
-                    class="flex items-center justify-center gap-[8px] rounded-full w-[50%] py-4 bg-white shadow-lg"
+                    class="flex items-center justify-center gap-[8px] rounded-full w-full py-4 bg-white shadow-lg"
                   >
                     <svg
                       width="15"
@@ -907,7 +907,7 @@ function App() {
                 <div class="flex justify-center pt-[20px]">
                   <button
                     type="button"
-                    class="flex items-center justify-center gap-[8px] rounded-full w-[50%] py-4 bg-white shadow-lg"
+                    class="flex items-center justify-center gap-[8px] rounded-full w-full py-4 bg-white shadow-lg"
                   >
                     <svg
                       width="15"
@@ -973,7 +973,7 @@ function App() {
             </button>
             <div
               class={`${
-                isOpenRight ? "h-[163px] visible" : "h-0 invisible"
+                isOpenRight ? "lg:h-[163px] h-[240px] visible" : "h-0 invisible"
               } transition-all bg-primary-50 border-l-[0.5px] border-r-[0.5px] border-green-300`}
             >
               <div class="p-[30px] border-b-[0.5px] border-green-300">
@@ -984,10 +984,10 @@ function App() {
                   </span>
                   <span>토스 1000-9136-201</span>
                 </div>
-                <div class="flex justify-center gap-[20px] pt-[20px]">
+                <div class="flex lg:flex-row flex-col justify-center gap-[20px] pt-[20px]">
                   <button
                     type="button"
-                    class="flex items-center justify-center gap-[8px] rounded-full w-[50%] py-4 bg-yellow-700 shadow-lg"
+                    class="flex items-center justify-center gap-[8px] rounded-full w-full py-4 bg-yellow-700 shadow-lg"
                     onClick={() =>
                       (window.location.href =
                         "https://qr.kakaopay.com/Ej7xyipUD")
@@ -1010,7 +1010,7 @@ function App() {
                   </button>
                   <button
                     type="button"
-                    class="flex items-center justify-center gap-[8px] rounded-full w-[50%] py-4 bg-white shadow-lg"
+                    class="flex items-center justify-center gap-[8px] rounded-full w-full py-4 bg-white shadow-lg"
                     onClick={() => copyToClipboard("238502-04-127818")}
                   >
                     <svg
@@ -1028,6 +1028,97 @@ function App() {
                     <span class="text-[16px]">계좌번호 복사</span>
                   </button>
                 </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className="flex flex-col items-center py-20 bg-primary-100">
+        <h3 className="fade sub-title text-primary-300">LOCATION</h3>
+        <h2 className="fade main-title text-gray-800 py-4">오시는 길</h2>
+
+        <div class="location lg:w-[1024px] px-12 flex flex-col gap-[10px] lg:flex-row justify-between items-center arita-buri text-center text-[18px] leading-9">
+          <span class="flex justify-center w-full">서울 강서구 강서로 388</span>
+          <span class="lg:w-[2px] w-[30px] h-[1px] lg:h-[26px] bg-primary-300 opacity-30"></span>
+          <span class="flex justify-center w-full">
+            더베뉴지 서울 2층 베뉴지홀
+          </span>
+        </div>
+
+        <div class="lg:flex w-full justify-center gap-[40px] py-12">
+          <div class="lg:w-[480px] w-full px-8 lg:px-0">
+            <div class="w-full h-[300px] bg-[url(./assets/images/map.png)] bg-center bg-cover"></div>
+            <div class="flex justify-between bg-gray-700 py-4 px-6">
+              <span class="text-white flex items-center gap-[6px]">
+                <svg
+                  width="15"
+                  height="15"
+                  viewBox="0 0 15 15"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M7.50012 0C5.84308 0.00181975 4.25442 0.660884 3.08271 1.83259C1.91101 3.0043 1.25194 4.59296 1.25012 6.25C1.25012 9.55125 6.50012 14.0831 7.09637 14.5894L7.50012 14.9306L7.90387 14.5894C8.50012 14.0831 13.7501 9.55125 13.7501 6.25C13.7483 4.59296 13.0892 3.0043 11.9175 1.83259C10.7458 0.660884 9.15717 0.00181975 7.50012 0V0ZM7.50012 9.375C6.88206 9.375 6.27787 9.19172 5.76397 8.84834C5.25006 8.50496 4.84952 8.0169 4.613 7.44589C4.37647 6.87487 4.31459 6.24653 4.43517 5.64034C4.55575 5.03415 4.85337 4.47733 5.29041 4.04029C5.72745 3.60325 6.28427 3.30562 6.89046 3.18505C7.49666 3.06447 8.12499 3.12635 8.69601 3.36288C9.26703 3.5994 9.75509 3.99994 10.0985 4.51384C10.4418 5.02775 10.6251 5.63193 10.6251 6.25C10.6241 7.0785 10.2946 7.87278 9.70873 8.45861C9.1229 9.04445 8.32862 9.37401 7.50012 9.375V9.375Z"
+                    fill="white"
+                  />
+                  <path
+                    d="M7.5 8.125C8.53553 8.125 9.375 7.28553 9.375 6.25C9.375 5.21447 8.53553 4.375 7.5 4.375C6.46447 4.375 5.625 5.21447 5.625 6.25C5.625 7.28553 6.46447 8.125 7.5 8.125Z"
+                    fill="white"
+                  />
+                </svg>
+                서울 강서구 강서로 388
+              </span>
+              <a
+                href="https://map.kakao.com/?from=roughmap&eName=%EB%8D%94%EB%B2%A0%EB%89%B4%EC%A7%80%EC%84%9C%EC%9A%B8&eX=464504.9999999995&eY=1127990.0000000023"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="text-white flex items-center justify-between"
+              >
+                카카오 길찾기
+                <svg
+                  width="20"
+                  height="20"
+                  viewBox="0 0 20 20"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M8.80058 15.8846L12.6214 12.0629C13.1521 11.5074 13.4482 10.7687 13.4482 10.0004C13.4482 9.23213 13.1521 8.49342 12.6214 7.9379L8.80058 4.11623C8.56608 3.88174 8.24804 3.75 7.91641 3.75C7.58479 3.75 7.26674 3.88174 7.03225 4.11623C6.79775 4.35073 6.66601 4.66877 6.66601 5.0004C6.66601 5.33203 6.79775 5.65007 7.03225 5.88457L10.8539 9.70623C10.932 9.78437 10.9759 9.89033 10.9759 10.0008C10.9759 10.1113 10.932 10.2173 10.8539 10.2954L7.03224 14.1162C6.79775 14.3507 6.66601 14.6688 6.66601 15.0004C6.66601 15.332 6.79775 15.6501 7.03224 15.8846C7.26674 16.1191 7.58478 16.2508 7.91641 16.2508C8.24804 16.2508 8.56608 16.1191 8.80058 15.8846Z"
+                    fill="white"
+                  />
+                </svg>
+              </a>
+            </div>
+          </div>
+          <div class="lg:w-[480px] lg:px-0 px-8 py-12 lg:py-0">
+            <h3 className="text-xl arita-buri-bold tracking-wider">지하철</h3>
+            <div class="pt-4">
+              <div className="arita-buri text-[15px]">
+                5호선 발산역 3번 출구
+              </div>
+              <div className="arita-buri text-[15px] pt-1">- 도보 3분 거리</div>
+            </div>
+            <div class="pt-4">
+              <div className="arita-buri text-[15px]">
+                9호선 양천향교역 6번 출구
+              </div>
+              <div className="arita-buri text-[15px] pt-1">
+                - 도보 약 10분 거리
+              </div>
+            </div>
+            <h3 className="pt-6 mt-4 text-xl arita-buri-bold tracking-wider border-t border-primary-300 border-opacity-30">
+              버스
+            </h3>
+            <div class="pt-4">
+              <div className="arita-buri text-[15px]">간선버스, 지선버스</div>
+              <div className="arita-buri text-[15px] pt-1">
+                - 601, 605, 654, 661, 6630, 6642, 6645, 6712
+              </div>
+            </div>
+            <div class="pt-4">
+              <div className="arita-buri text-[15px]">공항버스, 직행버스</div>
+              <div className="arita-buri text-[15px] pt-1">
+                - 6003, 3000, 8000
               </div>
             </div>
           </div>
