@@ -961,7 +961,7 @@ function App() {
           </div>
         </div>
         <div className="flex flex-col items-center py-20 lg:w-[400px] max-w-md mx-auto bg-primary-100">
-          <h3 className="fade sub-title text-primary-300">LOCATION</h3>
+          <h3 className="fade sub-title">LOCATION</h3>
           <h2 className="fade flex flex-col items-center suit-regular py-4 text-[18px]">
             오시는 길
           </h2>
@@ -1046,6 +1046,13 @@ function App() {
               </div>
             </div>
           </div>
+        </div>
+        <div className="flex justify-center lg:w-[400px] max-w-md mx-auto">
+          <img
+            className="max-w-[600px] w-full"
+            src={mainImage}
+            alt="메인 이미지"
+          />
         </div>
       </section>
       <div class="gallery flex justify-center items-center bg-black bg-opacity-40">
