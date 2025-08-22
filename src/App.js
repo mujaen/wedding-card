@@ -704,7 +704,7 @@ function App() {
             <span className="text-[18px] text-white">참석정보 전달하기</span>
           </a>
         </div>
-        <div className="flex flex-col items-center py-20 bg-white">
+        <div className="flex flex-col items-center py-20 lg:w-[400px] max-w-md mx-auto bg-white">
           <h3 className="fade sub-title text-primary-300">
             <svg
               width="32"
@@ -740,10 +740,10 @@ function App() {
               </defs>
             </svg>
           </h3>
-          <h2 className="fade flex flex-col items-center main-title text-gray-800 py-4">
+          <h2 className="fade flex flex-col items-center suit-regular py-4 text-[18px]">
             마음 전하실 곳
           </h2>
-          <div class="fade arita-buri text-center text-[18px] leading-9">
+          <div class="fade suit-regular text-center text-[18px] leading-9">
             저희 두 사람의 소중한 시작을
             <br />
             축하해주시는 모든 분들께 감사드립니다.
@@ -752,8 +752,8 @@ function App() {
             <br />
             행복하게 잘 살겠습니다.
           </div>
-          <div class="fade flex lg:flex-row w-full justify-center flex-col gap-[24px] py-12">
-            <div class="lg:w-[500px] lg:px-0 px-8">
+          <div class="fade flex w-full justify-center flex-col gap-[24px] py-12">
+            <div class="px-8">
               <button
                 type="button"
                 class="flex justify-between items-center gap-[14px] w-full bg-green-100 px-[25px] py-[20px] border-[0.5px] border-green-300 text-green-700 text-[22px] font-500"
@@ -799,9 +799,7 @@ function App() {
               </button>
               <div
                 class={`${
-                  isOpenLeft
-                    ? "lg:h-[490px] h-[566px] visible"
-                    : "h-0 invisible"
+                  isOpenLeft ? "h-[566px] visible" : "h-0 invisible"
                 } transition-all bg-green-50 border-l-[0.5px] border-r-[0.5px] border-green-300`}
               >
                 <div class="p-[30px] border-b-[0.5px] border-green-300">
@@ -814,7 +812,7 @@ function App() {
                     </span>
                     <span>국민 238502-04-127818</span>
                   </div>
-                  <div class="flex lg:flex-row flex-col justify-center gap-[20px] pt-[20px]">
+                  <div class="flex flex-col justify-center gap-[20px] pt-[20px]">
                     <button
                       type="button"
                       class="flex items-center justify-center gap-[8px] rounded-full w-full py-4 bg-yellow-700 shadow-lg"
@@ -925,7 +923,7 @@ function App() {
                 </div>
               </div>
             </div>
-            <div class="lg:w-[500px] lg:px-0 px-8">
+            <div class="px-8">
               <button
                 type="button"
                 class="flex justify-between items-center gap-[14px] w-full bg-primary-100  px-[25px] py-[20px] border-[0.5px] border-primary-200 text-secondary-700 text-[22px] font-500"
@@ -971,9 +969,7 @@ function App() {
               </button>
               <div
                 class={`${
-                  isOpenRight
-                    ? "lg:h-[163px] h-[240px] visible"
-                    : "h-0 invisible"
+                  isOpenRight ? "h-[240px] visible" : "h-0 invisible"
                 } transition-all bg-primary-50 border-l-[0.5px] border-r-[0.5px] border-green-300`}
               >
                 <div class="p-[30px] border-b-[0.5px] border-green-300">
@@ -986,7 +982,7 @@ function App() {
                     </span>
                     <span>토스 1000-9136-201</span>
                   </div>
-                  <div class="flex lg:flex-row flex-col justify-center gap-[20px] pt-[20px]">
+                  <div class="flex flex-col justify-center gap-[20px] pt-[20px]">
                     <button
                       type="button"
                       class="flex items-center justify-center gap-[8px] rounded-full w-full py-4 bg-yellow-700 shadow-lg"
@@ -1035,24 +1031,26 @@ function App() {
             </div>
           </div>
         </div>
-        <div className="flex flex-col items-center py-20 bg-primary-100">
+        <div className="flex flex-col items-center py-20 lg:w-[400px] max-w-md mx-auto bg-primary-100">
           <h3 className="fade sub-title text-primary-300">LOCATION</h3>
-          <h2 className="fade main-title text-gray-800 py-4">오시는 길</h2>
+          <h2 className="fade flex flex-col items-center suit-regular py-4 text-[18px]">
+            오시는 길
+          </h2>
 
-          <div class="location lg:w-[1024px] px-12 flex flex-col gap-[10px] lg:flex-row justify-between items-center arita-buri text-center text-[18px] leading-9">
+          <div class="location px-12 flex flex-col gap-[10px] justify-between items-center suit-regular text-center text-[18px] leading-9">
             <span class="flex justify-center w-full">
               서울 강서구 강서로 388
             </span>
-            <span class="lg:w-[2px] w-[30px] h-[1px] lg:h-[26px] bg-primary-300 opacity-30"></span>
+            <span class="w-[30px] h-[1px] bg-primary-300 opacity-30"></span>
             <span class="flex justify-center w-full">
               더베뉴지 서울 2층 베뉴지홀
             </span>
           </div>
 
-          <div class="lg:flex w-full justify-center gap-[40px] py-12">
-            <div class="fade lg:w-[480px] w-full px-8 lg:px-0">
+          <div class="w-full justify-center gap-[40px] py-12">
+            <div class="fade w-full px-8">
               <div class="w-full h-[300px] bg-[url(./assets/images/map.png)] bg-center bg-cover"></div>
-              <div class="flex justify-between bg-gray-700 py-4 lg:px-6 px-2">
+              <div class="flex justify-between bg-gray-700 py-4 px-2">
                 <span class="text-white flex items-center gap-[6px]">
                   <svg
                     width="15"
@@ -1094,38 +1092,28 @@ function App() {
                 </a>
               </div>
             </div>
-            <div class="fade lg:w-[480px] lg:px-0 px-8 py-12 lg:py-0">
-              <h3 className="text-xl arita-buri-bold tracking-wider">지하철</h3>
+            <div class="fade px-8 py-12">
+              <h3 className="text-xl suit-bold">지하철</h3>
               <div class="pt-4">
-                <div className="arita-buri text-[15px]">
-                  5호선 발산역 3번 출구
-                </div>
-                <div className="arita-buri text-[15px] pt-1">
-                  - 도보 3분 거리
-                </div>
+                <div className="text-[15px]">5호선 발산역 3번 출구</div>
+                <div className="text-[15px] pt-1">- 도보 3분 거리</div>
               </div>
               <div class="pt-4">
-                <div className="arita-buri text-[15px]">
-                  9호선 양천향교역 6번 출구
-                </div>
-                <div className="arita-buri text-[15px] pt-1">
-                  - 도보 약 10분 거리
-                </div>
+                <div className="text-[15px]">9호선 양천향교역 6번 출구</div>
+                <div className="text-[15px] pt-1">- 도보 약 10분 거리</div>
               </div>
-              <h3 className="pt-6 mt-4 text-xl arita-buri-bold tracking-wider border-t border-primary-300 border-opacity-30">
+              <h3 className="pt-6 mt-4 text-xl suit-bold tracking-wider border-t border-primary-300 border-opacity-30">
                 버스
               </h3>
               <div class="pt-4">
-                <div className="arita-buri text-[15px]">간선버스, 지선버스</div>
-                <div className="arita-buri text-[15px] pt-1">
+                <div className="text-[15px]">간선버스, 지선버스</div>
+                <div className="text-[15px] pt-1">
                   - 601, 605, 654, 661, 6630, 6642, 6645, 6712
                 </div>
               </div>
               <div class="pt-4">
-                <div className="arita-buri text-[15px]">공항버스, 직행버스</div>
-                <div className="arita-buri text-[15px] pt-1">
-                  - 6003, 3000, 8000
-                </div>
+                <div className="text-[15px]">공항버스, 직행버스</div>
+                <div className="text-[15px] pt-1">- 6003, 3000, 8000</div>
               </div>
             </div>
           </div>
