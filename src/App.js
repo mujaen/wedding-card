@@ -504,7 +504,7 @@ function App() {
                 <div className="flex-inline w-auto self-start px-3 py-1 bg-primary-300 rounded-full text-white">
                   23년 7월, 첫 시작
                 </div>
-                <h3 className="suit-regular text-[15px] pt-[20px]">
+                <h3 className="suit-bold text-[15px] pt-[20px]">
                   첫눈에 서로를 알아본 우리
                 </h3>
                 <h4 className="suit-regular text-[15px] pt-[20px]">
@@ -553,7 +553,7 @@ function App() {
                 <div className="flex-inline w-auto self-start px-3 py-1 bg-primary-300 rounded-full text-white">
                   평생의 약속
                 </div>
-                <h3 className="suit-regular text-[15px] pt-[20px]">프로포즈</h3>
+                <h3 className="suit-bold text-[15px] pt-[20px]">프로포즈</h3>
                 <h4 className="suit-regular text-[15px] pt-[20px]">
                   👰🏻 "Will you Marry me?"
                   <br />
@@ -575,8 +575,8 @@ function App() {
                 <div className="flex-inline w-auto self-start px-3 py-1 bg-primary-300 rounded-full text-white">
                   25년 12월 6일
                 </div>
-                <h3 className="suit-regular text-[15px] pt-[20px]">웨딩데이</h3>
-                <h4 className="suit-regular text-[15px] pt-[20px] pr-[10px]">
+                <h3 className="suit-bold text-[15px] pt-[20px]">웨딩데이</h3>
+                <h4 className="suit-regular text-[15px] pt-[20px]">
                   두 사람이 사랑의 마음으로 <br />
                   하나 되어 가는 새로운 여정
                 </h4>
@@ -594,99 +594,27 @@ function App() {
             </p>
           </div>
         </div>
-        <div className="flex flex-col items-center py-20 bg-white">
+        <div className="flex flex-col items-center py-20 lg:w-[400px] max-w-md mx-auto bg-white">
           <h3 className="fade sub-title text-primary-300">GALLERY</h3>
-          <h2 className="fade flex flex-col items-center main-title text-gray-800 py-4">
+          <h2 className="fade flex flex-col items-center suit-regular py-4 text-[18px]">
             우리의 소중한 순간
           </h2>
-          <div className="fade flex flex-wrap lg:gap-[20px] lg:w-[840px] py-[10px] lg:py-[40px] px-6 lg:px-0">
-            <div className="lg:w-[195px] w-1/3 p-2 lg:p-0">
-              <img
-                className="w-full rounded-md overflow-hidden"
-                src={broomImage}
-                alt="이야기1 이미지"
-              />
-            </div>
-            <div className="lg:w-[195px] w-1/3 p-2 lg:p-0">
-              <img
-                className="w-full rounded-md overflow-hidden"
-                src={broomImage}
-                alt="이야기1 이미지"
-              />
-            </div>
-            <div className="lg:w-[195px] w-1/3 p-2 lg:p-0">
-              <img
-                className="w-full rounded-md overflow-hidden"
-                src={broomImage}
-                alt="이야기1 이미지"
-              />
-            </div>
-            <div className="lg:w-[195px] w-1/3 p-2 lg:p-0">
-              <img
-                className="w-full rounded-md overflow-hidden"
-                src={broomImage}
-                alt="이야기1 이미지"
-              />
-            </div>
-            <div className="lg:w-[195px] w-1/3 p-2 lg:p-0">
-              <img
-                className="w-full rounded-md overflow-hidden"
-                src={broomImage}
-                alt="이야기1 이미지"
-              />
-            </div>
-            <div className="lg:w-[195px] w-1/3 p-2 lg:p-0">
-              <img
-                className="w-full rounded-md overflow-hidden"
-                src={broomImage}
-                alt="이야기1 이미지"
-              />
-            </div>
-            <div className="lg:w-[195px] w-1/3 p-2 lg:p-0">
-              <img
-                className="w-full rounded-md overflow-hidden"
-                src={broomImage}
-                alt="이야기1 이미지"
-              />
-            </div>
-            <div className="lg:w-[195px] w-1/3 p-2 lg:p-0">
-              <img
-                className="w-full rounded-md overflow-hidden"
-                src={broomImage}
-                alt="이야기1 이미지"
-              />
-            </div>
-            <div className="lg:w-[195px] w-1/3 p-2 lg:p-0">
-              <img
-                className="w-full rounded-md overflow-hidden"
-                src={broomImage}
-                alt="이야기1 이미지"
-              />
-            </div>
-            <div className="lg:w-[195px] w-1/3 p-2 lg:p-0">
-              <img
-                className="w-full rounded-md overflow-hidden"
-                src={broomImage}
-                alt="이야기1 이미지"
-              />
-            </div>
-            <div className="lg:w-[195px] w-1/3 p-2 lg:p-0">
-              <img
-                className="w-full rounded-md overflow-hidden"
-                src={broomImage}
-                alt="이야기1 이미지"
-              />
-            </div>
-            <div className="lg:w-[195px] w-1/3 p-2 lg:p-0">
-              <img
-                className="w-full rounded-md overflow-hidden"
-                src={broomImage}
-                alt="이야기1 이미지"
-              />
-            </div>
+          <div className="fade grid grid-cols-3 py-[10px] gap-[1.5px]">
+            <img className="w-full" src={broomImage} alt="이야기1 이미지" />
+            <img className="w-full" src={broomImage} alt="이야기1 이미지" />
+            <img className="w-full" src={broomImage} alt="이야기1 이미지" />
+            <img className="w-full" src={broomImage} alt="이야기1 이미지" />
+            <img className="w-full" src={broomImage} alt="이야기1 이미지" />
+            <img className="w-full" src={broomImage} alt="이야기1 이미지" />
+            <img className="w-full" src={broomImage} alt="이야기1 이미지" />
+            <img className="w-full" src={broomImage} alt="이야기1 이미지" />
+            <img className="w-full" src={broomImage} alt="이야기1 이미지" />
+            <img className="w-full" src={broomImage} alt="이야기1 이미지" />
+            <img className="w-full" src={broomImage} alt="이야기1 이미지" />
+            <img className="w-full" src={broomImage} alt="이야기1 이미지" />
           </div>
         </div>
-        <div className="flex flex-col items-center py-20 bg-primary-100">
+        <div className="flex flex-col items-center py-20 lg:w-[400px] max-w-md mx-auto bg-primary-100">
           <h3 className="fade sub-title text-primary-300">ATTENDANCE</h3>
           <h2 className="fade main-title text-gray-800 py-4">
             참석정보를 전달해주세요
