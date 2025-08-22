@@ -7,8 +7,8 @@ body {
   padding: 0;
   color: #333;
   font-size: 15px;
-  font-family: "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell",
-    "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  font-family: "SUIT-Regular", "Segoe UI", "Roboto", "Oxygen", "Ubuntu",
+    "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
   font-optical-sizing: auto;
   font-weight: 400;
   font-style: normal;
@@ -79,6 +79,7 @@ body {
   font-family: "Sometimestimes", serif;
   font-size: 30px;
   font-weight: 400;
+  letter-spacing: 0.05em;
 }
 
 .main-title {
