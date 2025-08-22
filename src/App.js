@@ -931,9 +931,9 @@ function App() {
           </div>
         </div>
         <div className="flex flex-col items-center py-20 bg-primary-400 lg:w-[400px] max-w-md mx-auto">
-          <h3 className="fade sub-title">INFOMATION</h3>
+          <h3 className="fade sub-title">INFORMATION</h3>
           <h2 className="fade flex flex-col items-center text-gray-800 py-4 suit-regular text-[18px]">
-            사전 안내
+            저희 웨딩에 대한 사전 안내를 드립니다
           </h2>
           <div className="flex flex-col gap-[40px] py-[20px]">
             <div className="max-w-[300px] mx-auto bg-white rounded-xl p-8">
@@ -966,7 +966,7 @@ function App() {
             오시는 길
           </h2>
 
-          <div class="location px-12 flex flex-col gap-[10px] justify-between items-center suit-regular text-center text-[18px] leading-9">
+          <div class="fade location px-12 flex flex-col gap-[10px] justify-between items-center suit-regular text-center text-[18px] leading-9">
             <span class="flex justify-center w-full">
               서울 강서구 강서로 388
             </span>
