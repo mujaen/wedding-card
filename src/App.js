@@ -507,7 +507,7 @@ function App() {
                 <h3 className="suit-bold text-[15px] pt-[20px]">
                   첫눈에 서로를 알아본 우리
                 </h3>
-                <h4 className="suit-regular text-[15px] pt-[20px]">
+                <h4 className="suit-regular text-[15px] pt-[16px]">
                   스치면 인연,
                   <br />
                   스며들면 사랑
@@ -533,7 +533,7 @@ function App() {
                 <h3 className="suit-bold text-[15px] pt-[20px]">
                   💕 행복했던 2년 반
                 </h3>
-                <h4 className="suit-regular text-[15px] pt-[20px] pr-[10px]">
+                <h4 className="suit-regular text-[15px] pt-[16px]">
                   함께한 11번의 계절 속<br />
                   너무 닮아버린 우리
                 </h4>
@@ -554,7 +554,7 @@ function App() {
                   평생의 약속
                 </div>
                 <h3 className="suit-bold text-[15px] pt-[20px]">프로포즈</h3>
-                <h4 className="suit-regular text-[15px] pt-[20px]">
+                <h4 className="suit-regular text-[15px] pt-[16px]">
                   👰🏻 "Will you Marry me?"
                   <br />
                   🤵🏻 "Yes!"
@@ -576,7 +576,7 @@ function App() {
                   25년 12월 6일
                 </div>
                 <h3 className="suit-bold text-[15px] pt-[20px]">웨딩데이</h3>
-                <h4 className="suit-regular text-[15px] pt-[20px]">
+                <h4 className="suit-regular text-[15px] pt-[16px]">
                   두 사람이 사랑의 마음으로 <br />
                   하나 되어 가는 새로운 여정
                 </h4>
@@ -615,11 +615,11 @@ function App() {
           </div>
         </div>
         <div className="flex flex-col items-center py-20 lg:w-[400px] max-w-md mx-auto bg-primary-100">
-          <h3 className="fade sub-title text-primary-300">ATTENDANCE</h3>
-          <h2 className="fade main-title text-gray-800 py-4">
+          <h3 className="fade sub-title">ATTENDANCE</h3>
+          <h2 className="fade flex flex-col items-center suit-regular py-4 text-[18px]">
             참석정보를 전달해주세요
           </h2>
-          <div class="fade arita-buri text-center text-[18px] leading-9">
+          <div class="fade suit-regular text-center text-[18px] leading-9">
             축하의 마음으로 예식에 참석하시는
             <br />
             모든 분들을 더욱 귀하게 모실 수 있도록,
@@ -628,7 +628,7 @@ function App() {
             <br />
             참석정보를 전달 부탁드립니다.
           </div>
-          <div class="fade attendance arita-buri text-center text-[18px] leading-9">
+          <div class="fade attendance suit-regular text-center text-[18px] leading-9">
             <h5 class="flex justify-center items-center gap-[10px]">
               <span className="w-[18px] h-[18px]">
                 <svg
