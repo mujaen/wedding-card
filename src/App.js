@@ -86,7 +86,7 @@ function App() {
   return (
     <>
       <section className="md:py-12">
-        <div className="flex justify-center lg:w-[400px] max-w-md mx-auto lg:rounded-t-3xl overflow-hidden">
+        <div className="flex h-screen lg:h-auto justify-center lg:w-[400px] max-w-md mx-auto lg:rounded-t-3xl overflow-hidden">
           <img
             className="max-w-[600px] w-full"
             src={mainImage}
