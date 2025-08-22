@@ -12,6 +12,28 @@ body {
   font-optical-sizing: auto;
   font-weight: 400;
   font-style: normal;
+  background-color: RGB(250, 218, 221);
+}
+
+@media (min-width: 1024px) {
+  .lg\:w-\[400px\] {
+    width: 400px;
+  }
+}
+
+@media (min-width: 768px) {
+  .md\:py-12 {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+  }
+}
+
+@font-face {
+  font-family: "SUIT-Regular";
+  src: url("https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_suit@1.0/SUIT-Regular.woff2")
+    format("woff2");
+  font-weight: normal;
+  font-style: normal;
 }
 
 @font-face {
@@ -32,6 +54,10 @@ body {
     url("./assets/fonts/Arita-buri-SemiBold.woff") format("woff");
 }
 
+.suit-regular {
+  font-family: "SUIT-Regular";
+}
+
 .arita-buri {
   font-family: "Arita-buri-Medium";
 }
@@ -50,9 +76,9 @@ body {
 }
 
 .sub-title {
-  font-family: "EB Garamond", serif;
-  letter-spacing: 0.2rem;
-  font-size: 16px;
+  font-family: "Sometimestimes", serif;
+  font-size: 30px;
+  font-weight: 400;
 }
 
 .main-title {
@@ -68,7 +94,8 @@ body {
 }
 
 .calendar {
-  width: 440px;
+  width: 340px;
+  font-family: "SUIT-Regular";
 }
 
 .calendar div {
@@ -87,8 +114,7 @@ body {
 }
 
 .calendar-header span {
-  font-size: 18px;
-  font-family: "Arita-buri-SemiBold";
+  font-size: 16px;
 }
 
 .custom-icon > svg {
@@ -144,4 +170,13 @@ body {
   padding-bottom: 10px;
   border-top: 3px double rgba(223, 162, 162, 0.3);
   border-bottom: 3px double rgba(223, 162, 162, 0.3);
+}
+
+.gallery {
+  display: none;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
 }

@@ -20,6 +20,7 @@ module.exports = {
         "primary-50": "#FFFBFB",
         "primary-100": "#F4EFEF",
         "primary-200": "#E4D7D2",
+        "primary-400": "#FFE6E8",
         "primary-300": "#DFA2A2",
         "primary-500": "#EB7B7B",
         "primary-700": "#BF4A4A",
