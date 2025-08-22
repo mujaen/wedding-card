@@ -93,107 +93,6 @@ function App() {
             alt="메인 이미지"
           />
         </div>
-
-        {/* <div className="menu lg:flex lg:px-4 justify-between text-primary-500">
-          <h1 className="flex justify-between items-center arita-buri text-xl  lg:border-none border-b">
-            <a href="/" className="flex py-5 px-4">
-              민호 &amp; 혜진
-            </a>
-            <a
-              href="#"
-              className="p-[22px] lg:hidden text-[0px]"
-              onClick={handleMenuClick}
-            >
-              <svg
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M22.5 10.5H1.5C0.671578 10.5 0 11.1716 0 12C0 12.8284 0.671578 13.5 1.5 13.5H22.5C23.3284 13.5 24 12.8284 24 12C24 11.1716 23.3284 10.5 22.5 10.5Z"
-                  fill="#EB7B7B"
-                />
-                <path
-                  d="M1.5 6.50001H22.5C23.3284 6.50001 24 5.82843 24 5C24 4.17158 23.3284 3.5 22.5 3.5H1.5C0.671578 3.5 0 4.17158 0 5C0 5.82843 0.671578 6.50001 1.5 6.50001Z"
-                  fill="#EB7B7B"
-                />
-                <path
-                  d="M22.5 17.5H1.5C0.671578 17.5 0 18.1716 0 19C0 19.8284 0.671578 20.5 1.5 20.5H22.5C23.3284 20.5 24 19.8284 24 19C24 18.1716 23.3284 17.5 22.5 17.5Z"
-                  fill="#EB7B7B"
-                />
-              </svg>
-            </a>
-          </h1>
-
-          <div className="relative">
-            <div
-              className={`lg:block lg:static absolute w-full z-50 transition-all duration-300 ${
-                isOpen ? "block" : "hidden"
-              }`}
-            >
-              <ul className="lg:flex">
-                <li className="arita-buri text-sm  lg:border-none border-b bg-white">
-                  <a
-                    href="/"
-                    className="flex py-6 px-4 hover:bg-primary-100 lg:hover:bg-white hover:text-primary-700"
-                  >
-                    신랑 &amp; 신부
-                  </a>
-                </li>
-                <li className=" arita-buri text-sm  lg:border-none border-b bg-white">
-                  <a
-                    href="/"
-                    className="flex py-6 px-4 hover:bg-primary-100 lg:hover:bg-white hover:text-primary-700"
-                  >
-                    우리의 이야기
-                  </a>
-                </li>
-                <li className=" arita-buri text-sm  lg:border-none border-b bg-white">
-                  <a
-                    href="/"
-                    className="flex py-6 px-4 hover:bg-primary-100 lg:hover:bg-white hover:text-primary-700"
-                  >
-                    사진첩
-                  </a>
-                </li>
-                <li className=" arita-buri text-sm  lg:border-none border-b bg-white">
-                  <a
-                    href="/"
-                    className="flex py-6 px-4 hover:bg-primary-100 lg:hover:bg-white hover:text-primary-700"
-                  >
-                    참석정보
-                  </a>
-                </li>
-                <li className=" arita-buri text-sm  lg:border-none border-b bg-white">
-                  <a
-                    href="/"
-                    className="flex py-6 px-4 hover:bg-primary-100 lg:hover:bg-white hover:text-primary-700"
-                  >
-                    마음 전하실 곳
-                  </a>
-                </li>
-                <li className=" arita-buri text-sm  lg:border-none border-b bg-white">
-                  <a
-                    href="/"
-                    className="flex py-6 px-4 hover:bg-primary-100 lg:hover:bg-white hover:text-primary-700"
-                  >
-                    오시는 길
-                  </a>
-                </li>
-                <li className="arita-buri text-sm  lg:border-none border-b bg-white">
-                  <a
-                    href="/"
-                    className="flex py-6 px-4 hover:bg-primary-100 lg:hover:bg-white hover:text-primary-700"
-                  >
-                    방명록
-                  </a>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div> */}
         <div className="flex flex-col items-center lg:w-[400px] max-w-md mx-auto py-20 bg-white">
           <div className="fade">
             <svg
@@ -435,7 +334,7 @@ function App() {
                     #다정다감
                   </li>
                 </ul>
-                <ul className="flex justify-center suit-bold text-[13px] gap-[5px] mt-1">
+                <ul className="flex justify-center suit-regular text-[13px] gap-[5px] mt-1">
                   <li className="px-3 py-1 bg-primary-300 rounded-full text-white">
                     #공감왕
                   </li>
@@ -1026,6 +925,36 @@ function App() {
                       <span class="text-[16px]">계좌번호 복사</span>
                     </button>
                   </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className="flex flex-col items-center py-20 bg-primary-400 lg:w-[400px] max-w-md mx-auto">
+          <h3 className="fade sub-title">INFOMATION</h3>
+          <h2 className="fade flex flex-col items-center text-gray-800 py-4 suit-regular text-[18px]">
+            사전 안내
+          </h2>
+          <div className="flex flex-col gap-[40px] py-[20px]">
+            <div className="max-w-[300px] mx-auto bg-white rounded-xl p-8">
+              <img
+                className="fade w-full rounded-xl overflow-hidden shadow-md"
+                src={broomImage}
+                alt="식사 이미지"
+              />
+              <div className="fade flex justify-center items-baseline pt-[30px] py-[20px]">
+                <span className="text-[18px] suit-regular">식사안내</span>
+              </div>
+              <div className="fade text-center">
+                <div className="flex flex-col gap-[20px] mb-5 suit-regular text-[15px]">
+                  <p>
+                    뷔페 식사 요리가 준비되어 있으며, 식사 장소는 홀과 같은 층에
+                    위치해 있습니다.
+                  </p>
+                  <p>
+                    소중한 걸음해 주심에 진심으로 감사드리며 즐거운 시간 되시길
+                    바랍니다.
+                  </p>
                 </div>
               </div>
             </div>
