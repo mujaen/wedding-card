@@ -1,18 +1,33 @@
 import React, { useState, useEffect, useRef } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
+import Snowfall from "react-snowfall";
 
 import mainImage from "./assets/images/main.jpg";
 import broomImage from "./assets/images/broom.png";
 import "swiper/css";
 
+const flower1 = document.createElement("img");
+flower1.src = "/assets/images/flower_1.png";
+const flower2 = document.createElement("img");
+flower2.src = "/assets/images/flower_2.png";
+const flower3 = document.createElement("img");
+flower3.src = "/assets/images/flower_3.png";
+const images = [flower1, flower2, flower3];
+
 function App() {
   const audioRef = useRef(null);
+  const swiperRef = useRef(null);
   const [isOpenLeft, setIsOpenLeft] = useState(false);
   const [isOpenRight, setIsOpenRight] = useState(false);
   const [isOpenModal, setIsOpenModal] = useState(false);
+  const [activeIndex, setActiveIndex] = useState(0);
 
   const [isPlaying, setIsPlaying] = useState(false);
-  const galleryImageList = ["/assets/images/1.png", "/assets/images/2.png"];
+  const galleryImageList = [
+    "/assets/images/1.png",
+    "/assets/images/2.png",
+    "/assets/images/3.png",
+  ];
 
   const options = {
     root: null, // viewport
@@ -54,6 +69,14 @@ function App() {
     }
   };
 
+  const handlePrev = () => {
+    if (swiperRef.current) swiperRef.current.slidePrev();
+  };
+
+  const handleNext = () => {
+    if (swiperRef.current) swiperRef.current.slideNext();
+  };
+
   const handleLeftButtonClick = () => {
     setIsOpenLeft(!isOpenLeft);
   };
@@ -62,7 +85,8 @@ function App() {
     setIsOpenRight(!isOpenRight);
   };
 
-  const handleGallerImageClick = () => {
+  const handleGallerImageClick = (index) => {
+    setActiveIndex(index);
     setIsOpenModal(!isOpenModal);
   };
 
@@ -112,7 +136,13 @@ function App() {
       />
       <button onClick={togglePlay}>{isPlaying ? "⏸ 멈추기" : "▶ 재생"}</button>
       <section className="md:py-12">
-        <div className="flex h-screen lg:h-auto justify-center lg:w-[400px] max-w-md mx-auto lg:rounded-t-3xl overflow-hidden">
+        <div className="relative flex h-screen lg:h-auto justify-center lg:w-[400px] max-w-md mx-auto lg:rounded-t-3xl overflow-hidden">
+          <Snowfall
+            speed={[0, 1.4]}
+            radius={[11, 11]}
+            snowflakeCount={15}
+            images={images}
+          />
           <img
             className="max-w-[600px] w-full"
             src={mainImage}
@@ -218,16 +248,16 @@ function App() {
               <span className="bg-red-400 rounded-full text-white">6</span>
             </div>
             <div>
-              <span>7</span>
+              <span className="text-primary-500">7</span>
               <span>8</span>
               <span>9</span>
               <span>10</span>
               <span>11</span>
               <span>12</span>
-              <span>13</span>
+              <span className="text-gray-100">13</span>
             </div>
             <div>
-              <span>14</span>
+              <span className="text-primary-500">14</span>
               <span>15</span>
               <span>16</span>
               <span>17</span>
@@ -236,16 +266,16 @@ function App() {
               <span>20</span>
             </div>
             <div>
-              <span>21</span>
+              <span className="text-primary-500">21</span>
               <span>22</span>
               <span>23</span>
               <span>24</span>
-              <span>25</span>
+              <span className="text-primary-500">25</span>
               <span>26</span>
               <span>27</span>
             </div>
             <div>
-              <span>28</span>
+              <span className="text-primary-500">28</span>
               <span>29</span>
               <span>30</span>
               <span>31</span>
@@ -525,13 +555,29 @@ function App() {
             우리의 소중한 순간
           </h2>
           <div className="fade grid grid-cols-3 py-[10px] gap-[1.5px]">
-            {galleryImageList.map((source) => (
-              <img
-                className="w-full"
-                src={source}
-                alt="이야기1 이미지"
-                onClick={() => handleGallerImageClick()}
-              />
+            {galleryImageList.map((source, index) => (
+              <div
+                className="flex justify-center items-center"
+                onClick={() => handleGallerImageClick(index)}
+              >
+                <div class="flex items-center rounded-none relative overflow-hidden aspect-square w-80">
+                  <div class="absolute top-0 left-0 w-full h-full bg-transparent z-10"></div>
+                  <img
+                    alt="gallery-grid-6"
+                    loading="eager"
+                    decoding="async"
+                    data-nimg="fill"
+                    className="rounded-none object-cover w-full h-full absolute"
+                    src={source}
+                  ></img>
+                </div>
+              </div>
+              // <div
+              //   key={index}
+              //   className="w-full aspect-square bg-center bg-cover bg-no-repeat cursor-pointer"
+              //   style={{ backgroundImage: `url(${source})` }}
+              //   onClick={() => handleGallerImageClick(index)}
+              // />
             ))}
           </div>
         </div>
@@ -1081,7 +1127,7 @@ function App() {
         <div class="gallery flex justify-center items-center bg-black bg-opacity-20">
           <div className="relative h-full lg:w-[400px] max-w-md mx-auto">
             <button
-              class="absolute right-4 top-4 z-40 hover:cursor-pointer"
+              class="hidden lg:block absolute right-4 top-4 z-40 hover:cursor-pointer"
               onClick={() => handleCloseButtonClick()}
             >
               <svg
@@ -1114,20 +1160,37 @@ function App() {
               <Swiper
                 spaceBetween={10}
                 slidesPerView={1}
-                onSlideChange={() => console.log("slide change")}
-                onSwiper={(swiper) => console.log("onSwiper", swiper)}
+                onSwiper={(swiper) => {
+                  swiperRef.current = swiper;
+                  swiper.slideTo(activeIndex, 0);
+                }}
+                className="h-full"
               >
                 {galleryImageList.map((source) => (
                   <SwiperSlide>
-                    <img
-                      className="max-w-[600px] w-full"
-                      src={source}
-                      alt="메인 이미지"
-                    />
+                    <div className="flex justify-center items-center h-full">
+                      <img
+                        className="max-w-[600px] w-full"
+                        src={source}
+                        alt="메인 이미지"
+                      />
+                    </div>
                   </SwiperSlide>
                 ))}
               </Swiper>
             </div>
+            <div
+              className="absolute top-0 left-0 w-1/3 h-full z-10"
+              onClick={handlePrev}
+            />
+            <div
+              className="absolute top-0 left-1/3 w-1/3 h-full z-10"
+              onClick={handleCloseButtonClick}
+            />
+            <div
+              className="absolute top-0 right-0 w-1/3 h-full z-10"
+              onClick={handleNext}
+            />
           </div>
         </div>
       )}
