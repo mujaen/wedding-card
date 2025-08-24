@@ -14,6 +14,7 @@ flower2.src = "/assets/images/flower_2.png";
 const flower3 = document.createElement("img");
 flower3.src = "/assets/images/flower_3.png";
 const images = [flower1, flower2, flower3];
+const videoSrc = "/assets/sample.mp4";
 
 function App() {
   const audioRef = useRef(null);
@@ -103,136 +104,154 @@ function App() {
     };
   }, [isOpenModal]);
 
-  useEffect(() => {
-    const boxList = document.querySelectorAll(".fade");
+  // useEffect(() => {
+  //   const boxList = document.querySelectorAll(".fade");
 
-    boxList.forEach((el) => observer.observe(el));
+  //   boxList.forEach((el) => observer.observe(el));
 
-    const targetDate = new Date("2025-12-06T14:40:00");
+  //   const targetDate = new Date("2025-12-06T14:40:00");
 
-    const updateCountdown = () => {
-      const now = new Date();
-      const diff = targetDate.getTime() - now.getTime();
+  //   const updateCountdown = () => {
+  //     const now = new Date();
+  //     const diff = targetDate.getTime() - now.getTime();
 
-      if (diff <= 0) {
-        setTimeLeft({ days: 0, hours: 0, minutes: 0, seconds: 0 });
-        return;
-      }
+  //     if (diff <= 0) {
+  //       setTimeLeft({ days: 0, hours: 0, minutes: 0, seconds: 0 });
+  //       return;
+  //     }
 
-      const totalSeconds = Math.floor(diff / 1000);
-      const days = Math.floor(totalSeconds / (3600 * 24));
-      const hours = Math.floor((totalSeconds % (3600 * 24)) / 3600);
-      const minutes = Math.floor((totalSeconds % 3600) / 60);
-      const seconds = totalSeconds % 60;
+  //     const totalSeconds = Math.floor(diff / 1000);
+  //     const days = Math.floor(totalSeconds / (3600 * 24));
+  //     const hours = Math.floor((totalSeconds % (3600 * 24)) / 3600);
+  //     const minutes = Math.floor((totalSeconds % 3600) / 60);
+  //     const seconds = totalSeconds % 60;
 
-      setTimeLeft({ days, hours, minutes, seconds });
-    };
+  //     setTimeLeft({ days, hours, minutes, seconds });
+  //   };
 
-    updateCountdown(); // 초기 실행
-    const timer = setInterval(updateCountdown, 1000); // 1초마다 갱신
+  //   updateCountdown(); // 초기 실행
+  //   const timer = setInterval(updateCountdown, 1000); // 1초마다 갱신
 
-    return () => clearInterval(timer);
-  }, []);
+  //   return () => clearInterval(timer);
+  // }, []);
 
-  const CustomSvgIcon = () => {
-    const barsRef = useRef([]);
-    const animationRef = useRef(null);
-    const barsState = useRef([]);
+  // const CustomSvgIcon = () => {
+  //   const barsRef = useRef([]);
+  //   const animationRef = useRef(null);
+  //   const barsState = useRef([]);
 
-    const baseY = 17;
-    const minHeight = 3;
-    const maxHeight = 10;
+  //   const baseY = 17;
+  //   const minHeight = 3;
+  //   const maxHeight = 10;
 
-    useEffect(() => {
-      barsState.current = new Array(5).fill(0).map(() => {
-        const initHeight = Math.random() * (maxHeight - minHeight) + minHeight;
-        return {
-          currentHeight: initHeight,
-          targetHeight: initHeight,
-          lastTargetChange: performance.now(),
-          targetChangeInterval: 4000 + Math.random() * 2000, // 4~6초 주기
-        };
-      });
+  //   useEffect(() => {
+  //     barsState.current = new Array(5).fill(0).map(() => {
+  //       const initHeight = Math.random() * (maxHeight - minHeight) + minHeight;
+  //       return {
+  //         currentHeight: initHeight,
+  //         targetHeight: initHeight,
+  //         lastTargetChange: performance.now(),
+  //         targetChangeInterval: 4000 + Math.random() * 2000, // 4~6초 주기
+  //       };
+  //     });
 
-      const animate = (time) => {
-        barsState.current.forEach((bar, i) => {
-          // 목표 도달했거나 바꿀 시간이 되면 새 목표 지정
-          if (
-            time - bar.lastTargetChange > bar.targetChangeInterval ||
-            Math.abs(bar.currentHeight - bar.targetHeight) < 0.05
-          ) {
-            const maxDelta = 1.5;
-            let newTarget =
-              bar.currentHeight + (Math.random() * 2 * maxDelta - maxDelta);
-            newTarget = Math.min(maxHeight, Math.max(minHeight, newTarget));
-            bar.targetHeight = newTarget;
+  //     const animate = (time) => {
+  //       barsState.current.forEach((bar, i) => {
+  //         // 목표 도달했거나 바꿀 시간이 되면 새 목표 지정
+  //         if (
+  //           time - bar.lastTargetChange > bar.targetChangeInterval ||
+  //           Math.abs(bar.currentHeight - bar.targetHeight) < 0.05
+  //         ) {
+  //           const maxDelta = 1.5;
+  //           let newTarget =
+  //             bar.currentHeight + (Math.random() * 2 * maxDelta - maxDelta);
+  //           newTarget = Math.min(maxHeight, Math.max(minHeight, newTarget));
+  //           bar.targetHeight = newTarget;
 
-            bar.lastTargetChange = time;
-            bar.targetChangeInterval = 4000 + Math.random() * 2000;
-          }
+  //           bar.lastTargetChange = time;
+  //           bar.targetChangeInterval = 4000 + Math.random() * 2000;
+  //         }
 
-          // 높이 이동 속도
-          const speed = 0.12;
-          if (bar.currentHeight < bar.targetHeight) {
-            bar.currentHeight = Math.min(
-              bar.currentHeight + speed,
-              bar.targetHeight
-            );
-          } else if (bar.currentHeight > bar.targetHeight) {
-            bar.currentHeight = Math.max(
-              bar.currentHeight - speed,
-              bar.targetHeight
-            );
-          }
+  //         // 높이 이동 속도
+  //         const speed = 0.12;
+  //         if (bar.currentHeight < bar.targetHeight) {
+  //           bar.currentHeight = Math.min(
+  //             bar.currentHeight + speed,
+  //             bar.targetHeight
+  //           );
+  //         } else if (bar.currentHeight > bar.targetHeight) {
+  //           bar.currentHeight = Math.max(
+  //             bar.currentHeight - speed,
+  //             bar.targetHeight
+  //           );
+  //         }
 
-          // DOM 업데이트
-          const rect = barsRef.current[i];
-          if (rect) {
-            rect.setAttribute("height", bar.currentHeight.toFixed(2));
-            rect.setAttribute("y", (baseY - bar.currentHeight).toFixed(2));
-          }
-        });
+  //         // DOM 업데이트
+  //         const rect = barsRef.current[i];
+  //         if (rect) {
+  //           rect.setAttribute("height", bar.currentHeight.toFixed(2));
+  //           rect.setAttribute("y", (baseY - bar.currentHeight).toFixed(2));
+  //         }
+  //       });
 
-        animationRef.current = requestAnimationFrame(animate);
-      };
+  //       animationRef.current = requestAnimationFrame(animate);
+  //     };
 
-      animationRef.current = requestAnimationFrame(animate);
+  //     animationRef.current = requestAnimationFrame(animate);
 
-      return () => cancelAnimationFrame(animationRef.current);
-    }, []);
+  //     return () => cancelAnimationFrame(animationRef.current);
+  //   }, []);
 
-    const bars = [6, 9, 12, 15, 18];
+  //   const bars = [6, 9, 12, 15, 18];
 
+  //   return (
+  //     <div style={{ width: "23px", height: "23px" }}>
+  //       <svg
+  //         xmlns="http://www.w3.org/2000/svg"
+  //         viewBox="0 0 23 23"
+  //         width="23"
+  //         height="23"
+  //         className="music-bars-svg"
+  //       >
+  //         <circle cx="11.5" cy="11.5" r="11.5" fill="#101010" />
+  //         {bars.map((x, i) => (
+  //           <rect
+  //             key={i}
+  //             ref={(el) => (barsRef.current[i] = el)}
+  //             x={x - 0.75}
+  //             y={baseY - maxHeight}
+  //             width={1.5}
+  //             height={minHeight}
+  //             rx={0.75}
+  //             fill="white"
+  //           />
+  //         ))}
+  //       </svg>
+  //     </div>
+  //   );
+  // };
+
+  const VideoPlayer = () => {
     return (
-      <div style={{ width: "23px", height: "23px" }}>
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 23 23"
-          width="23"
-          height="23"
-          className="music-bars-svg"
-        >
-          <circle cx="11.5" cy="11.5" r="11.5" fill="#101010" />
-          {bars.map((x, i) => (
-            <rect
-              key={i}
-              ref={(el) => (barsRef.current[i] = el)}
-              x={x - 0.75}
-              y={baseY - maxHeight}
-              width={1.5}
-              height={minHeight}
-              rx={0.75}
-              fill="white"
-            />
-          ))}
-        </svg>
-      </div>
+      <video
+        src={videoSrc}
+        autoPlay
+        muted
+        loop
+        playsInline
+        style={{
+          width: "100%", // 또는 원하는 사이즈로 조절
+          height: "auto",
+          display: "block",
+          objectFit: "cover", // 필요시 화면에 꽉 차게 조절
+        }}
+      />
     );
   };
 
   return (
     <>
-      <audio src="/assets/music.mp3" ref={audioRef} muted autoPlay loop />
+      {/* <audio src="/assets/music.mp3" ref={audioRef} muted autoPlay loop />
 
       <button onClick={togglePlay}>
         {isPlaying ? (
@@ -251,7 +270,7 @@ function App() {
         ) : (
           <CustomSvgIcon />
         )}
-      </button>
+      </button> */}
 
       <section className="md:py-12">
         <div className="relative flex h-screen lg:h-auto justify-center lg:w-[400px] max-w-md mx-auto lg:rounded-t-3xl overflow-hidden">
@@ -261,11 +280,12 @@ function App() {
             snowflakeCount={15}
             images={images}
           />
-          <img
+          <VideoPlayer />
+          {/* <img
             className="max-w-[600px] w-full"
             src={mainImage}
             alt="메인 이미지"
-          />
+          /> */}
         </div>
         <div className="flex flex-col items-center lg:w-[400px] max-w-md mx-auto py-20 bg-white">
           <div className="fade">
