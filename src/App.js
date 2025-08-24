@@ -140,13 +140,7 @@ function App() {
 
   return (
     <>
-      <audio
-        src="https://hellomybrand.com/wed/audio/silence.mp3"
-        ref={audioRef}
-        autoPlay
-        muted
-        loop
-      />
+      <audio src="/assets/music.mp3" ref={audioRef} autoPlay loop />
       <button onClick={togglePlay}>{isPlaying ? "⏸ 멈추기" : "▶ 재생"}</button>
       <section className="md:py-12">
         <div className="relative flex h-screen lg:h-auto justify-center lg:w-[400px] max-w-md mx-auto lg:rounded-t-3xl overflow-hidden">
