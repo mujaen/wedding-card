@@ -134,10 +134,125 @@ function App() {
     return () => clearInterval(timer);
   }, []);
 
+  const CustomSvgIcon = () => {
+    const barsRef = useRef([]);
+    const animationRef = useRef(null);
+    const barsState = useRef([]);
+
+    const baseY = 17;
+    const minHeight = 3;
+    const maxHeight = 10;
+
+    useEffect(() => {
+      barsState.current = new Array(5).fill(0).map(() => {
+        const initHeight = Math.random() * (maxHeight - minHeight) + minHeight;
+        return {
+          currentHeight: initHeight,
+          targetHeight: initHeight,
+          lastTargetChange: performance.now(),
+          targetChangeInterval: 4000 + Math.random() * 2000, // 4~6초 주기
+        };
+      });
+
+      const animate = (time) => {
+        barsState.current.forEach((bar, i) => {
+          // 목표 도달했거나 바꿀 시간이 되면 새 목표 지정
+          if (
+            time - bar.lastTargetChange > bar.targetChangeInterval ||
+            Math.abs(bar.currentHeight - bar.targetHeight) < 0.05
+          ) {
+            const maxDelta = 1.5;
+            let newTarget =
+              bar.currentHeight + (Math.random() * 2 * maxDelta - maxDelta);
+            newTarget = Math.min(maxHeight, Math.max(minHeight, newTarget));
+            bar.targetHeight = newTarget;
+
+            bar.lastTargetChange = time;
+            bar.targetChangeInterval = 4000 + Math.random() * 2000;
+          }
+
+          // 높이 이동 속도
+          const speed = 0.12;
+          if (bar.currentHeight < bar.targetHeight) {
+            bar.currentHeight = Math.min(
+              bar.currentHeight + speed,
+              bar.targetHeight
+            );
+          } else if (bar.currentHeight > bar.targetHeight) {
+            bar.currentHeight = Math.max(
+              bar.currentHeight - speed,
+              bar.targetHeight
+            );
+          }
+
+          // DOM 업데이트
+          const rect = barsRef.current[i];
+          if (rect) {
+            rect.setAttribute("height", bar.currentHeight.toFixed(2));
+            rect.setAttribute("y", (baseY - bar.currentHeight).toFixed(2));
+          }
+        });
+
+        animationRef.current = requestAnimationFrame(animate);
+      };
+
+      animationRef.current = requestAnimationFrame(animate);
+
+      return () => cancelAnimationFrame(animationRef.current);
+    }, []);
+
+    const bars = [6, 9, 12, 15, 18];
+
+    return (
+      <div style={{ width: "23px", height: "23px" }}>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 23 23"
+          width="23"
+          height="23"
+          className="music-bars-svg"
+        >
+          <circle cx="11.5" cy="11.5" r="11.5" fill="#101010" />
+          {bars.map((x, i) => (
+            <rect
+              key={i}
+              ref={(el) => (barsRef.current[i] = el)}
+              x={x - 0.75}
+              y={baseY - maxHeight}
+              width={1.5}
+              height={minHeight}
+              rx={0.75}
+              fill="white"
+            />
+          ))}
+        </svg>
+      </div>
+    );
+  };
+
   return (
     <>
-      <audio src="/assets/music.mp3" ref={audioRef} autoPlay loop />
-      <button onClick={togglePlay}>{isPlaying ? "⏸ 멈추기" : "▶ 재생"}</button>
+      <audio src="/assets/music.mp3" ref={audioRef} muted autoPlay loop />
+
+      <button onClick={togglePlay}>
+        {isPlaying ? (
+          <div style={{ width: "23px", height: "23px" }}>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 23 23"
+              width="23"
+              height="23"
+              className="play-icon-svg"
+            >
+              <circle cx="11.5" cy="11.5" r="11.5" fill="#101010" />
+              <polygon points="9,7 16,11.5 9,16" fill="white" />
+            </svg>
+          </div>
+        ) : (
+          <CustomSvgIcon />
+        )}
+      </button>
+
       <section className="md:py-12">
         <div className="relative flex h-screen lg:h-auto justify-center lg:w-[400px] max-w-md mx-auto lg:rounded-t-3xl overflow-hidden">
           <Snowfall
