@@ -1065,7 +1065,7 @@ function App() {
                   서울 강서구 강서로 388
                 </span>
                 <a
-                  href="https://map.kakao.com/?from=roughmap&eName=%EB%8D%94%EB%B2%A0%EB%89%B4%EC%A7%80%EC%84%9C%EC%9A%B8&eX=464504.9999999995&eY=1127990.0000000023"
+                  href="https://kko.kakao.com/X-1yeLI3v2"
                   target="_blank"
                   rel="noopener noreferrer"
                   class="text-white flex items-center justify-between"
