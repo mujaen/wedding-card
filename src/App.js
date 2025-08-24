@@ -95,6 +95,18 @@ function App() {
   };
 
   useEffect(() => {
+    if (isOpenModal) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "auto";
+    }
+
+    return () => {
+      document.body.style.overflow = "auto";
+    };
+  }, [isOpenModal]);
+
+  useEffect(() => {
     const boxList = document.querySelectorAll(".fade");
 
     boxList.forEach((el) => observer.observe(el));
