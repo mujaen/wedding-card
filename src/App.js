@@ -6,6 +6,7 @@ import mainImage from "./assets/images/main.jpg";
 import broomImage from "./assets/images/broom.png";
 import infoImage from "./assets/images/info.png";
 import "swiper/css";
+import Video from "./Video";
 
 const flower1 = document.createElement("img");
 flower1.src = "/assets/images/flower_1.png";
@@ -14,7 +15,6 @@ flower2.src = "/assets/images/flower_2.png";
 const flower3 = document.createElement("img");
 flower3.src = "/assets/images/flower_3.png";
 const images = [flower1, flower2, flower3];
-const videoSrc = "/assets/sample.mp4";
 
 function App() {
   const audioRef = useRef(null);
@@ -104,36 +104,36 @@ function App() {
     };
   }, [isOpenModal]);
 
-  // useEffect(() => {
-  //   const boxList = document.querySelectorAll(".fade");
+  useEffect(() => {
+    const boxList = document.querySelectorAll(".fade");
 
-  //   boxList.forEach((el) => observer.observe(el));
+    boxList.forEach((el) => observer.observe(el));
 
-  //   const targetDate = new Date("2025-12-06T14:40:00");
+    const targetDate = new Date("2025-12-06T14:40:00");
 
-  //   const updateCountdown = () => {
-  //     const now = new Date();
-  //     const diff = targetDate.getTime() - now.getTime();
+    const updateCountdown = () => {
+      const now = new Date();
+      const diff = targetDate.getTime() - now.getTime();
 
-  //     if (diff <= 0) {
-  //       setTimeLeft({ days: 0, hours: 0, minutes: 0, seconds: 0 });
-  //       return;
-  //     }
+      if (diff <= 0) {
+        setTimeLeft({ days: 0, hours: 0, minutes: 0, seconds: 0 });
+        return;
+      }
 
-  //     const totalSeconds = Math.floor(diff / 1000);
-  //     const days = Math.floor(totalSeconds / (3600 * 24));
-  //     const hours = Math.floor((totalSeconds % (3600 * 24)) / 3600);
-  //     const minutes = Math.floor((totalSeconds % 3600) / 60);
-  //     const seconds = totalSeconds % 60;
+      const totalSeconds = Math.floor(diff / 1000);
+      const days = Math.floor(totalSeconds / (3600 * 24));
+      const hours = Math.floor((totalSeconds % (3600 * 24)) / 3600);
+      const minutes = Math.floor((totalSeconds % 3600) / 60);
+      const seconds = totalSeconds % 60;
 
-  //     setTimeLeft({ days, hours, minutes, seconds });
-  //   };
+      setTimeLeft({ days, hours, minutes, seconds });
+    };
 
-  //   updateCountdown(); // 초기 실행
-  //   const timer = setInterval(updateCountdown, 1000); // 1초마다 갱신
+    updateCountdown(); // 초기 실행
+    const timer = setInterval(updateCountdown, 1000); // 1초마다 갱신
 
-  //   return () => clearInterval(timer);
-  // }, []);
+    return () => clearInterval(timer);
+  }, []);
 
   // const CustomSvgIcon = () => {
   //   const barsRef = useRef([]);
@@ -231,24 +231,6 @@ function App() {
   //   );
   // };
 
-  const VideoPlayer = () => {
-    return (
-      <video
-        src={videoSrc}
-        autoPlay
-        muted
-        loop
-        playsInline
-        style={{
-          width: "100%", // 또는 원하는 사이즈로 조절
-          height: "auto",
-          display: "block",
-          objectFit: "cover", // 필요시 화면에 꽉 차게 조절
-        }}
-      />
-    );
-  };
-
   return (
     <>
       {/* <audio src="/assets/music.mp3" ref={audioRef} muted autoPlay loop />
@@ -280,7 +262,7 @@ function App() {
             snowflakeCount={15}
             images={images}
           />
-          <VideoPlayer />
+          <Video />
           {/* <img
             className="max-w-[600px] w-full"
             src={mainImage}
