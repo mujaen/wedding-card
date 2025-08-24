@@ -254,7 +254,7 @@ function App() {
               <span>10</span>
               <span>11</span>
               <span>12</span>
-              <span className="text-gray-100">13</span>
+              <span className="text-gray-400">13</span>
             </div>
             <div>
               <span className="text-primary-500">14</span>
@@ -263,7 +263,7 @@ function App() {
               <span>17</span>
               <span>18</span>
               <span>19</span>
-              <span>20</span>
+              <span className="text-gray-400">20</span>
             </div>
             <div>
               <span className="text-primary-500">21</span>
@@ -272,7 +272,7 @@ function App() {
               <span>24</span>
               <span className="text-primary-500">25</span>
               <span>26</span>
-              <span>27</span>
+              <span className="text-gray-400"> 27</span>
             </div>
             <div>
               <span className="text-primary-500">28</span>
