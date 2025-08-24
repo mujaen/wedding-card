@@ -330,7 +330,7 @@ function App() {
             </div>
           </div>
           <a
-            href="/"
+            href="#location"
             className="fade flex w-[330px] justify-center items-center border border-gray-300 hover:border-gray-600 rounded-[8px] gap-[10px] mt-10 py-4 px-16"
           >
             <span className="w-[18px] h-[18px]">
@@ -572,12 +572,6 @@ function App() {
                   ></img>
                 </div>
               </div>
-              // <div
-              //   key={index}
-              //   className="w-full aspect-square bg-center bg-cover bg-no-repeat cursor-pointer"
-              //   style={{ backgroundImage: `url(${source})` }}
-              //   onClick={() => handleGallerImageClick(index)}
-              // />
             ))}
           </div>
         </div>
@@ -1028,7 +1022,10 @@ function App() {
             </div>
           </div>
         </div>
-        <div className="flex flex-col items-center py-20 lg:w-[400px] max-w-md mx-auto bg-primary-100">
+        <div
+          id="location"
+          className="flex flex-col items-center py-20 lg:w-[400px] max-w-md mx-auto bg-primary-100"
+        >
           <h3 className="fade sub-title">LOCATION</h3>
           <h2 className="fade flex flex-col items-center suit-regular py-4 text-[18px]">
             오시는 길
