@@ -24,11 +24,7 @@ function App() {
   const [activeIndex, setActiveIndex] = useState(0);
 
   const [isPlaying, setIsPlaying] = useState(false);
-  const galleryImageList = [
-    "/assets/images/1.png",
-    "/assets/images/2.png",
-    "/assets/images/3.png",
-  ];
+  const galleryImageList = ["/assets/images/1.png", "/assets/images/3.png"];
 
   const options = {
     root: null, // viewport
@@ -571,10 +567,7 @@ function App() {
                   <div class="absolute top-0 left-0 w-full h-full bg-transparent z-10"></div>
                   <img
                     alt="gallery-grid-6"
-                    loading="eager"
-                    decoding="async"
-                    data-nimg="fill"
-                    className="rounded-none object-cover w-full h-full absolute"
+                    className="rounded-none object-cover object-top w-full h-full absolute"
                     src={source}
                   ></img>
                 </div>
