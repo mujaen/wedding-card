@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 
 import mainImage from "./assets/images/main.jpg";
@@ -6,9 +6,13 @@ import broomImage from "./assets/images/broom.png";
 import "swiper/css";
 
 function App() {
-  const [isOpen, setIsOpen] = useState(false);
+  const audioRef = useRef(null);
   const [isOpenLeft, setIsOpenLeft] = useState(false);
   const [isOpenRight, setIsOpenRight] = useState(false);
+  const [isOpenModal, setIsOpenModal] = useState(false);
+
+  const [isPlaying, setIsPlaying] = useState(false);
+  const galleryImageList = ["/assets/images/1.png", "/assets/images/2.png"];
 
   const options = {
     root: null, // viewport
@@ -28,9 +32,6 @@ function App() {
       if (entry.intersectionRatio > 0) {
         entry.target.classList.add("inView");
       }
-      // else {
-      //   entry.target.classList.remove("inView");
-      // }
     });
   }, options);
 
@@ -39,10 +40,19 @@ function App() {
     alert("계좌번호가 복사되었습니다.");
   };
 
-  // const handleMenuClick = (e) => {
-  //   e.preventDefault();
-  //   setIsOpen(!isOpen);
-  // };
+  const togglePlay = () => {
+    const audio = audioRef.current;
+
+    if (audio) {
+      if (isPlaying) {
+        audio.pause();
+        setIsPlaying(false);
+      } else {
+        audio.play();
+        setIsPlaying(true);
+      }
+    }
+  };
 
   const handleLeftButtonClick = () => {
     setIsOpenLeft(!isOpenLeft);
@@ -50,6 +60,14 @@ function App() {
 
   const handleRightButtonClick = () => {
     setIsOpenRight(!isOpenRight);
+  };
+
+  const handleGallerImageClick = () => {
+    setIsOpenModal(!isOpenModal);
+  };
+
+  const handleCloseButtonClick = () => {
+    setIsOpenModal(!isOpenModal);
   };
 
   useEffect(() => {
@@ -85,6 +103,14 @@ function App() {
 
   return (
     <>
+      <audio
+        src="https://hellomybrand.com/wed/audio/silence.mp3"
+        ref={audioRef}
+        autoPlay
+        muted
+        loop
+      />
+      <button onClick={togglePlay}>{isPlaying ? "⏸ 멈추기" : "▶ 재생"}</button>
       <section className="md:py-12">
         <div className="flex h-screen lg:h-auto justify-center lg:w-[400px] max-w-md mx-auto lg:rounded-t-3xl overflow-hidden">
           <img
@@ -499,18 +525,14 @@ function App() {
             우리의 소중한 순간
           </h2>
           <div className="fade grid grid-cols-3 py-[10px] gap-[1.5px]">
-            <img className="w-full" src={broomImage} alt="이야기1 이미지" />
-            <img className="w-full" src={broomImage} alt="이야기1 이미지" />
-            <img className="w-full" src={broomImage} alt="이야기1 이미지" />
-            <img className="w-full" src={broomImage} alt="이야기1 이미지" />
-            <img className="w-full" src={broomImage} alt="이야기1 이미지" />
-            <img className="w-full" src={broomImage} alt="이야기1 이미지" />
-            <img className="w-full" src={broomImage} alt="이야기1 이미지" />
-            <img className="w-full" src={broomImage} alt="이야기1 이미지" />
-            <img className="w-full" src={broomImage} alt="이야기1 이미지" />
-            <img className="w-full" src={broomImage} alt="이야기1 이미지" />
-            <img className="w-full" src={broomImage} alt="이야기1 이미지" />
-            <img className="w-full" src={broomImage} alt="이야기1 이미지" />
+            {galleryImageList.map((source) => (
+              <img
+                className="w-full"
+                src={source}
+                alt="이야기1 이미지"
+                onClick={() => handleGallerImageClick()}
+              />
+            ))}
           </div>
         </div>
         <div className="flex flex-col items-center py-20 lg:w-[400px] max-w-md mx-auto bg-primary-100">
@@ -1055,38 +1077,60 @@ function App() {
           />
         </div>
       </section>
-      <div class="gallery flex justify-center items-center bg-black bg-opacity-40">
-        <div class="w-[360px]">
-          <Swiper
-            spaceBetween={10}
-            slidesPerView={1}
-            onSlideChange={() => console.log("slide change")}
-            onSwiper={(swiper) => console.log("onSwiper", swiper)}
-          >
-            <SwiperSlide>
-              <img
-                className="max-w-[600px] w-full"
-                src={mainImage}
-                alt="메인 이미지"
-              />
-            </SwiperSlide>
-            <SwiperSlide>
-              <img
-                className="max-w-[600px] w-full"
-                src={mainImage}
-                alt="메인 이미지"
-              />
-            </SwiperSlide>
-            <SwiperSlide>
-              <img
-                className="max-w-[600px] w-full"
-                src={mainImage}
-                alt="메인 이미지"
-              />
-            </SwiperSlide>
-          </Swiper>
+      {isOpenModal && (
+        <div class="gallery flex justify-center items-center bg-black bg-opacity-20">
+          <div className="relative h-full lg:w-[400px] max-w-md mx-auto">
+            <button
+              class="absolute right-4 top-4 z-40 hover:cursor-pointer"
+              onClick={() => handleCloseButtonClick()}
+            >
+              <svg
+                width="32"
+                height="32"
+                viewBox="0 0 32 32"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <rect
+                  width="32"
+                  height="32"
+                  rx="16"
+                  fill="white"
+                  fill-opacity="0.8"
+                ></rect>
+                <path
+                  d="M23 9L9 23"
+                  stroke="#999999"
+                  stroke-linecap="round"
+                ></path>
+                <path
+                  d="M23 23L9 9"
+                  stroke="#999999"
+                  stroke-linecap="round"
+                ></path>
+              </svg>
+            </button>
+            <div class="flex h-full lg:w-[400px] max-w-md mx-auto justify-center items-center bg-white">
+              <Swiper
+                spaceBetween={10}
+                slidesPerView={1}
+                onSlideChange={() => console.log("slide change")}
+                onSwiper={(swiper) => console.log("onSwiper", swiper)}
+              >
+                {galleryImageList.map((source) => (
+                  <SwiperSlide>
+                    <img
+                      className="max-w-[600px] w-full"
+                      src={source}
+                      alt="메인 이미지"
+                    />
+                  </SwiperSlide>
+                ))}
+              </Swiper>
+            </div>
+          </div>
         </div>
-      </div>
+      )}
     </>
   );
 }
