@@ -4,6 +4,7 @@ import Snowfall from "react-snowfall";
 
 import mainImage from "./assets/images/main.jpg";
 import broomImage from "./assets/images/broom.png";
+import infoImage from "./assets/images/info.png";
 import "swiper/css";
 
 const flower1 = document.createElement("img");
@@ -1013,7 +1014,7 @@ function App() {
             <div className="max-w-[300px] mx-auto bg-white rounded-xl p-8">
               <img
                 className="fade w-full rounded-xl overflow-hidden shadow-md"
-                src={broomImage}
+                src={infoImage}
                 alt="식사 이미지"
               />
               <div className="fade flex justify-center items-baseline pt-[30px] py-[20px]">
