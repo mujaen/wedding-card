@@ -7,8 +7,12 @@ const VideoPlayer = () => (
     src={videoSrc}
     autoPlay
     muted
-    loop
     playsInline
+    onEnded={() => {
+      if (videoRef.current) {
+        videoRef.current.pause();
+      }
+    }}
     style={{
       width: "100%",
       height: "auto",
