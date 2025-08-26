@@ -1,6 +1,6 @@
 import React, { useRef } from "react";
 
-const videoSrc = "/assets/sample2.mp4";
+const videoSrc = "/assets/sample.mp4";
 
 const VideoPlayer = () => {
   const videoRef = useRef(null);

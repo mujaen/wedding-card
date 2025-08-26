@@ -22,6 +22,7 @@ function App() {
   const [isOpenLeft, setIsOpenLeft] = useState(false);
   const [isOpenRight, setIsOpenRight] = useState(false);
   const [isOpenModal, setIsOpenModal] = useState(false);
+  const [isOpenForm, setIsOpenForm] = useState(false);
   const [activeIndex, setActiveIndex] = useState(0);
 
   const [isPlaying, setIsPlaying] = useState(false);
@@ -135,102 +136,6 @@ function App() {
     return () => clearInterval(timer);
   }, []);
 
-  // const CustomSvgIcon = () => {
-  //   const barsRef = useRef([]);
-  //   const animationRef = useRef(null);
-  //   const barsState = useRef([]);
-
-  //   const baseY = 17;
-  //   const minHeight = 3;
-  //   const maxHeight = 10;
-
-  //   useEffect(() => {
-  //     barsState.current = new Array(5).fill(0).map(() => {
-  //       const initHeight = Math.random() * (maxHeight - minHeight) + minHeight;
-  //       return {
-  //         currentHeight: initHeight,
-  //         targetHeight: initHeight,
-  //         lastTargetChange: performance.now(),
-  //         targetChangeInterval: 4000 + Math.random() * 2000, // 4~6초 주기
-  //       };
-  //     });
-
-  //     const animate = (time) => {
-  //       barsState.current.forEach((bar, i) => {
-  //         // 목표 도달했거나 바꿀 시간이 되면 새 목표 지정
-  //         if (
-  //           time - bar.lastTargetChange > bar.targetChangeInterval ||
-  //           Math.abs(bar.currentHeight - bar.targetHeight) < 0.05
-  //         ) {
-  //           const maxDelta = 1.5;
-  //           let newTarget =
-  //             bar.currentHeight + (Math.random() * 2 * maxDelta - maxDelta);
-  //           newTarget = Math.min(maxHeight, Math.max(minHeight, newTarget));
-  //           bar.targetHeight = newTarget;
-
-  //           bar.lastTargetChange = time;
-  //           bar.targetChangeInterval = 4000 + Math.random() * 2000;
-  //         }
-
-  //         // 높이 이동 속도
-  //         const speed = 0.12;
-  //         if (bar.currentHeight < bar.targetHeight) {
-  //           bar.currentHeight = Math.min(
-  //             bar.currentHeight + speed,
-  //             bar.targetHeight
-  //           );
-  //         } else if (bar.currentHeight > bar.targetHeight) {
-  //           bar.currentHeight = Math.max(
-  //             bar.currentHeight - speed,
-  //             bar.targetHeight
-  //           );
-  //         }
-
-  //         // DOM 업데이트
-  //         const rect = barsRef.current[i];
-  //         if (rect) {
-  //           rect.setAttribute("height", bar.currentHeight.toFixed(2));
-  //           rect.setAttribute("y", (baseY - bar.currentHeight).toFixed(2));
-  //         }
-  //       });
-
-  //       animationRef.current = requestAnimationFrame(animate);
-  //     };
-
-  //     animationRef.current = requestAnimationFrame(animate);
-
-  //     return () => cancelAnimationFrame(animationRef.current);
-  //   }, []);
-
-  //   const bars = [6, 9, 12, 15, 18];
-
-  //   return (
-  //     <div style={{ width: "23px", height: "23px" }}>
-  //       <svg
-  //         xmlns="http://www.w3.org/2000/svg"
-  //         viewBox="0 0 23 23"
-  //         width="23"
-  //         height="23"
-  //         className="music-bars-svg"
-  //       >
-  //         <circle cx="11.5" cy="11.5" r="11.5" fill="#101010" />
-  //         {bars.map((x, i) => (
-  //           <rect
-  //             key={i}
-  //             ref={(el) => (barsRef.current[i] = el)}
-  //             x={x - 0.75}
-  //             y={baseY - maxHeight}
-  //             width={1.5}
-  //             height={minHeight}
-  //             rx={0.75}
-  //             fill="white"
-  //           />
-  //         ))}
-  //       </svg>
-  //     </div>
-  //   );
-  // };
-
   return (
     <>
       {/* <audio src="/assets/music.mp3" ref={audioRef} muted autoPlay loop />
@@ -263,11 +168,6 @@ function App() {
             images={images}
           />
           <Video />
-          {/* <img
-            className="max-w-[600px] w-full"
-            src={mainImage}
-            alt="메인 이미지"
-          /> */}
         </div>
         <div className="flex flex-col items-center lg:w-[400px] max-w-md mx-auto py-20 bg-white">
           <div className="fade">
@@ -832,278 +732,308 @@ function App() {
           </div>
           <div class="fade flex w-full justify-center flex-col gap-[24px] py-12">
             <div class="px-8">
-              <button
-                type="button"
-                class="flex justify-between items-center gap-[14px] w-full bg-green-100 px-[25px] py-[20px] border-[0.5px] border-green-300 text-green-700 text-[22px] font-500"
-                onClick={() => handleLeftButtonClick()}
+              <div
+                data-state={isOpenLeft ? "open" : "close"}
+                className="border-b border-none rounded-lg shadow-md"
               >
-                <span class="flex gap-[14px] items-center">
+                <button
+                  data-state={isOpenLeft ? "open" : "close"}
+                  type="button"
+                  className="flex w-full flex-1 items-center justify-between font-medium text-gray-600 shadow-sm transition-all hover:rounded-md [&[data-state=open]>svg]:rotate-180 bg-white border-none rounded-lg data-[state=open]:rounded-b-none p-4 text-sm text-tog-444 h-[3.75rem] hover:bg-white"
+                  onClick={() => handleLeftButtonClick()}
+                >
+                  <span class="flex gap-[14px] text-gray-500 items-center">
+                    <svg
+                      width="16"
+                      height="16"
+                      viewBox="0 0 16 16"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <g clip-path="url(#clip0_2269_2347)">
+                        <path
+                          fill-rule="evenodd"
+                          clip-rule="evenodd"
+                          d="M15.2522 0.846708C14.3636 0.749014 13.4672 0.749014 12.5785 0.846708C12.4039 0.865914 12.2477 0.964433 12.1552 1.11384L10.6663 3.51787C10.5501 3.70547 10.2742 3.69615 10.1709 3.50115L9.4696 2.17683C9.32449 1.90282 8.98734 1.79453 8.7098 1.93279C6.13788 3.2141 3.93082 4.85502 2.85428 6.72891C2.30835 7.67918 2.04345 8.70774 2.19512 9.77643C2.23781 10.0773 2.31279 10.3761 2.42043 10.6725C2.47892 10.8336 2.67043 10.8947 2.81677 10.8055C4.03445 10.0635 5.14599 9.24684 5.90374 8.50393C6.18542 8.22774 6.63765 8.23221 6.91384 8.5139C7.14812 8.75286 7.18044 9.11457 7.01289 9.3874C7.00265 9.40407 6.99 9.41898 6.97596 9.43261C6.43943 9.95379 5.75649 10.5196 4.9803 11.0822C4.76602 11.2375 4.54698 11.3909 4.32478 11.5414C3.9885 11.7627 3.64103 11.9796 3.28724 12.1896C3.28353 12.1918 3.28259 12.1967 3.28524 12.2002C3.28787 12.2036 3.28698 12.2085 3.28331 12.2107C2.39068 12.7546 1.48683 13.2298 0.66671 13.5758C0.230562 13.7598 0.0261884 14.2626 0.210228 14.6987C0.394268 15.1349 0.89703 15.3392 1.33317 15.1552C2.30691 14.7443 3.36403 14.1805 4.38711 13.5443C4.48484 13.4835 4.60923 13.4871 4.70623 13.5492C6.8137 14.8962 9.67481 14.2686 11.8891 12.4013C14.4443 10.2466 16.3176 6.35772 15.7577 1.35121C15.728 1.0855 15.5179 0.875925 15.2522 0.846708Z"
+                          fill="#666666"
+                        />
+                      </g>
+                      <defs>
+                        <clipPath id="clip0_2269_2347">
+                          <rect width="16" height="16" fill="white" />
+                        </clipPath>
+                      </defs>
+                    </svg>
+                    신랑측
+                  </span>
                   <svg
-                    width="20"
-                    height="20"
-                    viewBox="0 0 20 20"
+                    width="14"
+                    height="8"
+                    viewBox="0 0 14 8"
                     fill="none"
                     xmlns="http://www.w3.org/2000/svg"
+                    class="transition-transform duration-200"
                   >
-                    <g clip-path="url(#clip0_2269_2347)">
-                      <path
-                        fill-rule="evenodd"
-                        clip-rule="evenodd"
-                        d="M19.0657 1.06034C17.955 0.938221 16.8345 0.938221 15.7236 1.06034C15.5053 1.08435 15.3102 1.20749 15.1945 1.39426L13.3334 4.39929C13.1882 4.63379 12.8432 4.62215 12.7141 4.37839L11.8375 2.72299C11.6561 2.38048 11.2347 2.24512 10.8877 2.41795C7.67284 4.01957 4.91401 6.07073 3.56834 8.41309C2.88593 9.60093 2.5548 10.8866 2.74439 12.2225C2.79776 12.5985 2.89147 12.9721 3.02603 13.3426C3.09914 13.544 3.33853 13.6204 3.52146 13.5089C5.04356 12.5813 6.43297 11.5605 7.38016 10.6319C7.73226 10.2866 8.29756 10.2922 8.64279 10.6443C8.93564 10.943 8.97604 11.3952 8.7666 11.7362C8.7538 11.757 8.73799 11.7757 8.72044 11.7927C8.04977 12.4442 7.1961 13.1514 6.22586 13.8547C5.95801 14.0489 5.68421 14.2406 5.40646 14.4287C4.98611 14.7053 4.55177 14.9764 4.10954 15.239C4.1049 15.2417 4.10373 15.2479 4.10704 15.2521C4.11033 15.2564 4.10921 15.2626 4.10463 15.2653C2.98884 15.9451 1.85903 16.5391 0.833875 16.9717C0.288691 17.2017 0.0332237 17.8301 0.263274 18.3753C0.493324 18.9206 1.12178 19.176 1.66696 18.946C2.88413 18.4323 4.20553 17.7276 5.48437 16.9323C5.60654 16.8563 5.76203 16.8609 5.88327 16.9384C8.51761 18.6221 12.094 17.8377 14.8619 15.5036C18.0559 12.8102 20.3975 7.9491 19.6976 1.69096C19.6605 1.35883 19.3979 1.09686 19.0657 1.06034Z"
-                        fill="#707664"
-                      />
-                    </g>
-                    <defs>
-                      <clipPath id="clip0_2269_2347">
-                        <rect width="20" height="20" fill="white" />
-                      </clipPath>
-                    </defs>
+                    <path
+                      d="M1 1L6.29289 6.68539C6.68342 7.10487 7.31658 7.10487 7.70711 6.68539L13 1"
+                      stroke="#999"
+                      stroke-linecap="round"
+                    ></path>
                   </svg>
-                  신랑측
-                </span>
-                <svg
-                  class={`${isOpenLeft ? "" : "rotate-180"}`}
-                  width="30"
-                  height="30"
-                  viewBox="0 0 30 30"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
+                </button>
+                <div
+                  data-state={isOpenLeft ? "open" : "close"}
+                  className="overflow-hidden text-sm transition-all data-[state=closed]:animate-accordion-up data-[state=open]:animate-accordion-down"
                 >
-                  <path
-                    d="M23.8259 16.7996L18.0934 11.0684C17.2601 10.2723 16.152 9.82813 14.9996 9.82812C13.8472 9.82812 12.7392 10.2723 11.9059 11.0684L6.17337 16.7996C5.82163 17.1514 5.62402 17.6284 5.62402 18.1259C5.62402 18.6233 5.82163 19.1004 6.17337 19.4521C6.52512 19.8039 7.00218 20.0015 7.49962 20.0015C7.99706 20.0015 8.47413 19.8039 8.82587 19.4521L14.5584 13.7196C14.6756 13.6025 14.8345 13.5366 15.0002 13.5366C15.166 13.5366 15.3249 13.6025 15.4421 13.7196L21.1734 19.4521C21.5251 19.8039 22.0022 20.0015 22.4996 20.0015C22.9971 20.0015 23.4741 19.8039 23.8259 19.4521C24.1776 19.1004 24.3752 18.6233 24.3752 18.1259C24.3752 17.6284 24.1776 17.1514 23.8259 16.7996Z"
-                    fill="#707664"
-                  />
-                </svg>
-              </button>
-              <div
-                class={`${
-                  isOpenLeft ? "h-[566px] visible" : "h-0 invisible"
-                } transition-all bg-green-50 border-l-[0.5px] border-r-[0.5px] border-green-300`}
-              >
-                <div class="p-[30px] border-b-[0.5px] border-green-300">
-                  <div class="flex justify-between">
-                    <span>
-                      신랑
-                      <em class="not-italic text-[18px] pl-2 font-700">
-                        김민호
-                      </em>
-                    </span>
-                    <span>국민 238502-04-127818</span>
-                  </div>
-                  <div class="flex flex-col justify-center gap-[20px] pt-[20px]">
-                    <button
-                      type="button"
-                      class="flex items-center justify-center gap-[8px] rounded-full w-full py-4 bg-yellow-700 shadow-lg"
-                      onClick={() =>
-                        (window.location.href =
-                          "https://qr.kakaopay.com/FDBFqcWrK")
-                      }
-                    >
-                      <svg
-                        width="18"
-                        height="16"
-                        viewBox="0 0 18 16"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          d="M9 0C13.9706 0 18 3.13401 18 7C18 10.866 13.9706 14 9 14C7.88189 14 6.81193 13.8396 5.82422 13.5498L1.30469 15.4326L2.8916 12.1396C1.11373 10.8609 0 9.03196 0 7C0 3.13401 4.02944 0 9 0Z"
-                          fill="#333333"
-                        />
-                      </svg>
-
-                      <span class="text-[16px]">카카오페이 송금</span>
-                    </button>
-                    <button
-                      type="button"
-                      class="flex items-center justify-center gap-[8px] rounded-full w-full py-4 bg-white shadow-lg"
-                      onClick={() => copyToClipboard("238502-04-127818")}
-                    >
-                      <svg
-                        width="15"
-                        height="15"
-                        viewBox="0 0 15 15"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          d="M13.7501 2.59062L11.2414 0H6.25012C5.75284 0 5.27593 0.197544 4.9243 0.549175C4.57267 0.900805 4.37512 1.37772 4.37512 1.875V2.5H3.12512C2.62784 2.5 2.15093 2.69754 1.7993 3.04917C1.44767 3.40081 1.25012 3.87772 1.25012 4.375V15H11.2501V11.875H13.7501V2.59062ZM10.0001 13.75H2.50012V4.375C2.50012 4.20924 2.56597 4.05027 2.68318 3.93306C2.80039 3.81585 2.95936 3.75 3.12512 3.75H4.37512V11.875H10.0001V13.75ZM5.62512 10.625V1.875C5.62512 1.70924 5.69097 1.55027 5.80818 1.43306C5.92539 1.31585 6.08436 1.25 6.25012 1.25H10.0001V3.75H12.5001V10.625H5.62512Z"
-                          fill="#333333"
-                        />
-                      </svg>
-                      <span class="text-[16px]">계좌번호 복사</span>
-                    </button>
-                  </div>
-                </div>
-                <div class="p-[30px] border-b-[0.5px] border-green-300">
-                  <div class="flex justify-between">
-                    <span>
-                      혼주
-                      <em class="not-italic text-[18px] pl-2 font-700">
-                        김해덕
-                      </em>
-                    </span>
-                    <span>국민 606025-90-101196</span>
-                  </div>
-                  <div class="flex justify-center pt-[20px]">
-                    <button
-                      type="button"
-                      class="flex items-center justify-center gap-[8px] rounded-full w-full py-4 bg-white shadow-lg"
-                      onClick={() => copyToClipboard("606025-90-101196")}
-                    >
-                      <svg
-                        width="15"
-                        height="15"
-                        viewBox="0 0 15 15"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          d="M13.7501 2.59062L11.2414 0H6.25012C5.75284 0 5.27593 0.197544 4.9243 0.549175C4.57267 0.900805 4.37512 1.37772 4.37512 1.875V2.5H3.12512C2.62784 2.5 2.15093 2.69754 1.7993 3.04917C1.44767 3.40081 1.25012 3.87772 1.25012 4.375V15H11.2501V11.875H13.7501V2.59062ZM10.0001 13.75H2.50012V4.375C2.50012 4.20924 2.56597 4.05027 2.68318 3.93306C2.80039 3.81585 2.95936 3.75 3.12512 3.75H4.37512V11.875H10.0001V13.75ZM5.62512 10.625V1.875C5.62512 1.70924 5.69097 1.55027 5.80818 1.43306C5.92539 1.31585 6.08436 1.25 6.25012 1.25H10.0001V3.75H12.5001V10.625H5.62512Z"
-                          fill="#333333"
-                        />
-                      </svg>
-                      <span class="text-[16px]">계좌번호 복사</span>
-                    </button>
-                  </div>
-                </div>
-                <div class="p-[30px] border-b-[0.5px] border-green-300">
-                  <div class="flex justify-between">
-                    <span>
-                      혼주
-                      <em class="not-italic text-[18px] pl-2 font-700">
-                        박경자
-                      </em>
-                    </span>
-                    <span>국민 602825-93-123294</span>
-                  </div>
-                  <div class="flex justify-center pt-[20px]">
-                    <button
-                      type="button"
-                      class="flex items-center justify-center gap-[8px] rounded-full w-full py-4 bg-white shadow-lg"
-                      onClick={() => copyToClipboard("602825-93-123294")}
-                    >
-                      <svg
-                        width="15"
-                        height="15"
-                        viewBox="0 0 15 15"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          d="M13.7501 2.59062L11.2414 0H6.25012C5.75284 0 5.27593 0.197544 4.9243 0.549175C4.57267 0.900805 4.37512 1.37772 4.37512 1.875V2.5H3.12512C2.62784 2.5 2.15093 2.69754 1.7993 3.04917C1.44767 3.40081 1.25012 3.87772 1.25012 4.375V15H11.2501V11.875H13.7501V2.59062ZM10.0001 13.75H2.50012V4.375C2.50012 4.20924 2.56597 4.05027 2.68318 3.93306C2.80039 3.81585 2.95936 3.75 3.12512 3.75H4.37512V11.875H10.0001V13.75ZM5.62512 10.625V1.875C5.62512 1.70924 5.69097 1.55027 5.80818 1.43306C5.92539 1.31585 6.08436 1.25 6.25012 1.25H10.0001V3.75H12.5001V10.625H5.62512Z"
-                          fill="#333333"
-                        />
-                      </svg>
-                      <span class="text-[16px]">계좌번호 복사</span>
-                    </button>
-                  </div>
+                  {isOpenLeft && (
+                    <div className="flex flex-col gap-[8px] px-3 py-4 rounded-b-lg bg-primary-400">
+                      <div class="flex flex-col gap-[20px] bg-white shadow-lg rounded-xl p-6">
+                        <div class="flex justify-between">
+                          <span>신랑</span>
+                          <span>김민호</span>
+                        </div>
+                        <div class="bg-gray-100 rounded-xl p-4">
+                          <div className="flex justify-between">
+                            <div>
+                              <div className="text-gray-400">국민은행</div>
+                              <div>238502-04-127818</div>
+                            </div>
+                            <div className="flex justify-between gap-[10px]">
+                              <button
+                                type="button"
+                                class="flex items-center justify-center w-[40px] rounded-full bg-white shadow-lg"
+                                onClick={() =>
+                                  (window.location.href =
+                                    "https://qr.kakaopay.com/FDBFqcWrK")
+                                }
+                              >
+                                <svg
+                                  width="18"
+                                  height="16"
+                                  viewBox="0 0 18 16"
+                                  fill="none"
+                                  xmlns="http://www.w3.org/2000/svg"
+                                >
+                                  <path
+                                    d="M9 0C13.9706 0 18 3.13401 18 7C18 10.866 13.9706 14 9 14C7.88189 14 6.81193 13.8396 5.82422 13.5498L1.30469 15.4326L2.8916 12.1396C1.11373 10.8609 0 9.03196 0 7C0 3.13401 4.02944 0 9 0Z"
+                                    fill="#333333"
+                                  />
+                                </svg>
+                              </button>
+                              <button
+                                type="button"
+                                class="flex items-center justify-center w-[40px] rounded-full bg-white shadow-lg"
+                                onClick={() =>
+                                  copyToClipboard("238502-04-127818")
+                                }
+                              >
+                                <svg
+                                  width="15"
+                                  height="15"
+                                  viewBox="0 0 15 15"
+                                  fill="none"
+                                  xmlns="http://www.w3.org/2000/svg"
+                                >
+                                  <path
+                                    d="M13.7501 2.59062L11.2414 0H6.25012C5.75284 0 5.27593 0.197544 4.9243 0.549175C4.57267 0.900805 4.37512 1.37772 4.37512 1.875V2.5H3.12512C2.62784 2.5 2.15093 2.69754 1.7993 3.04917C1.44767 3.40081 1.25012 3.87772 1.25012 4.375V15H11.2501V11.875H13.7501V2.59062ZM10.0001 13.75H2.50012V4.375C2.50012 4.20924 2.56597 4.05027 2.68318 3.93306C2.80039 3.81585 2.95936 3.75 3.12512 3.75H4.37512V11.875H10.0001V13.75ZM5.62512 10.625V1.875C5.62512 1.70924 5.69097 1.55027 5.80818 1.43306C5.92539 1.31585 6.08436 1.25 6.25012 1.25H10.0001V3.75H12.5001V10.625H5.62512Z"
+                                    fill="#333333"
+                                  />
+                                </svg>
+                              </button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="flex flex-col gap-[20px] bg-white shadow-lg rounded-xl p-6">
+                        <div class="flex justify-between">
+                          <span>혼주</span>
+                          <span>김해덕</span>
+                        </div>
+                        <div class="bg-gray-100 rounded-xl p-4">
+                          <div className="flex justify-between">
+                            <div>
+                              <div className="text-gray-400">국민은행</div>
+                              <div>606025-90-101196</div>
+                            </div>
+                            <div className="flex justify-between gap-[10px]">
+                              <button
+                                type="button"
+                                class="flex items-center justify-center w-[40px] rounded-full bg-white shadow-lg"
+                                onClick={() =>
+                                  copyToClipboard("606025-90-101196")
+                                }
+                              >
+                                <svg
+                                  width="15"
+                                  height="15"
+                                  viewBox="0 0 15 15"
+                                  fill="none"
+                                  xmlns="http://www.w3.org/2000/svg"
+                                >
+                                  <path
+                                    d="M13.7501 2.59062L11.2414 0H6.25012C5.75284 0 5.27593 0.197544 4.9243 0.549175C4.57267 0.900805 4.37512 1.37772 4.37512 1.875V2.5H3.12512C2.62784 2.5 2.15093 2.69754 1.7993 3.04917C1.44767 3.40081 1.25012 3.87772 1.25012 4.375V15H11.2501V11.875H13.7501V2.59062ZM10.0001 13.75H2.50012V4.375C2.50012 4.20924 2.56597 4.05027 2.68318 3.93306C2.80039 3.81585 2.95936 3.75 3.12512 3.75H4.37512V11.875H10.0001V13.75ZM5.62512 10.625V1.875C5.62512 1.70924 5.69097 1.55027 5.80818 1.43306C5.92539 1.31585 6.08436 1.25 6.25012 1.25H10.0001V3.75H12.5001V10.625H5.62512Z"
+                                    fill="#333333"
+                                  />
+                                </svg>
+                              </button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="flex flex-col gap-[20px] bg-white shadow-lg rounded-xl p-6">
+                        <div class="flex justify-between">
+                          <span>혼주</span>
+                          <span>박경자</span>
+                        </div>
+                        <div class="bg-gray-100 rounded-xl p-4">
+                          <div className="flex justify-between">
+                            <div>
+                              <div className="text-gray-400">국민은행</div>
+                              <div>602825-93-123294</div>
+                            </div>
+                            <div className="flex justify-between gap-[10px]">
+                              <button
+                                type="button"
+                                class="flex items-center justify-center w-[40px] rounded-full bg-white shadow-lg"
+                                onClick={() =>
+                                  copyToClipboard("602825-93-123294")
+                                }
+                              >
+                                <svg
+                                  width="15"
+                                  height="15"
+                                  viewBox="0 0 15 15"
+                                  fill="none"
+                                  xmlns="http://www.w3.org/2000/svg"
+                                >
+                                  <path
+                                    d="M13.7501 2.59062L11.2414 0H6.25012C5.75284 0 5.27593 0.197544 4.9243 0.549175C4.57267 0.900805 4.37512 1.37772 4.37512 1.875V2.5H3.12512C2.62784 2.5 2.15093 2.69754 1.7993 3.04917C1.44767 3.40081 1.25012 3.87772 1.25012 4.375V15H11.2501V11.875H13.7501V2.59062ZM10.0001 13.75H2.50012V4.375C2.50012 4.20924 2.56597 4.05027 2.68318 3.93306C2.80039 3.81585 2.95936 3.75 3.12512 3.75H4.37512V11.875H10.0001V13.75ZM5.62512 10.625V1.875C5.62512 1.70924 5.69097 1.55027 5.80818 1.43306C5.92539 1.31585 6.08436 1.25 6.25012 1.25H10.0001V3.75H12.5001V10.625H5.62512Z"
+                                    fill="#333333"
+                                  />
+                                </svg>
+                              </button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  )}
                 </div>
               </div>
             </div>
             <div class="px-8">
-              <button
-                type="button"
-                class="flex justify-between items-center gap-[14px] w-full bg-primary-100  px-[25px] py-[20px] border-[0.5px] border-primary-200 text-secondary-700 text-[22px] font-500"
-                onClick={() => handleRightButtonClick()}
+              <div
+                data-state={isOpenRight ? "open" : "close"}
+                className="border-b border-none rounded-lg shadow-md"
               >
-                <span class="flex gap-[14px] items-center">
+                <button
+                  data-state={isOpenRight ? "open" : "close"}
+                  type="button"
+                  className="flex w-full flex-1 items-center justify-between font-medium text-gray-600 shadow-sm transition-all hover:rounded-md [&[data-state=open]>svg]:rotate-180 bg-white border-none rounded-lg data-[state=open]:rounded-b-none p-4 text-sm text-tog-444 h-[3.75rem] hover:bg-white"
+                  onClick={() => handleRightButtonClick()}
+                >
+                  <span class="flex gap-[14px] text-gray-500 items-center">
+                    <svg
+                      width="16"
+                      height="16"
+                      viewBox="0 0 16 16"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <g clip-path="url(#clip0_2269_2347)">
+                        <path
+                          fill-rule="evenodd"
+                          clip-rule="evenodd"
+                          d="M15.2522 0.846708C14.3636 0.749014 13.4672 0.749014 12.5785 0.846708C12.4039 0.865914 12.2477 0.964433 12.1552 1.11384L10.6663 3.51787C10.5501 3.70547 10.2742 3.69615 10.1709 3.50115L9.4696 2.17683C9.32449 1.90282 8.98734 1.79453 8.7098 1.93279C6.13788 3.2141 3.93082 4.85502 2.85428 6.72891C2.30835 7.67918 2.04345 8.70774 2.19512 9.77643C2.23781 10.0773 2.31279 10.3761 2.42043 10.6725C2.47892 10.8336 2.67043 10.8947 2.81677 10.8055C4.03445 10.0635 5.14599 9.24684 5.90374 8.50393C6.18542 8.22774 6.63765 8.23221 6.91384 8.5139C7.14812 8.75286 7.18044 9.11457 7.01289 9.3874C7.00265 9.40407 6.99 9.41898 6.97596 9.43261C6.43943 9.95379 5.75649 10.5196 4.9803 11.0822C4.76602 11.2375 4.54698 11.3909 4.32478 11.5414C3.9885 11.7627 3.64103 11.9796 3.28724 12.1896C3.28353 12.1918 3.28259 12.1967 3.28524 12.2002C3.28787 12.2036 3.28698 12.2085 3.28331 12.2107C2.39068 12.7546 1.48683 13.2298 0.66671 13.5758C0.230562 13.7598 0.0261884 14.2626 0.210228 14.6987C0.394268 15.1349 0.89703 15.3392 1.33317 15.1552C2.30691 14.7443 3.36403 14.1805 4.38711 13.5443C4.48484 13.4835 4.60923 13.4871 4.70623 13.5492C6.8137 14.8962 9.67481 14.2686 11.8891 12.4013C14.4443 10.2466 16.3176 6.35772 15.7577 1.35121C15.728 1.0855 15.5179 0.875925 15.2522 0.846708Z"
+                          fill="#666666"
+                        />
+                      </g>
+                      <defs>
+                        <clipPath id="clip0_2269_2347">
+                          <rect width="16" height="16" fill="white" />
+                        </clipPath>
+                      </defs>
+                    </svg>
+                    신부측
+                  </span>
                   <svg
-                    width="20"
-                    height="20"
-                    viewBox="0 0 20 20"
+                    width="14"
+                    height="8"
+                    viewBox="0 0 14 8"
                     fill="none"
                     xmlns="http://www.w3.org/2000/svg"
+                    class="transition-transform duration-200"
                   >
-                    <g clip-path="url(#clip0_2269_2347)">
-                      <path
-                        fill-rule="evenodd"
-                        clip-rule="evenodd"
-                        d="M19.0657 1.06034C17.955 0.938221 16.8345 0.938221 15.7236 1.06034C15.5053 1.08435 15.3102 1.20749 15.1945 1.39426L13.3334 4.39929C13.1882 4.63379 12.8432 4.62215 12.7141 4.37839L11.8375 2.72299C11.6561 2.38048 11.2347 2.24512 10.8877 2.41795C7.67284 4.01957 4.91401 6.07073 3.56834 8.41309C2.88593 9.60093 2.5548 10.8866 2.74439 12.2225C2.79776 12.5985 2.89147 12.9721 3.02603 13.3426C3.09914 13.544 3.33853 13.6204 3.52146 13.5089C5.04356 12.5813 6.43297 11.5605 7.38016 10.6319C7.73226 10.2866 8.29756 10.2922 8.64279 10.6443C8.93564 10.943 8.97604 11.3952 8.7666 11.7362C8.7538 11.757 8.73799 11.7757 8.72044 11.7927C8.04977 12.4442 7.1961 13.1514 6.22586 13.8547C5.95801 14.0489 5.68421 14.2406 5.40646 14.4287C4.98611 14.7053 4.55177 14.9764 4.10954 15.239C4.1049 15.2417 4.10373 15.2479 4.10704 15.2521C4.11033 15.2564 4.10921 15.2626 4.10463 15.2653C2.98884 15.9451 1.85903 16.5391 0.833875 16.9717C0.288691 17.2017 0.0332237 17.8301 0.263274 18.3753C0.493324 18.9206 1.12178 19.176 1.66696 18.946C2.88413 18.4323 4.20553 17.7276 5.48437 16.9323C5.60654 16.8563 5.76203 16.8609 5.88327 16.9384C8.51761 18.6221 12.094 17.8377 14.8619 15.5036C18.0559 12.8102 20.3975 7.9491 19.6976 1.69096C19.6605 1.35883 19.3979 1.09686 19.0657 1.06034Z"
-                        fill="#8B6254"
-                      />
-                    </g>
-                    <defs>
-                      <clipPath id="clip0_2269_2347">
-                        <rect width="20" height="20" fill="white" />
-                      </clipPath>
-                    </defs>
+                    <path
+                      d="M1 1L6.29289 6.68539C6.68342 7.10487 7.31658 7.10487 7.70711 6.68539L13 1"
+                      stroke="#999"
+                      stroke-linecap="round"
+                    ></path>
                   </svg>
-                  신부측
-                </span>
-                <svg
-                  class={`${isOpenRight ? "" : "rotate-180"}`}
-                  width="30"
-                  height="30"
-                  viewBox="0 0 30 30"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
+                </button>
+                <div
+                  data-state={isOpenRight ? "open" : "close"}
+                  className="overflow-hidden text-sm transition-all data-[state=closed]:animate-accordion-up data-[state=open]:animate-accordion-down"
                 >
-                  <path
-                    d="M23.8259 16.7996L18.0934 11.0684C17.2601 10.2723 16.152 9.82813 14.9996 9.82812C13.8472 9.82812 12.7392 10.2723 11.9059 11.0684L6.17337 16.7996C5.82163 17.1514 5.62402 17.6284 5.62402 18.1259C5.62402 18.6233 5.82163 19.1004 6.17337 19.4521C6.52512 19.8039 7.00218 20.0015 7.49962 20.0015C7.99706 20.0015 8.47413 19.8039 8.82587 19.4521L14.5584 13.7196C14.6756 13.6025 14.8345 13.5366 15.0002 13.5366C15.166 13.5366 15.3249 13.6025 15.4421 13.7196L21.1734 19.4521C21.5251 19.8039 22.0022 20.0015 22.4996 20.0015C22.9971 20.0015 23.4741 19.8039 23.8259 19.4521C24.1776 19.1004 24.3752 18.6233 24.3752 18.1259C24.3752 17.6284 24.1776 17.1514 23.8259 16.7996Z"
-                    fill="#8B6254"
-                  />
-                </svg>
-              </button>
-              <div
-                class={`${
-                  isOpenRight ? "h-[240px] visible" : "h-0 invisible"
-                } transition-all bg-primary-50 border-l-[0.5px] border-r-[0.5px] border-green-300`}
-              >
-                <div class="p-[30px] border-b-[0.5px] border-green-300">
-                  <div class="flex justify-between">
-                    <span>
-                      신부
-                      <em class="not-italic text-[18px] pl-2 font-700">
-                        이혜진
-                      </em>
-                    </span>
-                    <span>토스 1000-9136-201</span>
-                  </div>
-                  <div class="flex flex-col justify-center gap-[20px] pt-[20px]">
-                    <button
-                      type="button"
-                      class="flex items-center justify-center gap-[8px] rounded-full w-full py-4 bg-yellow-700 shadow-lg"
-                      onClick={() =>
-                        (window.location.href =
-                          "https://qr.kakaopay.com/Ej7xyipUD")
-                      }
-                    >
-                      <svg
-                        width="18"
-                        height="16"
-                        viewBox="0 0 18 16"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          d="M9 0C13.9706 0 18 3.13401 18 7C18 10.866 13.9706 14 9 14C7.88189 14 6.81193 13.8396 5.82422 13.5498L1.30469 15.4326L2.8916 12.1396C1.11373 10.8609 0 9.03196 0 7C0 3.13401 4.02944 0 9 0Z"
-                          fill="#333333"
-                        />
-                      </svg>
-
-                      <span class="text-[16px]">카카오페이 송금</span>
-                    </button>
-                    <button
-                      type="button"
-                      class="flex items-center justify-center gap-[8px] rounded-full w-full py-4 bg-white shadow-lg"
-                      onClick={() => copyToClipboard("1000-9136-201")}
-                    >
-                      <svg
-                        width="15"
-                        height="15"
-                        viewBox="0 0 15 15"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          d="M13.7501 2.59062L11.2414 0H6.25012C5.75284 0 5.27593 0.197544 4.9243 0.549175C4.57267 0.900805 4.37512 1.37772 4.37512 1.875V2.5H3.12512C2.62784 2.5 2.15093 2.69754 1.7993 3.04917C1.44767 3.40081 1.25012 3.87772 1.25012 4.375V15H11.2501V11.875H13.7501V2.59062ZM10.0001 13.75H2.50012V4.375C2.50012 4.20924 2.56597 4.05027 2.68318 3.93306C2.80039 3.81585 2.95936 3.75 3.12512 3.75H4.37512V11.875H10.0001V13.75ZM5.62512 10.625V1.875C5.62512 1.70924 5.69097 1.55027 5.80818 1.43306C5.92539 1.31585 6.08436 1.25 6.25012 1.25H10.0001V3.75H12.5001V10.625H5.62512Z"
-                          fill="#333333"
-                        />
-                      </svg>
-                      <span class="text-[16px]">계좌번호 복사</span>
-                    </button>
-                  </div>
+                  {isOpenRight && (
+                    <div className="flex flex-col gap-[8px] px-3 py-4 rounded-b-lg bg-primary-400">
+                      <div class="flex flex-col gap-[20px] bg-white shadow-lg rounded-xl p-6">
+                        <div class="flex justify-between">
+                          <span>신부</span>
+                          <span>이혜진</span>
+                        </div>
+                        <div class="bg-gray-100 rounded-xl p-4">
+                          <div className="flex justify-between">
+                            <div>
+                              <div className="text-gray-400">토스뱅크</div>
+                              <div>1000-9136-201</div>
+                            </div>
+                            <div className="flex justify-between gap-[10px]">
+                              <button
+                                type="button"
+                                class="flex items-center justify-center w-[40px] rounded-full bg-white shadow-lg"
+                                onClick={() =>
+                                  (window.location.href =
+                                    "https://qr.kakaopay.com/Ej7xyipUD")
+                                }
+                              >
+                                <svg
+                                  width="18"
+                                  height="16"
+                                  viewBox="0 0 18 16"
+                                  fill="none"
+                                  xmlns="http://www.w3.org/2000/svg"
+                                >
+                                  <path
+                                    d="M9 0C13.9706 0 18 3.13401 18 7C18 10.866 13.9706 14 9 14C7.88189 14 6.81193 13.8396 5.82422 13.5498L1.30469 15.4326L2.8916 12.1396C1.11373 10.8609 0 9.03196 0 7C0 3.13401 4.02944 0 9 0Z"
+                                    fill="#333333"
+                                  />
+                                </svg>
+                              </button>
+                              <button
+                                type="button"
+                                class="flex items-center justify-center w-[40px] rounded-full bg-white shadow-lg"
+                                onClick={() => copyToClipboard("1000-9136-201")}
+                              >
+                                <svg
+                                  width="15"
+                                  height="15"
+                                  viewBox="0 0 15 15"
+                                  fill="none"
+                                  xmlns="http://www.w3.org/2000/svg"
+                                >
+                                  <path
+                                    d="M13.7501 2.59062L11.2414 0H6.25012C5.75284 0 5.27593 0.197544 4.9243 0.549175C4.57267 0.900805 4.37512 1.37772 4.37512 1.875V2.5H3.12512C2.62784 2.5 2.15093 2.69754 1.7993 3.04917C1.44767 3.40081 1.25012 3.87772 1.25012 4.375V15H11.2501V11.875H13.7501V2.59062ZM10.0001 13.75H2.50012V4.375C2.50012 4.20924 2.56597 4.05027 2.68318 3.93306C2.80039 3.81585 2.95936 3.75 3.12512 3.75H4.37512V11.875H10.0001V13.75ZM5.62512 10.625V1.875C5.62512 1.70924 5.69097 1.55027 5.80818 1.43306C5.92539 1.31585 6.08436 1.25 6.25012 1.25H10.0001V3.75H12.5001V10.625H5.62512Z"
+                                    fill="#333333"
+                                  />
+                                </svg>
+                              </button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  )}
                 </div>
               </div>
             </div>
@@ -1238,7 +1168,7 @@ function App() {
         </div>
       </section>
       {isOpenModal && (
-        <div class="gallery flex justify-center items-center bg-black bg-opacity-20">
+        <div class="modal flex justify-center items-center bg-black bg-opacity-20">
           <div className="relative h-full lg:w-[400px] max-w-md mx-auto">
             <button
               class="hidden lg:block absolute right-4 top-4 z-40 hover:cursor-pointer"
@@ -1306,6 +1236,11 @@ function App() {
               onClick={handleNext}
             />
           </div>
+        </div>
+      )}
+      {isOpenForm && (
+        <div className="modal flex justify-center items-center bg-black bg-opacity-20">
+          보내기
         </div>
       )}
     </>

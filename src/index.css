@@ -183,7 +183,7 @@ body {
   border-bottom: 3px double rgba(223, 162, 162, 0.3);
 }
 
-.gallery {
+.modal {
   position: fixed;
   top: 0;
   bottom: 0;
