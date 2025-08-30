@@ -1203,7 +1203,7 @@ function App() {
         <div class="modal flex justify-center items-center bg-black bg-opacity-20">
           <div className="relative h-full lg:w-[400px] max-w-md mx-auto">
             <button
-              class="hidden lg:block absolute right-4 top-4 z-40 hover:cursor-pointer"
+              class="absolute right-4 top-[11%] z-40 hover:cursor-pointer"
               onClick={() => handleCloseButtonClick()}
             >
               <svg
@@ -1256,15 +1256,19 @@ function App() {
               </Swiper>
             </div>
             <div
-              className="absolute top-0 left-0 w-1/3 h-full z-10"
+              className="absolute top-0 left-0 w-1/6 h-full z-10"
               onClick={handlePrev}
             />
             <div
-              className="absolute top-0 left-1/3 w-1/3 h-full z-10"
-              onClick={handleCloseButtonClick}
+              className="absolute top-0 right-[50%] w-1/6 h-full z-10"
+              onClick={handlePrev}
             />
             <div
-              className="absolute top-0 right-0 w-1/3 h-full z-10"
+              className="absolute top-0 left-[50%] w-1/6 h-full z-10"
+              onClick={handleNext}
+            />
+            <div
+              className="absolute top-0 right-0 w-1/6 h-full z-10"
               onClick={handleNext}
             />
           </div>
