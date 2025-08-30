@@ -5,6 +5,10 @@ import Snowfall from "react-snowfall";
 import broomImage from "./assets/images/broom.png";
 import infoImage from "./assets/images/info.png";
 import bannerImage from "./assets/images/banner.png";
+import storyImage1 from "./assets/images/story1.png";
+import storyImage2 from "./assets/images/story2.png";
+import storyImage3 from "./assets/images/story3.png";
+import storyImage4 from "./assets/images/story4.png";
 import "swiper/css";
 import Video from "./Video";
 
@@ -210,37 +214,50 @@ function App() {
 
   return (
     <>
-      <audio src="/assets/music.mp3" ref={audioRef} autoPlay loop />
-
-      <button onClick={togglePlay}>
-        {isPlaying ? (
-          <div style={{ width: "23px", height: "23px" }}>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 23 23"
-              width="23"
-              height="23"
-              className="play-icon-svg"
-            >
-              <circle cx="11.5" cy="11.5" r="11.5" fill="#101010" />
-              <polygon points="9,7 16,11.5 9,16" fill="white" />
-            </svg>
-          </div>
-        ) : (
-          "재생"
-        )}
-      </button>
-
       <section className="md:py-12">
         <div className="max-w-md mx-auto md:rounded-3xl shadow-xl lg:w-[400px]">
-          <div className="relative flex h-screen lg:h-auto justify-center lg:w-[400px] max-w-md mx-auto lg:rounded-t-3xl overflow-hidden">
+          <div className="relative flex flex-col h-screen lg:h-auto justify-center lg:w-[400px] max-w-md mx-auto lg:rounded-t-3xl overflow-hidden">
             <Snowfall
               speed={[0, 1.4]}
               radius={[11, 11]}
               snowflakeCount={15}
               images={images}
             />
+
             <Video />
+            <audio src="/assets/music.mp3" ref={audioRef} autoPlay loop />
+            <button onClick={togglePlay} className="absolute right-4 top-4">
+              {
+                <div style={{ width: "23px", height: "23px" }}>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 23 23"
+                    width="23"
+                    height="23"
+                    className="play-icon-svg"
+                  >
+                    <circle cx="11.5" cy="11.5" r="11.5" fill="#101010" />
+                    {isPlaying ? (
+                      <g transform="translate(5, 5)">
+                        {[0, 1, 2, 3, 4].map((i) => (
+                          <rect
+                            key={i}
+                            x={i * 2.5}
+                            y={0}
+                            width="1"
+                            height="13"
+                            fill="white"
+                            className={`bar bar-${i}`}
+                          />
+                        ))}
+                      </g>
+                    ) : (
+                      <polygon points="9,7 16,11.5 9,16" fill="white" />
+                    )}
+                  </svg>
+                </div>
+              }
+            </button>
           </div>
           <div className="flex flex-col items-center lg:w-[400px] max-w-md mx-auto py-20 bg-white">
             <div className="fade">
@@ -308,7 +325,7 @@ function App() {
             </div>
           </div>
           <div className="flex flex-col justify-center items-center lg:w-[400px] h-screen max-w-md mx-auto bg-primary-300">
-            <div className="flex w-full justify-center items-center gap-5 text-white continuous text-[88px]">
+            <div className="flex w-full justify-center items-center gap-5 text-white trumpet-creeper text-[88px]">
               <span className="fade static flex w-fit justify-center align-middle items-center overflow-y-clip h-28">
                 <span className="reveal-text reveal-text1">D</span>
                 <span className="reveal-text reveal-text2">E</span>
@@ -318,7 +335,7 @@ function App() {
                 <span className="reveal-text reveal-text4">6</span>
               </span>
             </div>
-            <div className="flex w-full justify-center items-center gap-5 text-white continuous text-[88px]">
+            <div className="flex w-full justify-center items-center gap-5 text-white trumpet-creeper text-[88px]">
               <span className="fade static flex w-fit justify-center align-middle items-center overflow-y-clip h-28">
                 <span className="reveal-text reveal-text5">2</span>
                 <span className="reveal-text reveal-text6">0</span>
@@ -541,7 +558,7 @@ function App() {
                 <div className="w-full pl-[20px] pr-[40px]">
                   <img
                     className="w-full rounded-xl overflow-hidden"
-                    src={broomImage}
+                    src={storyImage1}
                     alt="이야기1 이미지"
                   />
                 </div>
@@ -567,7 +584,7 @@ function App() {
                 <div className="w-full pr-[20px] pl-[40px]">
                   <img
                     className="w-full rounded-xl overflow-hidden"
-                    src={broomImage}
+                    src={storyImage2}
                     alt="이야기1 이미지"
                   />
                 </div>
@@ -590,7 +607,7 @@ function App() {
                 <div className="w-full pl-[20px] pr-[40px]">
                   <img
                     className="w-full rounded-xl overflow-hidden"
-                    src={broomImage}
+                    src={storyImage3}
                     alt="이야기1 이미지"
                   />
                 </div>
@@ -612,7 +629,7 @@ function App() {
                 <div className="w-full pr-[20px] pl-[40px]">
                   <img
                     className="w-full rounded-xl overflow-hidden"
-                    src={broomImage}
+                    src={storyImage4}
                     alt="이야기1 이미지"
                   />
                 </div>

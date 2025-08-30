@@ -56,14 +56,13 @@ body {
 }
 
 @font-face {
-  font-family: "Continuous";
-  font-weight: 400;
-  font-style: normal;
+  font-family: "TrumpetCreeper";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_JAMO@1.0/GrandifloraOne-Regular.woff2")
+    format("woff2");
+  font-weight: normal;
   font-display: swap;
-  src: local("Continuous"),
-    url("./assets/fonts/continuous.woff2") format("woff2"),
-    url("./assets/fonts/continuous.woff") format("woff");
 }
+
 @font-face {
   font-family: "Arita-buri-Medium";
   font-weight: 400;
@@ -96,8 +95,8 @@ body {
   font-style: normal;
 }
 
-.continuous {
-  font-family: "Continuous", sans-serif;
+.trumpet-creeper {
+  font-family: "TrumpetCreeper";
 }
 
 .hamchorom {
