@@ -234,7 +234,7 @@ function App() {
                     className="play-icon-svg"
                   >
                     <circle cx="11.5" cy="11.5" r="11.5" fill="#101010" />
-                    {!isPlaying ? (
+                    {isPlaying ? (
                       <g transform="translate(5.25, 17.5) scale(1, -1)">
                         {[0, 1, 2, 3, 4].map((i) => (
                           <rect
@@ -1296,14 +1296,6 @@ function App() {
             <div
               className="absolute top-0 left-0 w-1/6 h-full z-10"
               onClick={handlePrev}
-            />
-            <div
-              className="absolute top-0 right-[50%] w-1/6 h-full z-10"
-              onClick={handlePrev}
-            />
-            <div
-              className="absolute top-0 left-[50%] w-1/6 h-full z-10"
-              onClick={handleNext}
             />
             <div
               className="absolute top-0 right-0 w-1/6 h-full z-10"
