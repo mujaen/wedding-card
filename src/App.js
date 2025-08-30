@@ -203,12 +203,14 @@ function App() {
       <section className="md:py-12">
         <div className="max-w-md mx-auto md:rounded-3xl shadow-xl lg:w-[400px]">
           <div className="relative flex flex-col h-screen lg:h-auto justify-center lg:w-[400px] max-w-md mx-auto lg:rounded-t-3xl overflow-hidden">
-            <Snowfall
-              speed={[0, 1.4]}
-              radius={[11, 11]}
-              snowflakeCount={15}
-              images={images}
-            />
+            <div className="z-50">
+              <Snowfall
+                speed={[0, 1.4]}
+                radius={[11, 11]}
+                snowflakeCount={15}
+                images={images}
+              />
+            </div>
             <Video />
             <div class="absolute top-[12px] right-1/2 translate-x-1/2">
               <div class="fadeout toast px-4 py-2 bg-black rounded-full w-full">
