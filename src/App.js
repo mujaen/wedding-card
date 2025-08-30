@@ -5,6 +5,7 @@ import Snowfall from "react-snowfall";
 import mainImage from "./assets/images/main.jpg";
 import broomImage from "./assets/images/broom.png";
 import infoImage from "./assets/images/info.png";
+import bannerImage from "./assets/images/banner.png";
 import "swiper/css";
 import Video from "./Video";
 
@@ -251,12 +252,25 @@ function App() {
               신랑 김민호 · 신부 이혜진
             </div>
           </div>
-          <div className="flex justify-center lg:w-[400px] max-w-md mx-auto">
-            <img
-              className="max-w-[600px] w-full"
-              src={mainImage}
-              alt="메인 이미지"
-            />
+          <div className="flex flex-col justify-center items-center lg:w-[400px] h-screen max-w-md mx-auto bg-primary-300">
+            <div className="flex w-full justify-center items-center gap-5 text-white text-[96px]">
+              <span className="static flex w-fit justify-center align-middle items-center overflow-y-clip h-28">
+                <span className="reveal-text">D</span>
+                <span className="reveal-text">E</span>
+                <span className="reveal-text">C</span>
+              </span>
+              <span className="static flex w-fit justify-center align-middle items-center overflow-y-clip h-28">
+                <span className="reveal-text">6</span>
+              </span>
+            </div>
+            <div className="flex w-full justify-center items-center gap-5 text-white text-[96px]">
+              <span className="static flex w-fit justify-center align-middle items-center overflow-y-clip h-28">
+                <span className="reveal-text">2</span>
+                <span className="reveal-text">0</span>
+                <span className="reveal-text">2</span>
+                <span className="reveal-text">5</span>
+              </span>
+            </div>
           </div>
           <div className="flex flex-col items-center py-20 lg:w-[400px] max-w-md mx-auto bg-gray-50">
             <h3 className="fade sub-title">WEDDING DAY</h3>
@@ -1096,8 +1110,8 @@ function App() {
           <div className="lg:w-[400px] max-w-md mx-auto lg:rounded-b-3xl overflow-hidden">
             <img
               className="max-w-[600px] w-full"
-              src={mainImage}
-              alt="메인 이미지"
+              src={bannerImage}
+              alt="배너 이미지"
             />
             <div class="flex flex-col items-center justify-center bg-white gsap-div gap-y-3 min-h-28 py-9 px-9">
               <button
