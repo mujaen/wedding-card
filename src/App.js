@@ -27,7 +27,38 @@ function App() {
   const [activeIndex, setActiveIndex] = useState(0);
 
   const [isPlaying, setIsPlaying] = useState(false);
-  const galleryImageList = ["/assets/images/1.png", "/assets/images/3.png"];
+  const galleryImageList = [
+    "/assets/images/1.png",
+    "/assets/images/2.png",
+    "/assets/images/3.png",
+    "/assets/images/4.png",
+    "/assets/images/5.png",
+    "/assets/images/6.png",
+    "/assets/images/7.png",
+    "/assets/images/8.png",
+    "/assets/images/9.png",
+    "/assets/images/10.png",
+    "/assets/images/11.png",
+    "/assets/images/12.png",
+    "/assets/images/13.png",
+    "/assets/images/14.png",
+    "/assets/images/15.png",
+    "/assets/images/16.png",
+    "/assets/images/17.png",
+    "/assets/images/18.png",
+    "/assets/images/19.png",
+    "/assets/images/20.png",
+    "/assets/images/21.png",
+    "/assets/images/22.png",
+    "/assets/images/23.png",
+    "/assets/images/24.png",
+    "/assets/images/25.png",
+    "/assets/images/26.png",
+    "/assets/images/27.png",
+    "/assets/images/28.png",
+    "/assets/images/29.png",
+    "/assets/images/30.png",
+  ];
 
   const options = {
     root: null, // viewport
@@ -594,21 +625,23 @@ function App() {
               우리의 소중한 순간
             </h2>
             <div className="fade grid grid-cols-3 py-[10px] gap-[1.5px]">
-              {galleryImageList.map((source, index) => (
-                <div
-                  className="flex justify-center items-center"
-                  onClick={() => handleGallerImageClick(index)}
-                >
-                  <div class="flex items-center rounded-none relative overflow-hidden aspect-square w-80">
-                    <div class="absolute top-0 left-0 w-full h-full bg-transparent z-10"></div>
-                    <img
-                      alt="gallery-grid-6"
-                      className="rounded-none object-cover object-top w-full h-full absolute"
-                      src={source}
-                    ></img>
+              {galleryImageList
+                .map((source, index) => (
+                  <div
+                    className="flex justify-center items-center"
+                    onClick={() => handleGallerImageClick(index)}
+                  >
+                    <div class="flex items-center rounded-none relative overflow-hidden aspect-square w-80">
+                      <div class="absolute top-0 left-0 w-full h-full bg-transparent z-10"></div>
+                      <img
+                        alt="gallery-grid-6"
+                        className="rounded-none object-cover object-top w-full h-full absolute"
+                        src={source}
+                      ></img>
+                    </div>
                   </div>
-                </div>
-              ))}
+                ))
+                .slice(0, 9)}
             </div>
           </div>
           <div
