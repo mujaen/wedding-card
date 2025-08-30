@@ -37,7 +37,7 @@ const VideoPlayer = () => {
       onError={handleVideoError}
       style={{
         width: "100%",
-        height: "auto",
+        height: "100%",
         display: "block",
         objectFit: "cover",
       }}
