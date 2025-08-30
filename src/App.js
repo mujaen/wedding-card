@@ -1241,7 +1241,7 @@ function App() {
         <div class="modal flex justify-center items-center bg-black bg-opacity-20">
           <div className="relative h-full lg:w-[400px] max-w-md mx-auto">
             <button
-              class="absolute left-[50%] bottom-[10%] ml-[-16px] z-40 hover:cursor-pointer"
+              class="fixed right-4 top-4 ml-[-16px] z-40 hover:cursor-pointer"
               onClick={() => handleCloseButtonClick()}
             >
               <svg
