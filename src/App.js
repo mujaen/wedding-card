@@ -5,6 +5,8 @@ import Snowfall from "react-snowfall";
 import broomImage from "./assets/images/broom.png";
 import infoImage from "./assets/images/info.png";
 import bannerImage from "./assets/images/banner.png";
+import menImage from "./assets/images/men.png";
+import womenImage from "./assets/images/women.png";
 import storyImage1 from "./assets/images/story1.png";
 import storyImage2 from "./assets/images/story2.png";
 import storyImage3 from "./assets/images/story3.png";
@@ -207,7 +209,6 @@ function App() {
               snowflakeCount={15}
               images={images}
             />
-
             <Video />
             <div class="absolute top-[12px] right-1/2 translate-x-1/2">
               <div class="fadeout toast px-4 py-2 bg-black rounded-full w-full">
@@ -465,7 +466,7 @@ function App() {
               <div className="max-w-[300px] mx-auto bg-white rounded-xl p-8">
                 <img
                   className="fade w-full rounded-xl overflow-hidden shadow-md"
-                  src={broomImage}
+                  src={menImage}
                   alt="신랑 이미지"
                 />
                 <div className="fade flex justify-center items-baseline gap-[10px] pt-[30px] py-[20px]">
@@ -477,7 +478,7 @@ function App() {
                 <div className="fade text-center">
                   <div className="mb-5 suit-regular text-[15px]">
                     <p>1990년 2월 경기도 시흥 출생</p>
-                    <p>이 시대의 최수종 션 모음ZIP.</p>
+                    <p>엉뚱한 매력의 온달왕자</p>
                   </div>
 
                   <ul className="flex justify-center suit-regular text-[13px] gap-[5px] font-700">
@@ -493,7 +494,7 @@ function App() {
                   </ul>
                   <ul className="flex justify-center suit-regular text-[13px] gap-[5px] mt-1 font-700">
                     <li className="px-3 py-1 bg-primary-300 rounded-full text-white">
-                      #공감왕
+                      #꽃미소
                     </li>
                     <li className="px-3 py-1 bg-primary-300 rounded-full text-white">
                       #장난꾸러기
@@ -504,7 +505,7 @@ function App() {
               <div className="max-w-[300px] mx-auto bg-white rounded-xl p-8">
                 <img
                   className="fade w-full rounded-xl overflow-hidden shadow-md"
-                  src={broomImage}
+                  src={womenImage}
                   alt="신부 이미지"
                 />
                 <div className="fade flex justify-center items-baseline gap-[10px] pt-[30px] py-[20px]">
@@ -516,7 +517,7 @@ function App() {
                 <div className="fade text-center">
                   <div className="mb-5 suit-regular text-[15px]">
                     <p>1996년 1월 대구 출생</p>
-                    <p>내 말이 곧 법이다 우리집 공주</p>
+                    <p>4차원 내조여왕 평강공주</p>
                   </div>
 
                   <ul className="flex justify-center suit-regular text-[13px] gap-[5px] font-700">
@@ -532,10 +533,10 @@ function App() {
                   </ul>
                   <ul className="flex justify-center suit-regular text-[13px] gap-[5px] font-700 mt-1">
                     <li className="px-3 py-1 bg-primary-300 rounded-full text-white">
-                      #배려왕
+                      #개그우먼
                     </li>
                     <li className="px-3 py-1 bg-primary-300 rounded-full text-white">
-                      #금손
+                      #장금이
                     </li>
                   </ul>
                 </div>
