@@ -232,7 +232,7 @@ function App() {
                     className="play-icon-svg"
                   >
                     <circle cx="11.5" cy="11.5" r="11.5" fill="#101010" />
-                    {isPlaying ? (
+                    {!isPlaying ? (
                       <g transform="translate(5.25, 17.5) scale(1, -1)">
                         {[0, 1, 2, 3, 4].map((i) => (
                           <rect
