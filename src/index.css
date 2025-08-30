@@ -29,6 +29,14 @@ body {
 }
 
 @font-face {
+  font-family: "SfHambakneun";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2106@1.1/SF_HambakSnow.woff")
+    format("woff");
+  font-weight: normal;
+  font-display: swap;
+}
+
+@font-face {
   font-family: "Hamchorom";
   src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2104@1.0/HANBatang.woff")
     format("woff");
@@ -97,7 +105,7 @@ body {
 }
 
 .sub-title {
-  font-family: "Hamchorom", serif;
+  font-family: "SfHambakneun", serif;
   font-size: 30px;
   font-weight: 400;
   letter-spacing: 0.05em;
