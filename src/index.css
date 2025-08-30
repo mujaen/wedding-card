@@ -81,6 +81,16 @@ body {
   font-display: swap;
 }
 
+.cinzel-decorative-regular {
+  font-family: "Cinzel Decorative", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.hamchorom {
+  font-family: "Hamchorom";
+}
+
 .suit-regular {
   font-family: "NanumBarunPen";
 }

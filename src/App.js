@@ -286,18 +286,18 @@ function App() {
             </div>
           </div>
           <div className="flex flex-col justify-center items-center lg:w-[400px] h-screen max-w-md mx-auto bg-primary-300">
-            <div className="flex w-full justify-center items-center gap-5 text-white text-[96px]">
-              <span className="static flex w-fit justify-center align-middle items-center overflow-y-clip h-28">
+            <div className="flex w-full justify-center items-center gap-5 text-white cinzel-decorative-regular text-[96px]">
+              <span className="fade static flex w-fit justify-center align-middle items-center overflow-y-clip h-28">
                 <span className="reveal-text">D</span>
                 <span className="reveal-text">E</span>
                 <span className="reveal-text">C</span>
               </span>
-              <span className="static flex w-fit justify-center align-middle items-center overflow-y-clip h-28">
+              <span className="fade static flex w-fit justify-center align-middle items-center overflow-y-clip h-28">
                 <span className="reveal-text">6</span>
               </span>
             </div>
-            <div className="flex w-full justify-center items-center gap-5 text-white text-[96px]">
-              <span className="static flex w-fit justify-center align-middle items-center overflow-y-clip h-28">
+            <div className="flex w-full justify-center items-center gap-5 text-white cinzel-decorative-regular text-[96px]">
+              <span className="fade static flex w-fit justify-center align-middle items-center overflow-y-clip h-28">
                 <span className="reveal-text">2</span>
                 <span className="reveal-text">0</span>
                 <span className="reveal-text">2</span>
@@ -1203,7 +1203,7 @@ function App() {
         <div class="modal flex justify-center items-center bg-black bg-opacity-20">
           <div className="relative h-full lg:w-[400px] max-w-md mx-auto">
             <button
-              class="absolute right-4 top-[11%] z-40 hover:cursor-pointer"
+              class="absolute right-4 top-[15%] z-40 hover:cursor-pointer"
               onClick={() => handleCloseButtonClick()}
             >
               <svg
