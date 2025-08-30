@@ -2,7 +2,6 @@ import React, { useState, useEffect, useRef } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import Snowfall from "react-snowfall";
 
-import mainImage from "./assets/images/main.jpg";
 import broomImage from "./assets/images/broom.png";
 import infoImage from "./assets/images/info.png";
 import bannerImage from "./assets/images/banner.png";
