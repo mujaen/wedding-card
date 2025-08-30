@@ -235,7 +235,7 @@ function App() {
                 </g>
               </svg>
             </div>
-            <div class="fade suit-regular text-center text-[18px] leading-9">
+            <div class="fade suit-regular text-center text-[18px] text-gray-500 leading-9">
               예쁜 예감이 들었다.
               <br />
               우리는 언제나
@@ -244,9 +244,11 @@ function App() {
               <br />
               <br />
               이이체 &lt;연인&gt;
-              {/* 저희 두 사람이 함께하는 새로운 시작에
               <br />
-              귀한 발걸음으로 축복해 주시면 감사하겠습니다. */}
+              <br />
+              저희 두 사람이 함께하는 새로운 시작에
+              <br />
+              귀한 발걸음으로 축복해 주시면 감사하겠습니다.
             </div>
             <div className="fade suit-regular pt-8 text-center text-[18px]">
               신랑 김민호 · 신부 이혜진
@@ -348,7 +350,7 @@ function App() {
                     fill-rule="evenodd"
                     clip-rule="evenodd"
                     d="M5.97449 12.9791C4.01296 11.4758 1.33334 8.99241 1.33334 6.64436C1.33334 2.72175 5.00011 1.25725 8 4.28741C10.9999 1.25725 14.6667 2.72175 14.6667 6.64434C14.6667 8.99247 11.9871 11.4758 10.0255 12.9791C9.13754 13.6597 8.69354 14 8 14C7.30647 14 6.86247 13.6597 5.97449 12.9791Z"
-                    fill="#EB7B7B"
+                    fill="#C99CB2"
                   />
                 </svg>
                 <span>혜진의</span>
@@ -414,7 +416,7 @@ function App() {
                     <p>이 시대의 최수종 션 모음ZIP.</p>
                   </div>
 
-                  <ul className="flex justify-center suit-regular text-[13px] gap-[5px]">
+                  <ul className="flex justify-center suit-regular text-[13px] gap-[5px] font-700">
                     <li className="px-3 py-1 bg-primary-300 rounded-full text-white">
                       #A형
                     </li>
@@ -425,7 +427,7 @@ function App() {
                       #다정다감
                     </li>
                   </ul>
-                  <ul className="flex justify-center suit-regular text-[13px] gap-[5px] mt-1">
+                  <ul className="flex justify-center suit-regular text-[13px] gap-[5px] mt-1 font-700">
                     <li className="px-3 py-1 bg-primary-300 rounded-full text-white">
                       #공감왕
                     </li>
@@ -453,7 +455,7 @@ function App() {
                     <p>내 말이 곧 법이다 우리집 공주</p>
                   </div>
 
-                  <ul className="flex justify-center suit-regular text-[13px] gap-[5px]">
+                  <ul className="flex justify-center suit-regular text-[13px] gap-[5px] font-700">
                     <li className="px-3 py-1 bg-primary-300 rounded-full text-white">
                       #A형
                     </li>
@@ -464,7 +466,7 @@ function App() {
                       #집순이
                     </li>
                   </ul>
-                  <ul className="flex justify-center suit-regular text-[13px] gap-[5px] mt-1">
+                  <ul className="flex justify-center suit-regular text-[13px] gap-[5px] font-700 mt-1">
                     <li className="px-3 py-1 bg-primary-300 rounded-full text-white">
                       #배려왕
                     </li>
@@ -697,7 +699,7 @@ function App() {
                 <g clip-path="url(#clip1_2255_2360)">
                   <path
                     d="M13.1252 0.6875C12.2807 0.700636 11.4546 0.93639 10.7303 1.37095C10.006 1.80552 9.40923 2.4235 9.00021 3.1625C8.59119 2.4235 7.99441 1.80552 7.27014 1.37095C6.54587 0.93639 5.71975 0.700636 4.87521 0.6875C3.52892 0.745993 2.26049 1.33494 1.34705 2.32567C0.433607 3.31641 -0.0506 4.62839 0.000212859 5.975C0.000212859 11.0563 8.21721 16.925 8.56671 17.174L9.00021 17.4808L9.43371 17.174C9.78321 16.9265 18.0002 11.0563 18.0002 5.975C18.051 4.62839 17.5668 3.31641 16.6534 2.32567C15.7399 1.33494 14.4715 0.745993 13.1252 0.6875V0.6875Z"
-                    fill="#EB7B7B"
+                    fill="#C99CB2"
                   />
                 </g>
                 <defs>
