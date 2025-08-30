@@ -603,7 +603,7 @@ function App() {
             </h2>
 
             <div class="w-full justify-center gap-[40px] py-10">
-              <div class="fade w-full position">
+              <div class="fade w-full relative">
                 <div class="w-full h-[240px] bg-[url(./assets/images/map.png)] bg-center bg-cover"></div>
                 <div class="absolute top-4 left-4 py-1 px-2 rounded-md bg-gray-900 bg-opacity-60">
                   <a
@@ -1161,24 +1161,46 @@ function App() {
       )}
       {isOpenForm && (
         <div className="modal flex justify-center items-center bg-black bg-opacity-20">
-          <button type="button" onClick={() => setIsOpenForm(!isOpenForm)}>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              class="lucide lucide-x w-5 h-5"
+          <div
+            data-state={isOpenForm ? "open" : "closed"}
+            className="
+              bg-gray-50 relative max-w-lg w-full h-5/6 overflow-scroll py-12 p-6
+              shadow-lg duration-200
+              md:rounded-md focus:outline-none scrollbar-hide
+              data-[state=open]:animate-in data-[state=closed]:animate-out
+              data-[state=open]:fade-in-0 data-[state=closed]:fade-out-0
+              data-[state=open]:zoom-in-100 data-[state=closed]:zoom-out-95
+              data-[state=open]:slide-in-from-left-1/2 data-[state=open]:slide-in-from-top-[48%]
+              data-[state=closed]:slide-out-to-left-1/2 data-[state=closed]:slide-out-to-top-[48%]
+            "
+          >
+            <button
+              type="button"
+              className="absolute right-3 top-3 p-2"
+              onClick={() => setIsOpenForm(!isOpenForm)}
             >
-              <path d="M18 6 6 18"></path>
-              <path d="m6 6 12 12"></path>
-            </svg>
-          </button>
-          <div className="bg-white">보내기</div>
+              <svg
+                width="32"
+                height="32"
+                viewBox="0 0 32 32"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <rect width="32" height="32" rx="16" fill="#F9FAFB"></rect>
+                <path
+                  d="M23 9L9 23"
+                  stroke="#999999"
+                  stroke-linecap="round"
+                ></path>
+                <path
+                  d="M23 23L9 9"
+                  stroke="#999999"
+                  stroke-linecap="round"
+                ></path>
+              </svg>
+            </button>
+            <button type="button">보내기</button>
+          </div>
         </div>
       )}
     </>

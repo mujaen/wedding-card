@@ -14,12 +14,11 @@ module.exports = {
         "green-300": "#D0D3CB",
         "green-700": "#707664",
         "yellow-700": "#F7E600",
-
+        "gray-50": "#F9FAFB",
         "gray-400": "#888888",
         "gray-500": "#666666",
         "gray-600": "#444444",
         "gray-700": "#333333",
-
         "gray-900": "#111111",
         "primary-50": "#FFFBFB",
         "primary-100": "#F4EFEF",
