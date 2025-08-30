@@ -7,7 +7,7 @@ body {
   padding: 0;
   color: #333;
   font-size: 15px;
-  font-family: "SUIT-Regular", "Segoe UI", "Roboto", "Oxygen", "Ubuntu",
+  font-family: "NanumBarunPen", "Segoe UI", "Roboto", "Oxygen", "Ubuntu",
     "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
   font-optical-sizing: auto;
   font-weight: 400;
@@ -26,6 +26,14 @@ body {
     padding-top: 3rem;
     padding-bottom: 3rem;
   }
+}
+
+@font-face {
+  font-family: "Hamchorom";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2104@1.0/HANBatang.woff")
+    format("woff");
+  font-weight: normal;
+  font-display: swap;
 }
 
 @font-face {
@@ -60,8 +68,16 @@ body {
     url("./assets/fonts/Arita-buri-SemiBold.woff") format("woff");
 }
 
+@font-face {
+  font-family: "NanumBarunPen";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_two@1.0/NanumBarunpen.woff")
+    format("woff");
+  font-weight: normal;
+  font-display: swap;
+}
+
 .suit-regular {
-  font-family: "SUIT-Regular";
+  font-family: "NanumBarunPen";
 }
 
 .suit-bold {
@@ -80,13 +96,8 @@ body {
   font-family: "Dancing Script", cursive;
 }
 
-.eb-garamond {
-  font-family: "EB Garamond", serif;
-  letter-spacing: 0.02rem;
-}
-
 .sub-title {
-  font-family: "Sometimestimes", serif;
+  font-family: "Hamchorom", serif;
   font-size: 30px;
   font-weight: 400;
   letter-spacing: 0.05em;

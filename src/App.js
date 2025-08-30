@@ -49,9 +49,9 @@ function App() {
     });
   }, options);
 
-  const copyToClipboard = (text) => {
+  const copyToClipboard = (title, text) => {
     navigator.clipboard.writeText(text);
-    alert("계좌번호가 복사되었습니다.");
+    alert(`${title}가 복사되었습니다.`);
   };
 
   const togglePlay = () => {
@@ -235,20 +235,17 @@ function App() {
               </svg>
             </div>
             <div class="fade suit-regular text-center text-[18px] leading-9">
-              사람이 온다는 건 실은 어마어마한 일이다.
+              예쁜 예감이 들었다.
               <br />
-              그는 그의 과거와 현재와 그리고
+              우리는 언제나
               <br />
-              그의 미래와 함께 오기 때문이다.
-              <br />
-              한 사람의 일생이 오기 때문이다.
-              <br />
-              <br />- 정현종, '방문객'
+              손을 잡고 있게될 것이다.
               <br />
               <br />
-              저희 두 사람이 함께하는 새로운 시작에
+              이이체 &lt;연인&gt;
+              {/* 저희 두 사람이 함께하는 새로운 시작에
               <br />
-              귀한 발걸음으로 축복해 주시면 감사하겠습니다.
+              귀한 발걸음으로 축복해 주시면 감사하겠습니다. */}
             </div>
             <div className="fade suit-regular pt-8 text-center text-[18px]">
               신랑 김민호 · 신부 이혜진
@@ -771,7 +768,7 @@ function App() {
                   >
                     {isOpenLeft && (
                       <div className="flex flex-col gap-[8px] px-3 py-4 rounded-b-lg bg-primary-400">
-                        <div class="flex flex-col gap-[20px] bg-white shadow-lg rounded-xl p-6">
+                        <div class="flex flex-col gap-[20px] bg-white shadow-lg rounded-xl p-5">
                           <div class="flex justify-between">
                             <span>신랑</span>
                             <span>김민호</span>
@@ -808,7 +805,10 @@ function App() {
                                   type="button"
                                   class="flex items-center justify-center w-[40px] rounded-full bg-white shadow-lg"
                                   onClick={() =>
-                                    copyToClipboard("238502-04-127818")
+                                    copyToClipboard(
+                                      "계좌번호",
+                                      "238502-04-127818"
+                                    )
                                   }
                                 >
                                   <svg
@@ -828,7 +828,7 @@ function App() {
                             </div>
                           </div>
                         </div>
-                        <div class="flex flex-col gap-[20px] bg-white shadow-lg rounded-xl p-6">
+                        <div class="flex flex-col gap-[20px] bg-white shadow-lg rounded-xl p-5">
                           <div class="flex justify-between">
                             <span>혼주</span>
                             <span>김해덕</span>
@@ -844,7 +844,10 @@ function App() {
                                   type="button"
                                   class="flex items-center justify-center w-[40px] rounded-full bg-white shadow-lg"
                                   onClick={() =>
-                                    copyToClipboard("606025-90-101196")
+                                    copyToClipboard(
+                                      "계좌번호",
+                                      "606025-90-101196"
+                                    )
                                   }
                                 >
                                   <svg
@@ -864,7 +867,7 @@ function App() {
                             </div>
                           </div>
                         </div>
-                        <div class="flex flex-col gap-[20px] bg-white shadow-lg rounded-xl p-6">
+                        <div class="flex flex-col gap-[20px] bg-white shadow-lg rounded-xl p-5">
                           <div class="flex justify-between">
                             <span>혼주</span>
                             <span>박경자</span>
@@ -880,7 +883,10 @@ function App() {
                                   type="button"
                                   class="flex items-center justify-center w-[40px] rounded-full bg-white shadow-lg"
                                   onClick={() =>
-                                    copyToClipboard("602825-93-123294")
+                                    copyToClipboard(
+                                      "계좌번호",
+                                      "602825-93-123294"
+                                    )
                                   }
                                 >
                                   <svg
@@ -961,7 +967,7 @@ function App() {
                   >
                     {isOpenRight && (
                       <div className="flex flex-col gap-[8px] px-3 py-4 rounded-b-lg bg-primary-400">
-                        <div class="flex flex-col gap-[20px] bg-white shadow-lg rounded-xl p-6">
+                        <div class="flex flex-col gap-[20px] bg-white shadow-lg rounded-xl p-5">
                           <div class="flex justify-between">
                             <span>신부</span>
                             <span>이혜진</span>
@@ -998,7 +1004,7 @@ function App() {
                                   type="button"
                                   class="flex items-center justify-center w-[40px] rounded-full bg-white shadow-lg"
                                   onClick={() =>
-                                    copyToClipboard("1000-9136-201")
+                                    copyToClipboard("계좌번호", "1000-9136-201")
                                   }
                                 >
                                   <svg
@@ -1114,7 +1120,12 @@ function App() {
                   </svg>
                 </div>
               </button>
-              <button class="items-center whitespace-nowrap text-sm font-medium ring-offset-background bg-primary-300 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground py-2 flex justify-between w-full h-12 px-5 rounded-xl gsap-opacity">
+              <button
+                onClick={() =>
+                  copyToClipboard("청첩장 주소", "https://weddinginvite.pics/")
+                }
+                class="items-center whitespace-nowrap text-sm font-medium ring-offset-background bg-primary-300 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground py-2 flex justify-between w-full h-12 px-5 rounded-xl gsap-opacity"
+              >
                 <div class="text-white">청첩장 주소 복사하기</div>
                 <div>
                   <svg
