@@ -115,25 +115,6 @@ function App() {
     if (swiperRef.current) swiperRef.current.slideNext();
   };
 
-  const RevealText = ({ text, delay = 0 }) => {
-    const [show, setShow] = useState(false);
-
-    useEffect(() => {
-      const timeout = setTimeout(() => setShow(true), delay);
-      return () => clearTimeout(timeout);
-    }, [delay]);
-
-    return (
-      <span
-        className={`inline-block transition-all duration-700 ease-out transform
-          ${show ? "translate-y-0 opacity-100" : "translate-y-full opacity-0"}
-        `}
-      >
-        {text}
-      </span>
-    );
-  };
-
   const handleLeftButtonClick = () => {
     setIsOpenLeft(!isOpenLeft);
   };
@@ -226,7 +207,10 @@ function App() {
 
             <Video />
             <audio src="/assets/music.mp3" ref={audioRef} autoPlay loop />
-            <button onClick={togglePlay} className="absolute right-4 top-4">
+            <button
+              onClick={togglePlay}
+              className="absolute right-4 top-4 opacity-70"
+            >
               {
                 <div style={{ width: "23px", height: "23px" }}>
                   <svg
@@ -238,14 +222,14 @@ function App() {
                   >
                     <circle cx="11.5" cy="11.5" r="11.5" fill="#101010" />
                     {isPlaying ? (
-                      <g transform="translate(5, 5)">
+                      <g transform="translate(5.25, 17.5) scale(1, -1)">
                         {[0, 1, 2, 3, 4].map((i) => (
                           <rect
                             key={i}
-                            x={i * 2.5}
+                            x={i * 2.8}
                             y={0}
-                            width="1"
-                            height="13"
+                            width="1.2"
+                            height="10"
                             fill="white"
                             className={`bar bar-${i}`}
                           />
@@ -325,7 +309,7 @@ function App() {
             </div>
           </div>
           <div className="flex flex-col justify-center items-center lg:w-[400px] h-screen max-w-md mx-auto bg-primary-300">
-            <div className="flex w-full justify-center items-center gap-5 text-white trumpet-creeper text-[88px]">
+            <div className="flex w-full justify-center items-center gap-5 text-white trumpet-creeper text-[96px]">
               <span className="fade static flex w-fit justify-center align-middle items-center overflow-y-clip h-28">
                 <span className="reveal-text reveal-text1">D</span>
                 <span className="reveal-text reveal-text2">E</span>
@@ -335,7 +319,7 @@ function App() {
                 <span className="reveal-text reveal-text4">6</span>
               </span>
             </div>
-            <div className="flex w-full justify-center items-center gap-5 text-white trumpet-creeper text-[88px]">
+            <div className="flex w-full justify-center items-center gap-5 text-white trumpet-creeper text-[96px]">
               <span className="fade static flex w-fit justify-center align-middle items-center overflow-y-clip h-28">
                 <span className="reveal-text reveal-text5">2</span>
                 <span className="reveal-text reveal-text6">0</span>
