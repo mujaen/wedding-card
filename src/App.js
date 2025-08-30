@@ -93,6 +93,12 @@ function App() {
     setIsOpenModal(!isOpenModal);
   };
 
+  const shareKaKao = () => {
+    window.Kakao.Share.sendCustom({
+      templateId: 123846,
+    });
+  };
+
   useEffect(() => {
     if (isOpenModal) {
       document.body.style.overflow = "hidden";
@@ -368,7 +374,7 @@ function App() {
               href="#location"
               className="fade flex w-[300px] justify-center items-center rounded-[8px] bg-primary-300 mt-12 py-3.5 px-16"
             >
-              <span className="text-[14px] suit-regular text-white">
+              <span className="text-[16px] suit-regular text-white">
                 위치 안내 바로가기
               </span>
             </a>
@@ -1072,19 +1078,62 @@ function App() {
                 onClick={() => setIsOpenForm(!isOpenForm)}
                 className="w-[300px] flex justify-center items-center bg-primary-300 rounded-[8px] mt-6 py-4 px-16"
               >
-                <span className="text-[14px] text-white">
+                <span className="text-[16px] text-white">
                   참석정보 전달하기
                 </span>
               </button>
             </div>
           </div>
 
-          <div className="flex justify-center lg:w-[400px] max-w-md mx-auto lg:rounded-b-3xl overflow-hidden">
+          <div className="lg:w-[400px] max-w-md mx-auto lg:rounded-b-3xl overflow-hidden">
             <img
               className="max-w-[600px] w-full"
               src={mainImage}
               alt="메인 이미지"
             />
+            <div class="flex flex-col items-center justify-center bg-white gsap-div gap-y-3 min-h-28 py-9 px-9">
+              <button
+                onClick={() => shareKaKao()}
+                class="flex items-center justify-between text-sm w-full h-12 px-5 rounded-xl bg-yellow-700 gsap-opacity disabled:bg-[#FCE777]/50"
+              >
+                <div>카카오톡으로 청첩장 전하기</div>
+                <div>
+                  <svg
+                    width="25"
+                    height="24"
+                    viewBox="0 0 25 24"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      clip-rule="evenodd"
+                      d="M5.1473 18.6464C4.95204 18.8417 4.95204 19.1583 5.1473 19.3536C5.34256 19.5488 5.65915 19.5488 5.85441 19.3536L18 7.20797L18 18C18 18.2761 18.2239 18.5 18.5 18.5C18.7761 18.5 19 18.2761 19 18L19 6C19 5.72386 18.7761 5.5 18.5 5.5L6.49999 5.5C6.22385 5.5 5.99999 5.72386 5.99999 6C5.99999 6.27614 6.22385 6.5 6.49999 6.5L17.2937 6.5L5.1473 18.6464Z"
+                      fill="#222222"
+                    ></path>
+                  </svg>
+                </div>
+              </button>
+              <button class="items-center whitespace-nowrap text-sm font-medium ring-offset-background bg-primary-300 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground py-2 flex justify-between w-full h-12 px-5 rounded-xl gsap-opacity">
+                <div class="text-white">청첩장 주소 복사하기</div>
+                <div>
+                  <svg
+                    width="25"
+                    height="24"
+                    viewBox="0 0 25 24"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      clip-rule="evenodd"
+                      d="M5.5 1.5C4.67157 1.5 4 2.17157 4 3V16C4 16.8284 4.67157 17.5 5.5 17.5H15.5C16.3284 17.5 17 16.8284 17 16V3C17 2.17157 16.3284 1.5 15.5 1.5H5.5ZM5 3C5 2.72386 5.22386 2.5 5.5 2.5H15.5C15.7761 2.5 16 2.72386 16 3V16C16 16.2761 15.7761 16.5 15.5 16.5H5.5C5.22386 16.5 5 16.2761 5 16V3ZM21 6C21 5.72386 20.7761 5.5 20.5 5.5C20.2239 5.5 20 5.72386 20 6V19C20 19.8284 19.3284 20.5 18.5 20.5H8.5C8.22386 20.5 8 20.7239 8 21C8 21.2761 8.22386 21.5 8.5 21.5H18.5C19.8807 21.5 21 20.3807 21 19V6Z"
+                      fill="white"
+                    ></path>
+                  </svg>
+                </div>
+              </button>
+            </div>
           </div>
         </div>
       </section>
