@@ -56,6 +56,15 @@ body {
 }
 
 @font-face {
+  font-family: "Continuous";
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+  src: local("Continuous"),
+    url("./assets/fonts/continuous.woff2") format("woff2"),
+    url("./assets/fonts/continuous.woff") format("woff");
+}
+@font-face {
   font-family: "Arita-buri-Medium";
   font-weight: 400;
   font-style: normal;
@@ -85,6 +94,10 @@ body {
   font-family: "Cinzel", serif;
   font-weight: 400;
   font-style: normal;
+}
+
+.continuous {
+  font-family: "Continuous", sans-serif;
 }
 
 .hamchorom {

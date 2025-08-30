@@ -300,16 +300,16 @@ function App() {
               이이체 &lt;연인&gt;
               <br />
               <br />
-              저희 두 사람이 함께하는 새로운 시작에
+              서로의 인연을 이어 사랑의 결실을 맺으려 합니다.
               <br />
-              귀한 발걸음으로 축복해 주시면 감사하겠습니다.
+              귀한 걸음으로 축복해 주세요.
             </div>
             <div className="fade suit-regular pt-8 text-center text-[18px]">
               신랑 김민호 · 신부 이혜진
             </div>
           </div>
           <div className="flex flex-col justify-center items-center lg:w-[400px] h-screen max-w-md mx-auto bg-primary-300">
-            <div className="flex w-full justify-center items-center gap-5 text-white cinzel-decorative-regular text-[96px]">
+            <div className="flex w-full justify-center items-center gap-5 text-white continuous text-[88px]">
               <span className="fade static flex w-fit justify-center align-middle items-center overflow-y-clip h-28">
                 <span className="reveal-text reveal-text1">D</span>
                 <span className="reveal-text reveal-text2">E</span>
@@ -319,7 +319,7 @@ function App() {
                 <span className="reveal-text reveal-text4">6</span>
               </span>
             </div>
-            <div className="flex w-full justify-center items-center gap-5 text-white cinzel-decorative-regular text-[96px]">
+            <div className="flex w-full justify-center items-center gap-5 text-white continuous text-[88px]">
               <span className="fade static flex w-fit justify-center align-middle items-center overflow-y-clip h-28">
                 <span className="reveal-text reveal-text5">2</span>
                 <span className="reveal-text reveal-text6">0</span>
@@ -439,7 +439,7 @@ function App() {
             </div>
             <a
               href="#location"
-              className="fade flex w-[300px] justify-center items-center rounded-[8px] bg-primary-300 mt-12 py-3.5 px-16"
+              className="fade flex w-[300px] justify-center items-center rounded-[8px] bg-primary-300 mt-12 py-3 px-16"
             >
               <span className="text-[16px] suit-regular text-white">
                 위치 안내 바로가기
@@ -1127,7 +1127,7 @@ function App() {
               <button
                 type="button"
                 onClick={() => setIsOpenForm(!isOpenForm)}
-                className="w-[300px] flex justify-center items-center bg-primary-300 rounded-[8px] mt-6 py-4 px-16"
+                className="w-[300px] flex justify-center items-center bg-primary-300 rounded-[8px] mt-6 py-3 px-16"
               >
                 <span className="text-[16px] text-white">
                   참석정보 전달하기
@@ -1151,13 +1151,15 @@ function App() {
                   <span className="text-[18px] suit-regular">식사안내</span>
                 </div>
                 <div className="fade text-center">
-                  <div className="flex flex-col gap-[20px] mb-5 suit-regular text-[15px]">
+                  <div className="flex flex-col gap-[20px] mb-5 suit-regular text-[15px] break-words">
                     <p>
-                      뷔페 식사 요리가 준비되어 있으며, 식사 장소는 홀과 같은
-                      층에 위치해 있습니다.
+                      뷔페 식사 요리가 준비되어 있으며,
+                      <br />
+                      식사 장소는 홀과 같은 층에 위치해 있습니다.
                     </p>
                     <p>
-                      소중한 걸음해 주심에 진심으로 감사드리며&nbsp;&nbsp;&nbsp;
+                      소중한 걸음해 주심에 진심으로 감사드리며
+                      <br />
                       즐거운 시간 되시길 바랍니다.
                     </p>
                   </div>
@@ -1302,14 +1304,9 @@ function App() {
           <div
             data-state={isOpenForm ? "open" : "closed"}
             className="
-              bg-gray-50 relative max-w-lg w-full h-5/6 overflow-scroll py-12 p-6
+              bg-gray-100 relative max-w-lg w-full h-5/6 overflow-scroll py-12 p-6
               shadow-lg duration-200
-              md:rounded-md focus:outline-none scrollbar-hide
-              data-[state=open]:animate-in data-[state=closed]:animate-out
-              data-[state=open]:fade-in-0 data-[state=closed]:fade-out-0
-              data-[state=open]:zoom-in-100 data-[state=closed]:zoom-out-95
-              data-[state=open]:slide-in-from-left-1/2 data-[state=open]:slide-in-from-top-[48%]
-              data-[state=closed]:slide-out-to-left-1/2 data-[state=closed]:slide-out-to-top-[48%]
+              md:rounded-md focus:outline-none
             "
           >
             <button
@@ -1324,7 +1321,6 @@ function App() {
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
               >
-                <rect width="32" height="32" rx="16" fill="#F9FAFB"></rect>
                 <path
                   d="M23 9L9 23"
                   stroke="#999999"
@@ -1337,7 +1333,61 @@ function App() {
                 ></path>
               </svg>
             </button>
-            <button type="button">보내기</button>
+            <div className="flex flex-col">
+              <h2 className="suit-regular py-4 text-[22px] text-center">
+                참석 의사 전달하기
+              </h2>
+              <p className="leading-6 text-gray-500 text-center">
+                한 분 한 분을 소중히 모실 수 있도록
+                <br />
+                참석 의사를 전해주시면 감사하겠습니다.
+              </p>
+              <div className="pt-12 flex flex-col gap-[30px]">
+                <dl className="flex flex-col gap-[10px]">
+                  <dt className="text-[14px] text-gray-600">
+                    어느 분의 하객이신가요?
+                  </dt>
+                  <dd className="flex gap-[10px] w-full">
+                    <button
+                      type="button"
+                      onClick={() => null}
+                      className="w-1/2 flex justify-center items-center bg-primary-300 rounded-[8px] shadow-md py-3 px-16"
+                    >
+                      <span className="text-[16px] text-white">신랑</span>
+                    </button>
+                    <button
+                      type="button"
+                      onClick={() => null}
+                      className="w-1/2 flex justify-center items-center bg-white rounded-[8px] shadow-md py-3 px-16"
+                    >
+                      <span className="text-[16px] text-gray-500">신부</span>
+                    </button>
+                  </dd>
+                </dl>
+                <dl className="flex flex-col gap-[10px]">
+                  <dt className="text-[14px] text-gray-600">
+                    참석여부를 알려주세요
+                  </dt>
+                  <dd className="flex gap-[10px] w-full">
+                    <button
+                      type="button"
+                      onClick={() => null}
+                      className="w-1/2 flex justify-center items-center bg-primary-300 rounded-[8px] shadow-md py-3 px-16"
+                    >
+                      <span className="text-[16px] text-white">신랑</span>
+                    </button>
+                    <button
+                      type="button"
+                      onClick={() => null}
+                      className="w-1/2 flex justify-center items-center bg-white rounded-[8px] shadow-md py-3 px-16"
+                    >
+                      <span className="text-[16px] text-gray-500">신부</span>
+                    </button>
+                  </dd>
+                </dl>
+              </div>
+              <button type="button">전달하기</button>
+            </div>
           </div>
         </div>
       )}
