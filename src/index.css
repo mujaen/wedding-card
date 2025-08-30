@@ -197,6 +197,17 @@ body {
   }
 }
 
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+}
+
 .bar {
   transform-origin: top;
   animation: scaleBounce 1s infinite ease-in-out;
@@ -277,9 +288,13 @@ body {
   transition-delay: 800ms;
 }
 
-.inView {
+.fade.inView {
   opacity: 0;
   animation: fadeIn 2s both;
+}
+
+.fadeout.inView {
+  animation: fadeOut 2s both;
 }
 
 .attendance {

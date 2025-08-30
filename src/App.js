@@ -163,9 +163,12 @@ function App() {
   }, [isOpenForm]);
 
   useEffect(() => {
-    const boxList = document.querySelectorAll(".fade");
+    const fadeList = document.querySelectorAll(".fade");
+    const fadoutList = document.querySelectorAll(".fadeout");
 
-    boxList.forEach((el) => observer.observe(el));
+    const combinedList = [...fadeList, ...fadoutList];
+
+    combinedList.forEach((el) => observer.observe(el));
 
     const targetDate = new Date("2025-12-06T14:40:00");
 
@@ -206,6 +209,13 @@ function App() {
             />
 
             <Video />
+            <div class="absolute top-[12px] right-1/2 translate-x-1/2">
+              <div class="fadeout toast px-4 py-2 bg-black rounded-full w-full">
+                <p class="text-xs text-white text-center whitespace-nowrap">
+                  배경음악이 준비 되었습니다.
+                </p>
+              </div>
+            </div>
             <audio src="/assets/music.mp3" ref={audioRef} autoPlay loop />
             <button
               onClick={togglePlay}
