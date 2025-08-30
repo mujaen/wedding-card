@@ -12,7 +12,7 @@ body {
   font-optical-sizing: auto;
   font-weight: 400;
   font-style: normal;
-  background-color: RGB(250, 218, 221);
+  background-color: rgb(237, 222, 229);
 }
 
 @media (min-width: 1024px) {
@@ -26,14 +26,6 @@ body {
     padding-top: 3rem;
     padding-bottom: 3rem;
   }
-}
-
-@font-face {
-  font-family: "SfHambakneun";
-  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2106@1.1/SF_HambakSnow.woff")
-    format("woff");
-  font-weight: normal;
-  font-display: swap;
 }
 
 @font-face {
@@ -105,7 +97,7 @@ body {
 }
 
 .sub-title {
-  font-family: "SfHambakneun", serif;
+  font-family: "Hamchorom", serif;
   font-size: 30px;
   font-weight: 400;
   letter-spacing: 0.05em;
@@ -118,7 +110,7 @@ body {
 
 .main-title2 {
   font-family: "Arita-buri-SemiBold";
-  font-size: 20px;
+  font-size: 24px;
   line-height: 2;
   letter-spacing: 0.05rem;
 }

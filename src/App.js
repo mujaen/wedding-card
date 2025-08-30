@@ -211,7 +211,7 @@ function App() {
                       stroke-linecap="round"
                       stroke-linejoin="round"
                       fill-opacity="0"
-                      stroke="#DFA2A2"
+                      stroke="#C99CB2"
                       stroke-opacity="1"
                       stroke-width="2"
                       d=" M-1.7410000562667847,-6.458000183105469 C-1.7410000562667847,-6.458000183105469 8.251999855041504,-14.954000473022461 16.194000244140625,-9.310999870300293 C18.09600067138672,-7.960000038146973 17.510000228881836,-6.383999824523926 17.198999404907227,-5.51200008392334 C16.382999420166016,-3.2269999980926514 12.392000198364258,-2.7109999656677246 8.720999717712402,-4.283999919891357 C3.8940000534057617,-6.353000164031982 -0.2460000067949295,-6.547999858856201 -1.6050000190734863,-6.185999870300293 C-2.9639999866485596,-5.823999881744385 -6.99399995803833,-5.098999977111816 -9.982999801635742,-2.2909998893737793 C-12.972000122070312,0.5170000195503235 -20.98900032043457,3.5969998836517334 -26.785999298095703,1.6039999723434448"
@@ -225,7 +225,7 @@ function App() {
                       stroke-linecap="round"
                       stroke-linejoin="round"
                       fill-opacity="0"
-                      stroke="#DFA2A2"
+                      stroke="#C99CB2"
                       stroke-opacity="1"
                       stroke-width="2"
                       d=" M-1.7410000562667847,-6.458000183105469 C-1.7410000562667847,-6.458000183105469 8.251999855041504,-14.954000473022461 16.194000244140625,-9.310999870300293 C18.09600067138672,-7.960000038146973 17.510000228881836,-6.383999824523926 17.198999404907227,-5.51200008392334 C16.382999420166016,-3.2269999980926514 12.392000198364258,-2.7109999656677246 8.720999717712402,-4.283999919891357 C3.8940000534057617,-6.353000164031982 -0.2460000067949295,-6.547999858856201 -1.6050000190734863,-6.185999870300293 C-2.9639999866485596,-5.823999881744385 -6.99399995803833,-5.098999977111816 -9.982999801635742,-2.2909998893737793 C-12.972000122070312,0.5170000195503235 -20.98900032043457,3.5969998836517334 -26.785999298095703,1.6039999723434448"
@@ -334,7 +334,7 @@ function App() {
                     fill-rule="evenodd"
                     clip-rule="evenodd"
                     d="M5.97449 12.9791C4.01296 11.4758 1.33334 8.99241 1.33334 6.64436C1.33334 2.72175 5.00011 1.25725 8 4.28741C10.9999 1.25725 14.6667 2.72175 14.6667 6.64434C14.6667 8.99247 11.9871 11.4758 10.0255 12.9791C9.13754 13.6597 8.69354 14 8 14C7.30647 14 6.86247 13.6597 5.97449 12.9791Z"
-                    fill="#F87171"
+                    fill="#EB7B7B"
                   />
                 </svg>
                 <span>혜진의</span>
@@ -389,7 +389,7 @@ function App() {
                   alt="신랑 이미지"
                 />
                 <div className="fade flex justify-center items-baseline gap-[10px] pt-[30px] py-[20px]">
-                  <span className="text-[18px] suit-regular text-primary-500">
+                  <span className="text-[18px] suit-regular text-primary-300">
                     신랑
                   </span>
                   <span className="text-[18px] suit-regular">김민호</span>
@@ -428,7 +428,7 @@ function App() {
                   alt="신부 이미지"
                 />
                 <div className="fade flex justify-center items-baseline gap-[10px] pt-[30px] py-[20px]">
-                  <span className="text-[18px] suit-regular text-primary-500">
+                  <span className="text-[18px] suit-regular text-primary-300">
                     신부
                   </span>
                   <span className="text-[18px] suit-regular">이혜진</span>
@@ -462,7 +462,7 @@ function App() {
               </div>
             </div>
           </div>
-          <div className="flex flex-col items-center py-20 lg:w-[400px] max-w-md mx-auto bg-primary-100">
+          <div className="flex flex-col items-center pt-20 pb-10 lg:w-[400px] max-w-md mx-auto bg-gray-50">
             <h3 className="fade sub-title">OUR STORY</h3>
             <h2 className="fade flex flex-col items-center suit-regular py-4 text-[18px]">
               우리의 이야기
@@ -492,7 +492,7 @@ function App() {
                   </h4>
                 </div>
                 <div className="absolute top-0 bottom-0 left-0 right-0 border-l border-secondary-100 h-full w-[1px] m-auto"></div>
-                <span className="absolute top-[20px] left-0 right-0 rounded-full w-[17px] h-[17px] bg-primary-300 border-[4px] border-primary-100 m-auto"></span>
+                <span className="absolute top-[20px] left-0 right-0 rounded-full w-[17px] h-[17px] bg-primary-300 border-[4px] border-gray-50 m-auto"></span>
               </div>
               <div className="fade flex flex-row-reverse relative justify-center pt-[40px]">
                 <div className="w-full pr-[20px] pl-[40px]">
@@ -515,7 +515,7 @@ function App() {
                   </h4>
                 </div>
                 <div className="absolute top-0 bottom-0 left-0 right-0 border-l border-secondary-100 h-full w-[1px] m-auto"></div>
-                <span className="absolute top-[60px] left-0 right-0 rounded-full w-[17px] h-[17px] bg-primary-300 border-[4px] border-primary-100 m-auto"></span>
+                <span className="absolute top-[60px] left-0 right-0 rounded-full w-[17px] h-[17px] bg-primary-300 border-[4px] border-gray-50 m-auto"></span>
               </div>
               <div className="fade flex flex-row relative justify-center pt-[40px]">
                 <div className="w-full pl-[20px] pr-[40px]">
@@ -537,7 +537,7 @@ function App() {
                   </h4>
                 </div>
                 <div className="absolute top-0 bottom-0 left-0 right-0 border-l border-secondary-100 h-full w-[1px] m-auto"></div>
-                <span className="absolute top-[60px] left-0 right-0 rounded-full w-[17px] h-[17px] bg-primary-300 border-[4px] border-primary-100 m-auto"></span>
+                <span className="absolute top-[60px] left-0 right-0 rounded-full w-[17px] h-[17px] bg-primary-300 border-[4px] border-gray-50 m-auto"></span>
               </div>
               <div className="fade flex flex-row-reverse relative justify-center pt-[40px]">
                 <div className="w-full pr-[20px] pl-[40px]">
@@ -551,17 +551,19 @@ function App() {
                   <div className="flex-inline w-auto self-start px-3 py-1 bg-primary-300 rounded-full text-white">
                     25년 12월 6일
                   </div>
-                  <h3 className="suit-bold text-[15px] pt-[20px]">웨딩데이</h3>
+                  <h3 className="suit-bold text-[15px] pt-[20px]">
+                    💍 웨딩데이
+                  </h3>
                   <h4 className="suit-regular text-[15px] pt-[16px]">
                     두 사람이 사랑의 마음으로 <br />
                     하나 되어 가는 새로운 여정
                   </h4>
                 </div>
                 <div className="absolute top-0 bottom-0 left-0 right-0 border-l border-secondary-100 h-full w-[1px] m-auto"></div>
-                <span className="absolute top-[60px] left-0 right-0 rounded-full w-[17px] h-[17px] bg-primary-300 border-[4px] border-primary-100 m-auto"></span>
+                <span className="absolute top-[60px] left-0 right-0 rounded-full w-[17px] h-[17px] bg-primary-300 border-[4px] border-gray-50 m-auto"></span>
               </div>
             </div>
-            <div className="fade">
+            <div className="fade pt-10">
               <p className="dancing-script text-primary-300 text-2xl">
                 And Now ...
               </p>
@@ -595,7 +597,7 @@ function App() {
           </div>
           <div
             id="location"
-            className="flex flex-col items-center pt-20 lg:w-[400px] max-w-md mx-auto bg-primary-100"
+            className="flex flex-col items-center pt-20 lg:w-[400px] max-w-md mx-auto bg-gray-50"
           >
             <h3 className="fade sub-title">LOCATION</h3>
             <h2 className="fade flex flex-col items-center suit-regular py-4 text-[18px]">
@@ -663,7 +665,7 @@ function App() {
               </div>
             </div>
           </div>
-          <div className="flex flex-col items-center py-20 lg:w-[400px] max-w-md mx-auto bg-gray-50">
+          <div className="flex flex-col items-center py-20 lg:w-[400px] max-w-md mx-auto bg-primary-400">
             <h3 className="fade sub-title text-primary-300">
               <svg
                 width="32"
@@ -681,7 +683,7 @@ function App() {
                 <g clip-path="url(#clip1_2255_2360)">
                   <path
                     d="M13.1252 0.6875C12.2807 0.700636 11.4546 0.93639 10.7303 1.37095C10.006 1.80552 9.40923 2.4235 9.00021 3.1625C8.59119 2.4235 7.99441 1.80552 7.27014 1.37095C6.54587 0.93639 5.71975 0.700636 4.87521 0.6875C3.52892 0.745993 2.26049 1.33494 1.34705 2.32567C0.433607 3.31641 -0.0506 4.62839 0.000212859 5.975C0.000212859 11.0563 8.21721 16.925 8.56671 17.174L9.00021 17.4808L9.43371 17.174C9.78321 16.9265 18.0002 11.0563 18.0002 5.975C18.051 4.62839 17.5668 3.31641 16.6534 2.32567C15.7399 1.33494 14.4715 0.745993 13.1252 0.6875V0.6875Z"
-                    fill="#F5AB7F"
+                    fill="#EB7B7B"
                   />
                 </g>
                 <defs>
@@ -1031,6 +1033,36 @@ function App() {
               </div>
             </div>
           </div>
+
+          <div className="flex flex-col items-center py-20 lg:w-[400px] max-w-md mx-auto bg-white">
+            <h3 className="fade sub-title">ATTENDANCE</h3>
+            <h2 className="fade flex flex-col items-center suit-regular py-4 text-[18px] text-center leading-9">
+              축하의 마음으로 예식에 참석하시는
+              <br />
+              모든 분들을 더욱 귀하게 모실 수 있도록,
+              <br />
+              참석정보를 전해주세요
+            </h2>
+            <div class="fade suit-regular text-center p-8 mt-8 rounded-xl bg-primary-400">
+              <h5 class="flex justify-center items-center gap-[10px] text-gray-600 leading-7">
+                2025년 12월 06일
+                <br />
+                토요일 오후 2:40
+              </h5>
+              <h5 class="flex justify-center items-center gap-[10px] text-gray-600 mt-6">
+                더베뉴지 서울 2층 베뉴지홀
+              </h5>
+              <button
+                type="button"
+                onClick={() => setIsOpenForm(!isOpenForm)}
+                className="w-[300px] flex justify-center items-center bg-primary-300 rounded-[8px] mt-6 py-4 px-16"
+              >
+                <span className="text-[16px] text-white">
+                  참석정보 전달하기
+                </span>
+              </button>
+            </div>
+          </div>
           <div className="flex flex-col items-center py-20 bg-primary-400 lg:w-[400px] max-w-md mx-auto">
             <h3 className="fade sub-title">INFORMATION</h3>
             <h2 className="fade flex flex-col items-center text-gray-800 py-4 suit-regular text-[18px]">
@@ -1061,36 +1093,6 @@ function App() {
               </div>
             </div>
           </div>
-          <div className="flex flex-col items-center py-20 lg:w-[400px] max-w-md mx-auto bg-white">
-            <h3 className="fade sub-title">ATTENDANCE</h3>
-            <h2 className="fade flex flex-col items-center suit-regular py-4 text-[18px] text-center leading-9">
-              축하의 마음으로 예식에 참석하시는
-              <br />
-              모든 분들을 더욱 귀하게 모실 수 있도록,
-              <br />
-              참석정보를 전해주세요
-            </h2>
-            <div class="fade suit-regular text-center p-8 mt-8 rounded-xl bg-primary-400">
-              <h5 class="flex justify-center items-center gap-[10px] text-gray-600 leading-7">
-                2025년 12월 06일
-                <br />
-                토요일 오후 2:40
-              </h5>
-              <h5 class="flex justify-center items-center gap-[10px] text-gray-600 mt-6">
-                더베뉴지 서울 2층 베뉴지홀
-              </h5>
-              <button
-                type="button"
-                onClick={() => setIsOpenForm(!isOpenForm)}
-                className="w-[300px] flex justify-center items-center bg-primary-300 rounded-[8px] mt-6 py-4 px-16"
-              >
-                <span className="text-[16px] text-white">
-                  참석정보 전달하기
-                </span>
-              </button>
-            </div>
-          </div>
-
           <div className="lg:w-[400px] max-w-md mx-auto lg:rounded-b-3xl overflow-hidden">
             <img
               className="max-w-[600px] w-full"
