@@ -60,6 +60,10 @@ function App() {
     "/assets/images/30.png",
   ];
 
+  const firstRow = ["D", "E", "C"];
+  const secondRow = ["6"];
+  const thirdRow = ["2", "0", "2", "5"];
+
   const options = {
     root: null, // viewport
     rootMargin: "20px",
@@ -106,6 +110,25 @@ function App() {
 
   const handleNext = () => {
     if (swiperRef.current) swiperRef.current.slideNext();
+  };
+
+  const RevealText = ({ text, delay = 0 }) => {
+    const [show, setShow] = useState(false);
+
+    useEffect(() => {
+      const timeout = setTimeout(() => setShow(true), delay);
+      return () => clearTimeout(timeout);
+    }, [delay]);
+
+    return (
+      <span
+        className={`inline-block transition-all duration-700 ease-out transform
+          ${show ? "translate-y-0 opacity-100" : "translate-y-full opacity-0"}
+        `}
+      >
+        {text}
+      </span>
+    );
   };
 
   const handleLeftButtonClick = () => {
@@ -288,20 +311,20 @@ function App() {
           <div className="flex flex-col justify-center items-center lg:w-[400px] h-screen max-w-md mx-auto bg-primary-300">
             <div className="flex w-full justify-center items-center gap-5 text-white cinzel-decorative-regular text-[96px]">
               <span className="fade static flex w-fit justify-center align-middle items-center overflow-y-clip h-28">
-                <span className="reveal-text">D</span>
-                <span className="reveal-text">E</span>
-                <span className="reveal-text">C</span>
+                <span className="reveal-text reveal-text1">D</span>
+                <span className="reveal-text reveal-text2">E</span>
+                <span className="reveal-text reveal-text3">C</span>
               </span>
               <span className="fade static flex w-fit justify-center align-middle items-center overflow-y-clip h-28">
-                <span className="reveal-text">6</span>
+                <span className="reveal-text reveal-text4">6</span>
               </span>
             </div>
             <div className="flex w-full justify-center items-center gap-5 text-white cinzel-decorative-regular text-[96px]">
               <span className="fade static flex w-fit justify-center align-middle items-center overflow-y-clip h-28">
-                <span className="reveal-text">2</span>
-                <span className="reveal-text">0</span>
-                <span className="reveal-text">2</span>
-                <span className="reveal-text">5</span>
+                <span className="reveal-text reveal-text5">2</span>
+                <span className="reveal-text reveal-text6">0</span>
+                <span className="reveal-text reveal-text7">2</span>
+                <span className="reveal-text reveal-text8">5</span>
               </span>
             </div>
           </div>
