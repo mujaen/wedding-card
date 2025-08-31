@@ -239,7 +239,7 @@ function App() {
             <audio src="/assets/music.mp3" ref={audioRef} autoPlay loop />
             <button
               onClick={togglePlay}
-              className="absolute right-4 top-4 opacity-70"
+              className="fixed lg:absolute right-4 top-4 opacity-70"
             >
               {
                 <div style={{ width: "23px", height: "23px" }}>
