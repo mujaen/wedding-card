@@ -2,7 +2,6 @@ import React, { useState, useEffect, useRef } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import Snowfall from "react-snowfall";
 
-import broomImage from "./assets/images/broom.png";
 import infoImage from "./assets/images/info.png";
 import bannerImage from "./assets/images/banner.png";
 import menImage from "./assets/images/men.png";
@@ -30,6 +29,11 @@ function App() {
   const [isOpenModal, setIsOpenModal] = useState(false);
   const [isOpenForm, setIsOpenForm] = useState(false);
   const [activeIndex, setActiveIndex] = useState(0);
+
+  const [isGroomBride, setIsGroomBride] = useState("groom");
+  const [isPossible, setIsPossible] = useState(true);
+  const [name, setName] = useState("");
+  const [agree, setAgree] = useState(false);
 
   const [isPlaying, setIsPlaying] = useState(false);
   const galleryImageList = [
@@ -64,10 +68,6 @@ function App() {
     "/assets/images/29.png",
     "/assets/images/30.png",
   ];
-
-  const firstRow = ["D", "E", "C"];
-  const secondRow = ["6"];
-  const thirdRow = ["2", "0", "2", "5"];
 
   const options = {
     root: null, // viewport
@@ -138,6 +138,21 @@ function App() {
     window.Kakao.Share.sendCustom({
       templateId: 123846,
     });
+  };
+
+  const submit = () => {
+    if (!name.trim()) {
+      alert(`성함을 입력해 주세요.`);
+      return;
+    }
+
+    if (!agree) {
+      alert("개인정보 수집 및 이용에 동의해주세요.");
+      return;
+    }
+
+    alert(`참석 의사가 전달되었습니다!`);
+    setIsOpenForm(!isOpenForm);
   };
 
   useEffect(() => {
@@ -1294,11 +1309,11 @@ function App() {
               </Swiper>
             </div>
             <div
-              className="absolute top-0 left-0 w-1/6 h-full z-10"
+              className="absolute top-0 left-0 w-1/7 h-full z-10"
               onClick={handlePrev}
             />
             <div
-              className="absolute top-0 right-0 w-1/6 h-full z-10"
+              className="absolute top-0 right-0 w-1/7 h-full z-10"
               onClick={handleNext}
             />
           </div>
@@ -1347,51 +1362,173 @@ function App() {
                 <br />
                 참석 의사를 전해주시면 감사하겠습니다.
               </p>
-              <div className="pt-12 flex flex-col gap-[30px]">
-                <dl className="flex flex-col gap-[10px]">
-                  <dt className="text-[14px] text-gray-600">
+              <div className="pt-12 flex flex-col gap-[25px]">
+                <dl className="flex flex-col gap-[7px]">
+                  <dt className="flex text-[14px] text-gray-600">
                     어느 분의 하객이신가요?
+                    <span class="text-tog-pink ml-1 mt-[1px]">
+                      <svg
+                        width="4"
+                        height="4"
+                        viewBox="0 0 4 4"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <rect width="4" height="4" rx="2" fill="#C99CB2"></rect>
+                      </svg>
+                    </span>
                   </dt>
                   <dd className="flex gap-[10px] w-full">
                     <button
                       type="button"
-                      onClick={() => null}
-                      className="w-1/2 flex justify-center items-center bg-primary-300 rounded-[8px] shadow-md py-3 px-16"
+                      onClick={() => setIsGroomBride("groom")}
+                      className={`w-1/2 flex justify-center items-center ${
+                        isGroomBride === "groom" ? "bg-primary-300" : "bg-white"
+                      }  rounded-[8px] shadow-md py-3 px-16`}
                     >
-                      <span className="text-[16px] text-white">신랑</span>
+                      <span
+                        className={`text-[16px] ${
+                          isGroomBride === "groom"
+                            ? "text-white"
+                            : "text-gray-400"
+                        }`}
+                      >
+                        신랑
+                      </span>
                     </button>
                     <button
                       type="button"
-                      onClick={() => null}
-                      className="w-1/2 flex justify-center items-center bg-white rounded-[8px] shadow-md py-3 px-16"
+                      onClick={() => setIsGroomBride("bride")}
+                      className={`w-1/2 flex justify-center items-center ${
+                        isGroomBride === "bride" ? "bg-primary-300" : "bg-white"
+                      }  rounded-[8px] shadow-md py-3 px-16`}
                     >
-                      <span className="text-[16px] text-gray-500">신부</span>
+                      <span
+                        className={`text-[16px] ${
+                          isGroomBride === "bride"
+                            ? "text-white"
+                            : "text-gray-400"
+                        }`}
+                      >
+                        신부
+                      </span>
                     </button>
                   </dd>
                 </dl>
-                <dl className="flex flex-col gap-[10px]">
-                  <dt className="text-[14px] text-gray-600">
+                <dl className="flex flex-col gap-[7px]">
+                  <dt className="flex text-[14px] text-gray-600">
                     참석여부를 알려주세요
+                    <span class="text-tog-pink ml-1 mt-[1px]">
+                      <svg
+                        width="4"
+                        height="4"
+                        viewBox="0 0 4 4"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <rect width="4" height="4" rx="2" fill="#C99CB2"></rect>
+                      </svg>
+                    </span>
                   </dt>
                   <dd className="flex gap-[10px] w-full">
                     <button
                       type="button"
-                      onClick={() => null}
-                      className="w-1/2 flex justify-center items-center bg-primary-300 rounded-[8px] shadow-md py-3 px-16"
+                      onClick={() => setIsPossible(true)}
+                      className={`w-1/2 flex justify-center items-center ${
+                        isPossible ? "bg-primary-300" : "bg-white"
+                      }  rounded-[8px] shadow-md py-3 px-16`}
                     >
-                      <span className="text-[16px] text-white">신랑</span>
+                      <span
+                        className={`text-[16px] ${
+                          isPossible ? "text-white" : "text-gray-400"
+                        }`}
+                      >
+                        참석할게요
+                      </span>
                     </button>
                     <button
                       type="button"
-                      onClick={() => null}
-                      className="w-1/2 flex justify-center items-center bg-white rounded-[8px] shadow-md py-3 px-16"
+                      onClick={() => setIsPossible(false)}
+                      className={`w-1/2 flex justify-center items-center ${
+                        !isPossible ? "bg-primary-300" : "bg-white"
+                      }  rounded-[8px] shadow-md py-3 px-16`}
                     >
-                      <span className="text-[16px] text-gray-500">신부</span>
+                      <span
+                        className={`text-[16px] ${
+                          !isPossible ? "text-white" : "text-gray-400"
+                        }`}
+                      >
+                        참석이 어려워요
+                      </span>
                     </button>
+                  </dd>
+                </dl>
+                <dl className="flex flex-col gap-[7px]">
+                  <dt className="flex text-[14px] text-gray-600">
+                    성함
+                    <span class="text-tog-pink ml-1 mt-[1px]">
+                      <svg
+                        width="4"
+                        height="4"
+                        viewBox="0 0 4 4"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <rect width="4" height="4" rx="2" fill="#C99CB2"></rect>
+                      </svg>
+                    </span>
+                  </dt>
+                  <dd className="flex gap-[10px] w-full">
+                    <input
+                      type="text"
+                      placeholder="성함을 입력해 주세요"
+                      value={name}
+                      onChange={(e) => setName(e.target.value)}
+                      className="flex w-full border border-input px-3 py-2 text-sm ring-offset-background focus-visible:outline-none focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50 focus-visible:ring-0 focus-visible:ring-offset-0 h-12 shadow-md rounded-md border-none placeholder:text-gray-300"
+                    />
+                  </dd>
+                </dl>
+                <dl className="flex flex-col gap-[7px]">
+                  <dt className="flex text-[14px] text-gray-600">
+                    개인정보 수집 및 이용 동의
+                    <span class="text-tog-pink ml-1 mt-[1px]">
+                      <svg
+                        width="4"
+                        height="4"
+                        viewBox="0 0 4 4"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <rect width="4" height="4" rx="2" fill="#C99CB2"></rect>
+                      </svg>
+                    </span>
+                  </dt>
+                  <dd className="flex flex-col gap-[5px] w-full">
+                    <div className="text-[12px] bg-white border border-gray-300  px-3 py-2 w-full rounded-md text-gray-400">
+                      참석 정보 전달을 위한 개인정보 수집 및 이용에
+                      동의해주세요.
+                      <br />
+                      항목: 성함 · 보유기간: 청첩장 이용 종료시 까지
+                    </div>
+                    <label className="flex gap-[5px]">
+                      <input
+                        type="checkbox"
+                        className="border border-gray-400"
+                        checked={agree}
+                        onChange={(e) => setAgree(e.target.checked)}
+                      />
+                      <span className="text-[14px] text-gray-600">동의함</span>
+                    </label>
                   </dd>
                 </dl>
               </div>
-              <button type="button">전달하기</button>
+              <button
+                type="button"
+                onClick={() => submit()}
+                className="w-full mt-10 flex justify-center items-center bg-primary-300 rounded-[8px] shadow-md py-3 px-16"
+              >
+                <span className="text-[16px] text-white">전달하기</span>
+              </button>
             </div>
           </div>
         </div>
