@@ -1082,7 +1082,7 @@ function App() {
                             <div className="flex justify-between">
                               <div>
                                 <div className="text-gray-400">토스뱅크</div>
-                                <div>1000-9136-201</div>
+                                <div>1000-9136-2017</div>
                               </div>
                               <div className="flex justify-between gap-[10px]">
                                 <button
@@ -1110,7 +1110,10 @@ function App() {
                                   type="button"
                                   class="flex items-center justify-center w-[40px] rounded-full bg-white shadow-lg"
                                   onClick={() =>
-                                    copyToClipboard("계좌번호", "1000-9136-201")
+                                    copyToClipboard(
+                                      "계좌번호",
+                                      "1000-9136-2017"
+                                    )
                                   }
                                 >
                                   <svg
