@@ -28,6 +28,7 @@ function App() {
   const [isOpenRight, setIsOpenRight] = useState(false);
   const [isOpenModal, setIsOpenModal] = useState(false);
   const [isOpenForm, setIsOpenForm] = useState(false);
+  const [isOpenGallery, setIsOpenGallery] = useState(false);
   const [activeIndex, setActiveIndex] = useState(0);
 
   const [isGroomBride, setIsGroomBride] = useState("groom");
@@ -696,8 +697,31 @@ function App() {
                     </div>
                   </div>
                 ))
-                .slice(0, 9)}
+                .slice(0, isOpenGallery ? 30 : 9)}
             </div>
+            {!isOpenGallery && (
+              <div class="fade flex justify-center py-9">
+                <button type="button" onClick={() => setIsOpenGallery(true)}>
+                  <svg
+                    width="320"
+                    height="70"
+                    viewBox="0 0 320 70"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M152 6L159.057 13.5805C159.578 14.1398 160.422 14.1398 160.943 13.5805L168 6"
+                      stroke="#666666"
+                      stroke-linecap="round"
+                    ></path>
+                    <path
+                      d="M147.233 40.0469V41.127H142.927V47.1016C144.984 47.0879 146.386 47.0127 147.999 46.7051L148.149 47.7715C146.386 48.1064 144.896 48.1816 142.585 48.1816H141.614V40.0469H147.233ZM146.536 44.3672V43.2871H149.941V38.9121H151.239V51.1895H149.941V44.3672H146.536ZM167.181 48.5645V49.6445H155.97V48.5645H160.906V46.0488H157.256V39.7461H158.554V41.8516H164.57V39.7461H165.855V46.0488H162.191V48.5645H167.181ZM158.554 44.9961H164.57V42.9043H158.554V44.9961ZM177.976 38.9121V51.1621H176.663V38.9121H177.976ZM167.913 47.8809C171.167 46.3291 172.76 44.1211 173.013 41.2637H168.501V40.2246H174.325C174.325 43.8135 172.801 46.917 168.597 48.9336L167.913 47.8809Z"
+                      fill="#666666"
+                    ></path>
+                  </svg>
+                </button>
+              </div>
+            )}
           </div>
           <div
             id="location"
