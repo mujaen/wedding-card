@@ -36,6 +36,7 @@ function App() {
   const [agree, setAgree] = useState(false);
 
   const [isPlaying, setIsPlaying] = useState(false);
+  const [isFirst, setIsFirst] = useState(true);
   const galleryImageList = [
     "/assets/images/1.png",
     "/assets/images/2.png",
@@ -107,6 +108,7 @@ function App() {
         setIsPlaying(true);
       }
     }
+    setIsFirst(false);
   };
 
   const handlePrev = () => {
@@ -249,7 +251,7 @@ function App() {
                     className="play-icon-svg"
                   >
                     <circle cx="11.5" cy="11.5" r="11.5" fill="#101010" />
-                    {isPlaying ? (
+                    {isPlaying || isFirst ? (
                       <g transform="translate(5.25, 17.5) scale(1, -1)">
                         {[0, 1, 2, 3, 4].map((i) => (
                           <rect
