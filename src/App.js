@@ -1438,7 +1438,7 @@ function App() {
                       onClick={() => setIsPossible(true)}
                       className={`w-1/2 flex justify-center items-center ${
                         isPossible ? "bg-primary-300" : "bg-white"
-                      }  rounded-[8px] shadow-md py-3 px-16`}
+                      }  rounded-[8px] shadow-md py-3`}
                     >
                       <span
                         className={`text-[16px] ${
@@ -1453,7 +1453,7 @@ function App() {
                       onClick={() => setIsPossible(false)}
                       className={`w-1/2 flex justify-center items-center ${
                         !isPossible ? "bg-primary-300" : "bg-white"
-                      }  rounded-[8px] shadow-md py-3 px-16`}
+                      }  rounded-[8px] shadow-md py-3`}
                     >
                       <span
                         className={`text-[16px] ${
@@ -1486,7 +1486,7 @@ function App() {
                       placeholder="성함을 입력해 주세요"
                       value={name}
                       onChange={(e) => setName(e.target.value)}
-                      className="flex w-full border border-input px-3 py-2 text-sm ring-offset-background focus-visible:outline-none focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50 focus-visible:ring-0 focus-visible:ring-offset-0 h-12 shadow-md rounded-md border-none placeholder:text-gray-300"
+                      className="flex w-full border border-input px-3 py-2 text-sm ring-offset-background focus-visible:outline-none focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50 focus-visible:ring-0 focus-visible:ring-offset-0 h-12 shadow-md rounded-md border-none placeholder:text-gray-400"
                     />
                   </dd>
                 </dl>
