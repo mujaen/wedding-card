@@ -219,7 +219,7 @@ function App() {
     <>
       <section className="md:py-12">
         <div className="max-w-md mx-auto md:rounded-3xl shadow-xl lg:w-[400px]">
-          <div className="relative flex flex-col h-screen lg:h-auto justify-center lg:w-[400px] max-w-md mx-auto lg:rounded-t-3xl overflow-hidden">
+          <div className="relative flex flex-col h-screen lg:h-auto justify-center lg:w-[400px] max-w-md mx-auto lg:rounded-t-3xl overflow-hidden bg-white">
             <div className="z-50">
               <Snowfall
                 speed={[0, 1.4]}
