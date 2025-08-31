@@ -239,7 +239,7 @@ function App() {
             <audio src="/assets/music.mp3" ref={audioRef} autoPlay loop />
             <button
               onClick={togglePlay}
-              className={`fixed right-4 bottom-6 ${
+              className={`fixed left-4 top-4 ${
                 isPlaying ? "opacity-50" : "opacity-15"
               } z-50`}
             >
