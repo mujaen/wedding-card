@@ -241,7 +241,7 @@ function App() {
               onClick={togglePlay}
               className={`fixed left-4 top-4 ${
                 isPlaying ? "opacity-50" : "opacity-15"
-              } z-50`}
+              } z-30`}
             >
               {
                 <div style={{ width: "23px", height: "23px" }}>
@@ -1257,7 +1257,7 @@ function App() {
         </div>
       </section>
       {isOpenModal && (
-        <div class="modal flex justify-center items-center bg-black bg-opacity-20">
+        <div class="modal flex justify-center items-center bg-black bg-opacity-20 z-50">
           <div className="relative h-full lg:w-[400px] max-w-md mx-auto">
             <button
               class="fixed right-4 top-4 ml-[-16px] z-40 hover:cursor-pointer"
@@ -1324,7 +1324,7 @@ function App() {
         </div>
       )}
       {isOpenForm && (
-        <div className="modal flex justify-center items-center bg-black bg-opacity-20">
+        <div className="modal flex justify-center items-center bg-black bg-opacity-20 z-50">
           <div
             data-state={isOpenForm ? "open" : "closed"}
             className="
