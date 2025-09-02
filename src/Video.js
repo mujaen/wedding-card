@@ -7,8 +7,13 @@ const VideoPlayer = () => {
   const [shouldShowImage, setShouldShowImage] = useState(false);
 
   useEffect(() => {
-    const isWindows = navigator.userAgent.includes("Windows");
-    if (isWindows) {
+    const userAgent = navigator.userAgent || navigator.vendor || window.opera;
+
+    const isWindows = userAgent.includes("Windows");
+    const isAndroid = userAgent.includes("Android");
+    const isSamsung = /SM-|Samsung/i.test(userAgent);
+
+    if (isWindows || isAndroid || isSamsung) {
       setShouldShowImage(true);
     }
   }, []);
