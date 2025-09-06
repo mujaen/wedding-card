@@ -10,10 +10,10 @@ const VideoPlayer = () => {
     const userAgent = navigator.userAgent || navigator.vendor || window.opera;
 
     const isWindows = userAgent.includes("Windows");
-    const isAndroid = userAgent.includes("Android");
-    const isSamsung = /SM-|Samsung/i.test(userAgent);
+    //const isAndroid = userAgent.includes("Android");
+    //const isSamsung = /SM-|Samsung/i.test(userAgent);
 
-    if (isWindows || isAndroid || isSamsung) {
+    if (isWindows) {
       setShouldShowImage(true);
     }
   }, []);
